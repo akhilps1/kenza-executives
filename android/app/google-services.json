@@ -1,0 +1,67 @@
+{
+  "project_info": {
+    "project_number": "407632692695",
+    "project_id": "kenza-gold",
+    "storage_bucket": "kenza-gold.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:407632692695:android:362e38ef1801d22b9cf792",
+        "android_client_info": {
+          "package_name": "com.example.kenza_employee"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDjgAzdkxvFObwdwcd3ja9W2lVTE9GgDo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:407632692695:android:923ca3612ea850c19cf792",
+        "android_client_info": {
+          "package_name": "com.kenza.executives"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDjgAzdkxvFObwdwcd3ja9W2lVTE9GgDo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:407632692695:android:30e871c34abd65869cf792",
+        "android_client_info": {
+          "package_name": "com.kenza.gold.kenza_user"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDjgAzdkxvFObwdwcd3ja9W2lVTE9GgDo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
