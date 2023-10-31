@@ -18,7 +18,7 @@ class _AppWidgetState extends State<AppWidget> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: AppColor.primaryColor,
-        titleSpacing: 0,
+        titleSpacing: position == 0 ? 0 : null,
         leading: position == 0
             ? IconButton(
                 onPressed: () {},
@@ -72,7 +72,7 @@ class _AppWidgetState extends State<AppWidget> {
             ),
           ),
           BottomNavigationBarItem(
-            label: 'Enroll',
+            label: 'Transactions',
             icon: Stack(
               children: [
                 ImageIcon(

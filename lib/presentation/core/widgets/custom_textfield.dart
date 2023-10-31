@@ -1,6 +1,7 @@
 import 'package:executives/domain/core/utils/extentions/extentions.dart';
 import 'package:executives/domain/core/utils/theme/app_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class CustomTextField extends StatelessWidget {
   const CustomTextField({
@@ -12,6 +13,7 @@ class CustomTextField extends StatelessWidget {
     this.contentPadding,
     this.borderColor,
     this.textInputType,
+    this.inputFormatters,
     super.key,
   });
 
@@ -23,6 +25,7 @@ class CustomTextField extends StatelessWidget {
   final EdgeInsetsGeometry? contentPadding;
   final Color? borderColor;
   final TextInputType? textInputType;
+  final List<TextInputFormatter>? inputFormatters;
 
   @override
   Widget build(BuildContext context) {
@@ -30,6 +33,7 @@ class CustomTextField extends StatelessWidget {
       autovalidateMode: autovalidateMode,
       validator: validator,
       onChanged: onChanged,
+      inputFormatters: inputFormatters,
       keyboardType: textInputType,
       decoration: InputDecoration(
         hintText: hintText,

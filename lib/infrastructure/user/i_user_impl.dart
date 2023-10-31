@@ -5,6 +5,7 @@ import 'package:dartz/dartz.dart';
 import 'package:executives/domain/users/failures/user_failure.dart';
 import 'package:executives/domain/users/failures/value_validator.dart';
 import 'package:executives/domain/users/i_user_facade.dart';
+import 'package:executives/domain/users/models/employee_daily_collection.dart';
 import 'package:executives/domain/users/models/user_details.dart';
 import 'package:injectable/injectable.dart';
 
@@ -104,5 +105,89 @@ class IUserImpl implements IUserFacade {
   @override
   void clearData() {
     _lastDoc = null;
+  }
+
+  @override
+  Future<Either<UserFailure, DailyCollection>> getEmployeeDailyCollection({
+    required String employeeId,
+  }) async {
+    try {
+      final id = DateTime.now().year.toString() +
+          DateTime.now().month.toString() +
+          DateTime.now().day.toString();
+
+      final data = await _firestore
+          .collection('executive')
+          .doc(employeeId)
+          .collection('daily_collection')
+          .doc(id)
+          .get();
+      if (data.data() != null) {
+        return right(
+          DailyCollection.fromMap(data.data()!).copyWith(id: data.id),
+        );
+      } else {
+        final data = DailyCollection(amount: 0, timestamp: Timestamp.now());
+        await _firestore
+            .collection('executive')
+            .doc(employeeId)
+            .collection('daily_collection')
+            .doc(id)
+            .set(
+              data.toMap(),
+            );
+        return right(
+          data.copyWith(id: id),
+        );
+      }
+    } on Exception catch (e) {
+      return left(
+        UserFailure.serverFailure(
+          errorMsg: e.toString(),
+        ),
+      );
+    }
+  }
+
+  @override
+  Future<Either<UserFailure, DailyCollection>> getBranchDailyCollection({
+    required String branchId,
+  }) async {
+    try {
+      final id = DateTime.now().year.toString() +
+          DateTime.now().month.toString() +
+          DateTime.now().day.toString();
+
+      final data = await _firestore
+          .collection('branches')
+          .doc(branchId)
+          .collection('daily_collection')
+          .doc(id)
+          .get();
+      if (data.data() != null) {
+        return right(
+          DailyCollection.fromMap(data.data()!).copyWith(id: data.id),
+        );
+      } else {
+        final data = DailyCollection(amount: 0, timestamp: Timestamp.now());
+        await _firestore
+            .collection('branches')
+            .doc(branchId)
+            .collection('daily_collection')
+            .doc(id)
+            .set(
+              data.toMap(),
+            );
+        return right(
+          data.copyWith(id: id),
+        );
+      }
+    } on Exception catch (e) {
+      return left(
+        UserFailure.serverFailure(
+          errorMsg: e.toString(),
+        ),
+      );
+    }
   }
 }

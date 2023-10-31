@@ -1,16 +1,16 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:executives/domain/users/failures/value_validator.dart';
 
-class DailyCollection {
+class DailyCollectionDetails {
   String? id;
   final String branchId;
   final String accountId;
   final String employeeId;
   final String userId;
-  final Amount amount;
+  final num amount;
   final num collectedAmount;
   final num lastDayCollected;
-  DailyCollection({
+  DailyCollectionDetails({
     required this.branchId,
     required this.accountId,
     required this.employeeId,
@@ -28,36 +28,36 @@ class DailyCollection {
       'accountId': accountId,
       'employeeId': employeeId,
       'userId': userId,
-      'amount': amount.getOrCrash(),
+      'amount': amount,
       'collectedAmount': collectedAmount,
       'lastDayCollected': lastDayCollected,
     };
   }
 
-  factory DailyCollection.fromMap(Map<String, dynamic> map) {
-    return DailyCollection(
+  factory DailyCollectionDetails.fromMap(Map<String, dynamic> map) {
+    return DailyCollectionDetails(
       id: map['id'] != null ? map['id'] as String : null,
       branchId: map['branchId'] as String,
       accountId: map['accountId'] as String,
       employeeId: map['employeeId'] as String,
       userId: map['userId'] as String,
-      amount: Amount(map['amount'] as num),
+      amount: map['amount'] as num,
       collectedAmount: map['collectedAmount'] as num,
       lastDayCollected: map['lastDayCollected'] as num,
     );
   }
 
-  DailyCollection copyWith({
+  DailyCollectionDetails copyWith({
     String? id,
     String? branchId,
     String? accountId,
     String? employeeId,
     String? userId,
-    Amount? amount,
+    num? amount,
     num? collectedAmount,
     num? lastDayCollected,
   }) {
-    return DailyCollection(
+    return DailyCollectionDetails(
       id: id ?? this.id,
       branchId: branchId ?? this.branchId,
       accountId: accountId ?? this.accountId,

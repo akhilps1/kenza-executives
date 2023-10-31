@@ -24,6 +24,17 @@ class _UsersScreenState extends State<UsersScreen> {
     if (context.read<UserBloc>().state.users.isEmpty) {
       context.read<UserBloc>().add(GetAllusers(context.branchId));
     }
+    if (context.read<UserBloc>().state.dailyCollection == null) {
+      context.read<UserBloc>().add(
+            GetEmployeeDailyCollection(context.employeeId),
+          );
+    }
+    if (context.read<UserBloc>().state.branchdailyCollection == null) {
+      context.read<UserBloc>().add(
+            GetBranchDailyCollection(context.branchId),
+          );
+    }
+
     scrollController.addListener(() {
       double delta = MediaQuery.of(context).size.height * 0.16;
       if (scrollController.position.atEdge) {
@@ -74,7 +85,7 @@ class _UsersScreenState extends State<UsersScreen> {
                       child: Row(
                         children: [
                           Transform.scale(
-                            scale: 1,
+                            scale: 0.85,
                             child: const ImageIcon(AssetImage(MediaRes.search)),
                           ),
                           SizedBox(
@@ -82,6 +93,13 @@ class _UsersScreenState extends State<UsersScreen> {
                             child: TextField(
                               onChanged: (value) {
                                 if (value.isEmpty) {
+                                  context
+                                      .read<UserBloc>()
+                                      .add(const ClearUserData());
+                                  context.read<UserBloc>().add(
+                                        GetEmployeeDailyCollection(
+                                            context.employeeId),
+                                      );
                                   context.read<UserBloc>().add(
                                         GetAllusers(context.branchId),
                                       );
@@ -116,7 +134,7 @@ class _UsersScreenState extends State<UsersScreen> {
               ),
               const SliverToBoxAdapter(
                 child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 10),
+                  padding: EdgeInsets.only(left: 10, right: 10, bottom: 7),
                   child: Opacity(
                     opacity: 0.70,
                     child: Text(

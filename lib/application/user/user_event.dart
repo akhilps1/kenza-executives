@@ -8,4 +8,8 @@ class UserEvent with _$UserEvent {
   const factory UserEvent.getAllusers(String branchId) = GetAllusers;
   const factory UserEvent.clearUserData() = ClearUserData;
   const factory UserEvent.clearUserFailure() = ClearUserFailure;
+  const factory UserEvent.getEmployeeDailyCollection(String employeeId) =
+      GetEmployeeDailyCollection;
+  const factory UserEvent.getBranchDailyCollection(String branchId) =
+      GetBranchDailyCollection;
 }

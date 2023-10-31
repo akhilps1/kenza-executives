@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:dartz/dartz.dart';
 import 'package:executives/domain/core/failures/value_objects.dart/value_failure.dart';
 import 'package:executives/domain/users/models/user_details.dart';
@@ -45,6 +47,7 @@ Either<ValueFailure<num>, num> validateAmount(
     return right(amount);
   } else {
     return left(
-        const ValueFailure.invalidAmount(errorMsg: 'Amount cannot be empty'));
+      const InvalidAmount(errorMsg: 'Amount must greater than 0'),
+    );
   }
 }

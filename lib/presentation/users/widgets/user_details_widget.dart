@@ -28,7 +28,7 @@ class UserDetailsWidget extends StatelessWidget {
         shadows: const [
           BoxShadow(
             color: Color(0x3F000000),
-            blurRadius: 4,
+            blurRadius: 1,
           )
         ],
       ),
@@ -45,16 +45,19 @@ class UserDetailsWidget extends StatelessWidget {
                     borderRadius: BorderRadius.circular(6),
                   ),
                 ),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(6),
-                  child: user.imgUrl.isNotEmpty
-                      ? CustomCachedNetworkImage(url: user.imgUrl)
-                      : ColoredBox(
-                          color: AppColor.primaryColor,
-                          child: Image.asset(
-                            MediaRes.logo,
+                child: Hero(
+                  tag: 'profile${user.id}',
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(6),
+                    child: user.imgUrl.isNotEmpty
+                        ? CustomCachedNetworkImage(url: user.imgUrl)
+                        : ColoredBox(
+                            color: AppColor.primaryColor,
+                            child: Image.asset(
+                              MediaRes.logo,
+                            ),
                           ),
-                        ),
+                  ),
                 ),
               )
             ],
@@ -67,7 +70,7 @@ class UserDetailsWidget extends StatelessWidget {
                 child: Opacity(
                   opacity: 0.80,
                   child: Text(
-                    user.name,
+                    user.name.toLowerCase().capitalize,
                     style: const TextStyle(
                       color: Colors.black,
                       fontSize: 13,
@@ -81,15 +84,15 @@ class UserDetailsWidget extends StatelessWidget {
                 height: 4,
               ),
               UserSubDetailsWidget(
-                text: user.ladmark,
-                image: MediaRes.mapPin,
+                text: user.ladmark.toLowerCase().capitalize,
+                image: Icons.place,
               ),
               const SizedBox(
                 height: 4,
               ),
               UserSubDetailsWidget(
                 text: user.phoneNo,
-                image: MediaRes.call,
+                image: Icons.call,
               )
             ],
           ),
@@ -106,7 +109,7 @@ class UserSubDetailsWidget extends StatelessWidget {
     required this.text,
   });
 
-  final String image;
+  final IconData image;
   final String text;
 
   @override
@@ -116,10 +119,10 @@ class UserSubDetailsWidget extends StatelessWidget {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          ImageIcon(
-            AssetImage(image),
+          Icon(
+            image,
             size: 15,
-            color: Colors.black54,
+            color: Colors.black45,
           ),
           const SizedBox(
             width: 8,
@@ -132,7 +135,7 @@ class UserSubDetailsWidget extends StatelessWidget {
                 text,
                 softWrap: true,
                 style: const TextStyle(
-                  color: Colors.black,
+                  color: Colors.black54,
                   fontSize: 12,
                   fontFamily: 'Montserrat',
                   fontWeight: FontWeight.w500,

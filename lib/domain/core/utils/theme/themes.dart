@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pinput/pinput.dart';
 
 import './app_colors.dart';
 
@@ -115,32 +116,61 @@ class AppTheam {
         useMaterial3: true,
       );
 
-  // static get defaultPinTheme => PinTheme(
-  //       width: 56,
-  //       height: 56,
-  //       textStyle: const TextStyle(
-  //           fontSize: 20,
-  //           color: AppColor.primaryColor,
-  //           fontFamily: 'montserrat',
-  //           fontWeight: FontWeight.w600),
-  //       decoration: BoxDecoration(
-  //         border: Border.all(
-  //           color: AppColor.primaryColor,
-  //         ),
-  //         borderRadius: BorderRadius.circular(8),
-  //       ),
-  //     );
+  static get defaultPinTheme => PinTheme(
+        width: 56,
+        height: 56,
+        textStyle: const TextStyle(
+            fontSize: 20,
+            color: AppColor.primaryColor,
+            fontFamily: 'montserrat',
+            fontWeight: FontWeight.w600),
+        decoration: BoxDecoration(
+          border: Border.all(
+            color: AppColor.primaryColor,
+          ),
+          borderRadius: BorderRadius.circular(8),
+        ),
+      );
 
-  // static get focusedPinTheme => defaultPinTheme.copyDecorationWith(
-  //       border: Border.all(
-  //         color: AppColor.primaryColor,
-  //       ),
-  //       borderRadius: BorderRadius.circular(8),
-  //     );
+  static get focusedPinTheme => defaultPinTheme.copyDecorationWith(
+        border: Border.all(
+          color: AppColor.primaryColor,
+        ),
+        borderRadius: BorderRadius.circular(8),
+      );
 
-  // static get submittedPinTheme => defaultPinTheme.copyWith(
-  //       decoration: defaultPinTheme.decoration.copyWith(
-  //         color: AppColor.primaryColor.withOpacity(0.1),
-  //       ),
-  //     );
+  static get submittedPinTheme => defaultPinTheme.copyWith(
+        decoration: defaultPinTheme.decoration.copyWith(
+          color: AppColor.primaryColor.withOpacity(0.1),
+        ),
+      );
+
+  static get defaultPinThemeBlack => PinTheme(
+        width: 56,
+        height: 56,
+        textStyle: const TextStyle(
+            fontSize: 20,
+            color: AppColor.primaryColor,
+            fontFamily: 'montserrat',
+            fontWeight: FontWeight.w600),
+        decoration: BoxDecoration(
+          border: Border.all(
+            color: Colors.black54,
+          ),
+          borderRadius: BorderRadius.circular(8),
+        ),
+      );
+
+  static get focusedPinThemeBlack => defaultPinTheme.copyDecorationWith(
+        border: Border.all(
+          color: Colors.black54,
+        ),
+        borderRadius: BorderRadius.circular(8),
+      );
+
+  static get submittedPinThemeBlack => defaultPinTheme.copyWith(
+        decoration: defaultPinTheme.decoration.copyWith(
+          color: Colors.black54.withOpacity(0.1),
+        ),
+      );
 }

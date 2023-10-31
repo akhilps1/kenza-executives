@@ -11,4 +11,6 @@ abstract class ValueFailure<T> with _$ValueFailure<T> {
       LimitReached<T>;
   const factory ValueFailure.invalidAmount({required String errorMsg}) =
       InvalidAmount<T>;
+  const factory ValueFailure.monthlyLimitExeeded({required String errorMsg}) =
+      MonthlyLimitExeeded<T>;
 }

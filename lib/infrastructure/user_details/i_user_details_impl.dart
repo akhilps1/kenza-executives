@@ -1,39 +1,93 @@
+import 'dart:async';
 import 'dart:developer';
 
+import 'package:executives/infrastructure/user_details/usecase/notification_usecase.dart';
+import 'package:executives/infrastructure/user_details/usecase/user_verification_usecase.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
+import 'package:executives/domain/core/serveice/keywords_generater.dart';
 import 'package:executives/domain/user_details/i_user_details_facade.dart';
 import 'package:executives/domain/user_details/models/account_model.dart';
 import 'package:executives/domain/user_details/models/daily_collection.dart';
-import 'package:executives/domain/user_details/models/transaction.dart';
+import 'package:executives/domain/transactions/models/transaction.dart';
 import 'package:executives/domain/users/failures/user_failure.dart';
 import 'package:executives/domain/users/models/user_details.dart';
-import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:injectable/injectable.dart';
 
 @LazySingleton(as: IUserDeatailsFacade)
 class IUserDeatailsImpl implements IUserDeatailsFacade {
-  IUserDeatailsImpl(
-      {required FirebaseFirestore firestore,
-      required FirebaseMessaging messaging})
-      : _firestore = firestore,
-        _messaging = messaging;
+  IUserDeatailsImpl({
+    required FirebaseFirestore firestore,
+    required NotificationServeice notificationServeice,
+    required UserVerificationServeice userVerificationServeice,
+  })  : _firestore = firestore,
+        _notificationServeice = notificationServeice,
+        _userVerificationServeice = userVerificationServeice;
 
   final FirebaseFirestore _firestore;
-  final FirebaseMessaging _messaging;
+
+  final NotificationServeice _notificationServeice;
+
+  final UserVerificationServeice _userVerificationServeice;
 
   QueryDocumentSnapshot<Map<String, dynamic>>? _lastDoc;
 
   @override
   Future<Either<UserFailure, TransactionDetails>> addTransaction(
-      TransactionDetails transactionDetails) {
-    throw UnimplementedError();
+    TransactionDetails transactionDetails,
+  ) async {
+    try {
+      final ref = _firestore.collection('transactions').doc();
+      final kewords = getKeywords(ref.id);
+      await ref.set(
+        transactionDetails.copyWith(
+          id: ref.id,
+          keywords: [
+            ...transactionDetails.keywords,
+            ...kewords,
+          ],
+        ).toMap(),
+      );
+
+      await _notificationServeice.sendFcmMessage(
+        body: '',
+        title: '',
+        token: transactionDetails.userDetails.token,
+      );
+      return right(
+        transactionDetails.copyWith(id: ref.id),
+      );
+    } catch (e) {
+      log(e.toString());
+      return left(
+        UserFailure.serverFailure(
+          errorMsg: e.toString(),
+        ),
+      );
+    }
   }
 
   @override
-  Future<Either<UserFailure, TransactionDetails>> createNewAccount(
-      {required String accountId}) {
-    throw UnimplementedError();
+  Future<Either<UserFailure, AccountDetail>> createNewAccount({
+    required AccountDetail account,
+  }) async {
+    try {
+      // Add the account to the Firestore 'accounts' collection
+      final data = await _firestore.collection('accounts').add(account.toMap());
+      // Return a 'right' value with the created account and its ID
+      return right(
+        account.copyWith(
+          id: data.id,
+        ),
+      );
+    } catch (e) {
+      // Return a 'left' value with a failure message in case of an error
+      return left(
+        UserFailure.serverFailure(
+          errorMsg: e.toString(),
+        ),
+      );
+    }
   }
 
   @override
@@ -147,7 +201,7 @@ class IUserDeatailsImpl implements IUserDeatailsFacade {
 
   @override
   Future<Either<UserFailure, Unit>> updateAmount({
-    required DailyCollection collection,
+    required DailyCollectionDetails collection,
   }) async {
     try {
       await Future.wait(
@@ -156,6 +210,8 @@ class IUserDeatailsImpl implements IUserDeatailsFacade {
           _updateAmountInBranch(collection),
           _updateAmountInEmployee(collection),
           _updateDailyCollectedAmount(collection),
+          _updateAmountMonthlyLimit(collection),
+          _updateDailyCollectedAmountInEmployee(collection),
         ],
       );
       return right(unit);
@@ -169,36 +225,6 @@ class IUserDeatailsImpl implements IUserDeatailsFacade {
     }
   }
 
-  Future<void> _updateAmountInAccount(DailyCollection collection) async {
-    await _firestore.collection('accounts').doc(collection.accountId).update({
-      'deposits': FieldValue.increment(collection.amount.getOrCrash()),
-    });
-  }
-
-  Future<void> _updateAmountInBranch(DailyCollection collection) async {
-    await _firestore.collection('branches').doc(collection.branchId).update({
-      'totalTransactionAmount':
-          FieldValue.increment(collection.amount.getOrCrash()),
-    });
-  }
-
-  Future<void> _updateAmountInEmployee(DailyCollection collection) async {
-    await _firestore.collection('branches').doc(collection.employeeId).update({
-      'collected': FieldValue.increment(collection.amount.getOrCrash()),
-    });
-  }
-
-  Future<void> _updateDailyCollectedAmount(DailyCollection collection) async {
-    final id = "${DateTime.now()
-      ..day
-      ..month
-      ..year}";
-
-    await _firestore.collection('executive').doc(id).set(
-          collection.toMap(),
-        );
-  }
-
   @override
   void clearDoc() {
     _lastDoc = null;
@@ -208,28 +234,31 @@ class IUserDeatailsImpl implements IUserDeatailsFacade {
   Future<Either<UserFailure, num>> getMonthlyLimit(
     UserDetails userDetails,
   ) async {
-    final id = "${DateTime.now()
-      ..year
-      ..month}";
+    final id = DateTime.now().year.toString() + DateTime.now().month.toString();
+    log(id);
     try {
       final data = await _firestore
-          .collection('useres')
+          .collection('users')
           .doc(userDetails.id)
           .collection('monthly_limit')
           .doc(id)
           .get();
 
+      log('getMonthlyLimit $data');
+
       if (data.data() != null) {
         return right(data.data()!['limit']);
       } else {
         await _firestore
-            .collection('useres')
+            .collection('users')
             .doc(userDetails.id)
             .collection('monthly_limit')
             .doc(id)
-            .set({
-          'limit': userDetails.maxDepositeAmount,
-        });
+            .set(
+          {
+            'limit': userDetails.maxDepositeAmount,
+          },
+        );
 
         return right(userDetails.maxDepositeAmount);
       }
@@ -241,5 +270,88 @@ class IUserDeatailsImpl implements IUserDeatailsFacade {
         ),
       );
     }
+  }
+
+  @override
+  Stream<Either<UserFailure, String>> verifyUser({
+    required String phoneNumber,
+  }) {
+    return _userVerificationServeice.veryfyPhoneNo(phoneNo: phoneNumber);
+  }
+
+  @override
+  Future<Either<UserFailure, Unit>> verifySmsCode(
+      {required String smsCode, required String verificationId}) {
+    //
+    return _userVerificationServeice.verifySmsCode(
+      smsCode: smsCode,
+      verificationId: verificationId,
+    );
+  }
+
+  Future<void> _updateAmountInAccount(DailyCollectionDetails collection) async {
+    await _firestore.collection('accounts').doc(collection.accountId).update(
+      {
+        'deposits': FieldValue.increment(collection.amount),
+      },
+    );
+  }
+
+  Future<void> _updateAmountInBranch(DailyCollectionDetails collection) async {
+    await _firestore.collection('branches').doc(collection.branchId).update({
+      'totalTransactionAmount': FieldValue.increment(collection.amount),
+    });
+  }
+
+  Future<void> _updateAmountMonthlyLimit(
+      DailyCollectionDetails collection) async {
+    final id = DateTime.now().year.toString() + DateTime.now().month.toString();
+    await _firestore
+        .collection('users')
+        .doc(collection.userId)
+        .collection('monthly_limit')
+        .doc(id)
+        .update({
+      'limit': FieldValue.increment(-collection.amount),
+    });
+  }
+
+  Future<void> _updateAmountInEmployee(
+      DailyCollectionDetails collection) async {
+    await _firestore.collection('executive').doc(collection.employeeId).update({
+      'collected': FieldValue.increment(collection.amount),
+    });
+  }
+
+  Future<void> _updateDailyCollectedAmount(
+      DailyCollectionDetails collection) async {
+    final id = DateTime.now().year.toString() +
+        DateTime.now().month.toString() +
+        DateTime.now().day.toString();
+
+    await _firestore
+        .collection('branches')
+        .doc(collection.branchId)
+        .collection('daily_collection')
+        .doc(id)
+        .update({
+      'amount': FieldValue.increment(collection.amount),
+    });
+  }
+
+  Future<void> _updateDailyCollectedAmountInEmployee(
+      DailyCollectionDetails collection) async {
+    final id = DateTime.now().year.toString() +
+        DateTime.now().month.toString() +
+        DateTime.now().day.toString();
+
+    await _firestore
+        .collection('executive')
+        .doc(collection.employeeId)
+        .collection('daily_collection')
+        .doc(id)
+        .update({
+      'amount': FieldValue.increment(collection.amount),
+    });
   }
 }

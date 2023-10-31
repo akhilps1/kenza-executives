@@ -6,6 +6,7 @@ import 'package:dartz/dartz.dart';
 import 'package:executives/domain/core/serveice/custom_toast.dart';
 import 'package:executives/domain/users/failures/value_validator.dart';
 import 'package:executives/domain/users/i_user_facade.dart';
+import 'package:executives/domain/users/models/employee_daily_collection.dart';
 import 'package:executives/domain/users/models/user_details.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
@@ -101,6 +102,44 @@ class UserBloc extends Bloc<UserEvent, UserState> {
         );
       },
       transformer: droppable(),
+    );
+
+    on<GetEmployeeDailyCollection>(
+      (event, emit) async {
+        final failureOrSuccess = await _iUserFacade.getEmployeeDailyCollection(
+          employeeId: event.employeeId,
+        );
+
+        failureOrSuccess.fold(
+          (l) => null,
+          (success) {
+            emit(
+              state.copyWith(
+                dailyCollection: success,
+              ),
+            );
+          },
+        );
+      },
+    );
+
+    on<GetBranchDailyCollection>(
+      (event, emit) async {
+        final failureOrSuccess = await _iUserFacade.getBranchDailyCollection(
+          branchId: event.branchId,
+        );
+
+        failureOrSuccess.fold(
+          (l) => null,
+          (success) {
+            emit(
+              state.copyWith(
+                branchdailyCollection: success,
+              ),
+            );
+          },
+        );
+      },
     );
 
     on<ClearUserData>(

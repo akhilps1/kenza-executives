@@ -24,7 +24,7 @@ class Amount extends ValueObjet<num> {
     required this.value,
   });
 
-  factory Amount(value) {
+  factory Amount(num value) {
     return Amount._(value: validateAmount(value));
   }
 }

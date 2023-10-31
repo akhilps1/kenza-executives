@@ -23,6 +23,7 @@ mixin _$ValueFailure<T> {
     required TResult Function(String errorMsg) invalidPassword,
     required TResult Function(String errorMsg) limitReached,
     required TResult Function(String errorMsg) invalidAmount,
+    required TResult Function(String errorMsg) monthlyLimitExeeded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -31,6 +32,7 @@ mixin _$ValueFailure<T> {
     TResult? Function(String errorMsg)? invalidPassword,
     TResult? Function(String errorMsg)? limitReached,
     TResult? Function(String errorMsg)? invalidAmount,
+    TResult? Function(String errorMsg)? monthlyLimitExeeded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -39,6 +41,7 @@ mixin _$ValueFailure<T> {
     TResult Function(String errorMsg)? invalidPassword,
     TResult Function(String errorMsg)? limitReached,
     TResult Function(String errorMsg)? invalidAmount,
+    TResult Function(String errorMsg)? monthlyLimitExeeded,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -48,6 +51,7 @@ mixin _$ValueFailure<T> {
     required TResult Function(InvlidPassword<T> value) invalidPassword,
     required TResult Function(LimitReached<T> value) limitReached,
     required TResult Function(InvalidAmount<T> value) invalidAmount,
+    required TResult Function(MonthlyLimitExeeded<T> value) monthlyLimitExeeded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -56,6 +60,7 @@ mixin _$ValueFailure<T> {
     TResult? Function(InvlidPassword<T> value)? invalidPassword,
     TResult? Function(LimitReached<T> value)? limitReached,
     TResult? Function(InvalidAmount<T> value)? invalidAmount,
+    TResult? Function(MonthlyLimitExeeded<T> value)? monthlyLimitExeeded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -64,6 +69,7 @@ mixin _$ValueFailure<T> {
     TResult Function(InvlidPassword<T> value)? invalidPassword,
     TResult Function(LimitReached<T> value)? limitReached,
     TResult Function(InvalidAmount<T> value)? invalidAmount,
+    TResult Function(MonthlyLimitExeeded<T> value)? monthlyLimitExeeded,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -178,6 +184,7 @@ class _$InvalidEmailImpl<T> implements InvalidEmail<T> {
     required TResult Function(String errorMsg) invalidPassword,
     required TResult Function(String errorMsg) limitReached,
     required TResult Function(String errorMsg) invalidAmount,
+    required TResult Function(String errorMsg) monthlyLimitExeeded,
   }) {
     return invalidUserName(errorMsg);
   }
@@ -189,6 +196,7 @@ class _$InvalidEmailImpl<T> implements InvalidEmail<T> {
     TResult? Function(String errorMsg)? invalidPassword,
     TResult? Function(String errorMsg)? limitReached,
     TResult? Function(String errorMsg)? invalidAmount,
+    TResult? Function(String errorMsg)? monthlyLimitExeeded,
   }) {
     return invalidUserName?.call(errorMsg);
   }
@@ -200,6 +208,7 @@ class _$InvalidEmailImpl<T> implements InvalidEmail<T> {
     TResult Function(String errorMsg)? invalidPassword,
     TResult Function(String errorMsg)? limitReached,
     TResult Function(String errorMsg)? invalidAmount,
+    TResult Function(String errorMsg)? monthlyLimitExeeded,
     required TResult orElse(),
   }) {
     if (invalidUserName != null) {
@@ -215,6 +224,7 @@ class _$InvalidEmailImpl<T> implements InvalidEmail<T> {
     required TResult Function(InvlidPassword<T> value) invalidPassword,
     required TResult Function(LimitReached<T> value) limitReached,
     required TResult Function(InvalidAmount<T> value) invalidAmount,
+    required TResult Function(MonthlyLimitExeeded<T> value) monthlyLimitExeeded,
   }) {
     return invalidUserName(this);
   }
@@ -226,6 +236,7 @@ class _$InvalidEmailImpl<T> implements InvalidEmail<T> {
     TResult? Function(InvlidPassword<T> value)? invalidPassword,
     TResult? Function(LimitReached<T> value)? limitReached,
     TResult? Function(InvalidAmount<T> value)? invalidAmount,
+    TResult? Function(MonthlyLimitExeeded<T> value)? monthlyLimitExeeded,
   }) {
     return invalidUserName?.call(this);
   }
@@ -237,6 +248,7 @@ class _$InvalidEmailImpl<T> implements InvalidEmail<T> {
     TResult Function(InvlidPassword<T> value)? invalidPassword,
     TResult Function(LimitReached<T> value)? limitReached,
     TResult Function(InvalidAmount<T> value)? invalidAmount,
+    TResult Function(MonthlyLimitExeeded<T> value)? monthlyLimitExeeded,
     required TResult orElse(),
   }) {
     if (invalidUserName != null) {
@@ -330,6 +342,7 @@ class _$InvlidPasswordImpl<T> implements InvlidPassword<T> {
     required TResult Function(String errorMsg) invalidPassword,
     required TResult Function(String errorMsg) limitReached,
     required TResult Function(String errorMsg) invalidAmount,
+    required TResult Function(String errorMsg) monthlyLimitExeeded,
   }) {
     return invalidPassword(errorMsg);
   }
@@ -341,6 +354,7 @@ class _$InvlidPasswordImpl<T> implements InvlidPassword<T> {
     TResult? Function(String errorMsg)? invalidPassword,
     TResult? Function(String errorMsg)? limitReached,
     TResult? Function(String errorMsg)? invalidAmount,
+    TResult? Function(String errorMsg)? monthlyLimitExeeded,
   }) {
     return invalidPassword?.call(errorMsg);
   }
@@ -352,6 +366,7 @@ class _$InvlidPasswordImpl<T> implements InvlidPassword<T> {
     TResult Function(String errorMsg)? invalidPassword,
     TResult Function(String errorMsg)? limitReached,
     TResult Function(String errorMsg)? invalidAmount,
+    TResult Function(String errorMsg)? monthlyLimitExeeded,
     required TResult orElse(),
   }) {
     if (invalidPassword != null) {
@@ -367,6 +382,7 @@ class _$InvlidPasswordImpl<T> implements InvlidPassword<T> {
     required TResult Function(InvlidPassword<T> value) invalidPassword,
     required TResult Function(LimitReached<T> value) limitReached,
     required TResult Function(InvalidAmount<T> value) invalidAmount,
+    required TResult Function(MonthlyLimitExeeded<T> value) monthlyLimitExeeded,
   }) {
     return invalidPassword(this);
   }
@@ -378,6 +394,7 @@ class _$InvlidPasswordImpl<T> implements InvlidPassword<T> {
     TResult? Function(InvlidPassword<T> value)? invalidPassword,
     TResult? Function(LimitReached<T> value)? limitReached,
     TResult? Function(InvalidAmount<T> value)? invalidAmount,
+    TResult? Function(MonthlyLimitExeeded<T> value)? monthlyLimitExeeded,
   }) {
     return invalidPassword?.call(this);
   }
@@ -389,6 +406,7 @@ class _$InvlidPasswordImpl<T> implements InvlidPassword<T> {
     TResult Function(InvlidPassword<T> value)? invalidPassword,
     TResult Function(LimitReached<T> value)? limitReached,
     TResult Function(InvalidAmount<T> value)? invalidAmount,
+    TResult Function(MonthlyLimitExeeded<T> value)? monthlyLimitExeeded,
     required TResult orElse(),
   }) {
     if (invalidPassword != null) {
@@ -482,6 +500,7 @@ class _$LimitReachedImpl<T> implements LimitReached<T> {
     required TResult Function(String errorMsg) invalidPassword,
     required TResult Function(String errorMsg) limitReached,
     required TResult Function(String errorMsg) invalidAmount,
+    required TResult Function(String errorMsg) monthlyLimitExeeded,
   }) {
     return limitReached(errorMsg);
   }
@@ -493,6 +512,7 @@ class _$LimitReachedImpl<T> implements LimitReached<T> {
     TResult? Function(String errorMsg)? invalidPassword,
     TResult? Function(String errorMsg)? limitReached,
     TResult? Function(String errorMsg)? invalidAmount,
+    TResult? Function(String errorMsg)? monthlyLimitExeeded,
   }) {
     return limitReached?.call(errorMsg);
   }
@@ -504,6 +524,7 @@ class _$LimitReachedImpl<T> implements LimitReached<T> {
     TResult Function(String errorMsg)? invalidPassword,
     TResult Function(String errorMsg)? limitReached,
     TResult Function(String errorMsg)? invalidAmount,
+    TResult Function(String errorMsg)? monthlyLimitExeeded,
     required TResult orElse(),
   }) {
     if (limitReached != null) {
@@ -519,6 +540,7 @@ class _$LimitReachedImpl<T> implements LimitReached<T> {
     required TResult Function(InvlidPassword<T> value) invalidPassword,
     required TResult Function(LimitReached<T> value) limitReached,
     required TResult Function(InvalidAmount<T> value) invalidAmount,
+    required TResult Function(MonthlyLimitExeeded<T> value) monthlyLimitExeeded,
   }) {
     return limitReached(this);
   }
@@ -530,6 +552,7 @@ class _$LimitReachedImpl<T> implements LimitReached<T> {
     TResult? Function(InvlidPassword<T> value)? invalidPassword,
     TResult? Function(LimitReached<T> value)? limitReached,
     TResult? Function(InvalidAmount<T> value)? invalidAmount,
+    TResult? Function(MonthlyLimitExeeded<T> value)? monthlyLimitExeeded,
   }) {
     return limitReached?.call(this);
   }
@@ -541,6 +564,7 @@ class _$LimitReachedImpl<T> implements LimitReached<T> {
     TResult Function(InvlidPassword<T> value)? invalidPassword,
     TResult Function(LimitReached<T> value)? limitReached,
     TResult Function(InvalidAmount<T> value)? invalidAmount,
+    TResult Function(MonthlyLimitExeeded<T> value)? monthlyLimitExeeded,
     required TResult orElse(),
   }) {
     if (limitReached != null) {
@@ -634,6 +658,7 @@ class _$InvalidAmountImpl<T> implements InvalidAmount<T> {
     required TResult Function(String errorMsg) invalidPassword,
     required TResult Function(String errorMsg) limitReached,
     required TResult Function(String errorMsg) invalidAmount,
+    required TResult Function(String errorMsg) monthlyLimitExeeded,
   }) {
     return invalidAmount(errorMsg);
   }
@@ -645,6 +670,7 @@ class _$InvalidAmountImpl<T> implements InvalidAmount<T> {
     TResult? Function(String errorMsg)? invalidPassword,
     TResult? Function(String errorMsg)? limitReached,
     TResult? Function(String errorMsg)? invalidAmount,
+    TResult? Function(String errorMsg)? monthlyLimitExeeded,
   }) {
     return invalidAmount?.call(errorMsg);
   }
@@ -656,6 +682,7 @@ class _$InvalidAmountImpl<T> implements InvalidAmount<T> {
     TResult Function(String errorMsg)? invalidPassword,
     TResult Function(String errorMsg)? limitReached,
     TResult Function(String errorMsg)? invalidAmount,
+    TResult Function(String errorMsg)? monthlyLimitExeeded,
     required TResult orElse(),
   }) {
     if (invalidAmount != null) {
@@ -671,6 +698,7 @@ class _$InvalidAmountImpl<T> implements InvalidAmount<T> {
     required TResult Function(InvlidPassword<T> value) invalidPassword,
     required TResult Function(LimitReached<T> value) limitReached,
     required TResult Function(InvalidAmount<T> value) invalidAmount,
+    required TResult Function(MonthlyLimitExeeded<T> value) monthlyLimitExeeded,
   }) {
     return invalidAmount(this);
   }
@@ -682,6 +710,7 @@ class _$InvalidAmountImpl<T> implements InvalidAmount<T> {
     TResult? Function(InvlidPassword<T> value)? invalidPassword,
     TResult? Function(LimitReached<T> value)? limitReached,
     TResult? Function(InvalidAmount<T> value)? invalidAmount,
+    TResult? Function(MonthlyLimitExeeded<T> value)? monthlyLimitExeeded,
   }) {
     return invalidAmount?.call(this);
   }
@@ -693,6 +722,7 @@ class _$InvalidAmountImpl<T> implements InvalidAmount<T> {
     TResult Function(InvlidPassword<T> value)? invalidPassword,
     TResult Function(LimitReached<T> value)? limitReached,
     TResult Function(InvalidAmount<T> value)? invalidAmount,
+    TResult Function(MonthlyLimitExeeded<T> value)? monthlyLimitExeeded,
     required TResult orElse(),
   }) {
     if (invalidAmount != null) {
@@ -712,4 +742,162 @@ abstract class InvalidAmount<T> implements ValueFailure<T> {
   @JsonKey(ignore: true)
   _$$InvalidAmountImplCopyWith<T, _$InvalidAmountImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$MonthlyLimitExeededImplCopyWith<T, $Res>
+    implements $ValueFailureCopyWith<T, $Res> {
+  factory _$$MonthlyLimitExeededImplCopyWith(_$MonthlyLimitExeededImpl<T> value,
+          $Res Function(_$MonthlyLimitExeededImpl<T>) then) =
+      __$$MonthlyLimitExeededImplCopyWithImpl<T, $Res>;
+  @override
+  @useResult
+  $Res call({String errorMsg});
+}
+
+/// @nodoc
+class __$$MonthlyLimitExeededImplCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res, _$MonthlyLimitExeededImpl<T>>
+    implements _$$MonthlyLimitExeededImplCopyWith<T, $Res> {
+  __$$MonthlyLimitExeededImplCopyWithImpl(_$MonthlyLimitExeededImpl<T> _value,
+      $Res Function(_$MonthlyLimitExeededImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? errorMsg = null,
+  }) {
+    return _then(_$MonthlyLimitExeededImpl<T>(
+      errorMsg: null == errorMsg
+          ? _value.errorMsg
+          : errorMsg // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$MonthlyLimitExeededImpl<T> implements MonthlyLimitExeeded<T> {
+  const _$MonthlyLimitExeededImpl({required this.errorMsg});
+
+  @override
+  final String errorMsg;
+
+  @override
+  String toString() {
+    return 'ValueFailure<$T>.monthlyLimitExeeded(errorMsg: $errorMsg)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$MonthlyLimitExeededImpl<T> &&
+            (identical(other.errorMsg, errorMsg) ||
+                other.errorMsg == errorMsg));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, errorMsg);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$MonthlyLimitExeededImplCopyWith<T, _$MonthlyLimitExeededImpl<T>>
+      get copyWith => __$$MonthlyLimitExeededImplCopyWithImpl<T,
+          _$MonthlyLimitExeededImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String errorMsg) invalidUserName,
+    required TResult Function(String errorMsg) invalidPassword,
+    required TResult Function(String errorMsg) limitReached,
+    required TResult Function(String errorMsg) invalidAmount,
+    required TResult Function(String errorMsg) monthlyLimitExeeded,
+  }) {
+    return monthlyLimitExeeded(errorMsg);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String errorMsg)? invalidUserName,
+    TResult? Function(String errorMsg)? invalidPassword,
+    TResult? Function(String errorMsg)? limitReached,
+    TResult? Function(String errorMsg)? invalidAmount,
+    TResult? Function(String errorMsg)? monthlyLimitExeeded,
+  }) {
+    return monthlyLimitExeeded?.call(errorMsg);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String errorMsg)? invalidUserName,
+    TResult Function(String errorMsg)? invalidPassword,
+    TResult Function(String errorMsg)? limitReached,
+    TResult Function(String errorMsg)? invalidAmount,
+    TResult Function(String errorMsg)? monthlyLimitExeeded,
+    required TResult orElse(),
+  }) {
+    if (monthlyLimitExeeded != null) {
+      return monthlyLimitExeeded(errorMsg);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(InvalidEmail<T> value) invalidUserName,
+    required TResult Function(InvlidPassword<T> value) invalidPassword,
+    required TResult Function(LimitReached<T> value) limitReached,
+    required TResult Function(InvalidAmount<T> value) invalidAmount,
+    required TResult Function(MonthlyLimitExeeded<T> value) monthlyLimitExeeded,
+  }) {
+    return monthlyLimitExeeded(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(InvalidEmail<T> value)? invalidUserName,
+    TResult? Function(InvlidPassword<T> value)? invalidPassword,
+    TResult? Function(LimitReached<T> value)? limitReached,
+    TResult? Function(InvalidAmount<T> value)? invalidAmount,
+    TResult? Function(MonthlyLimitExeeded<T> value)? monthlyLimitExeeded,
+  }) {
+    return monthlyLimitExeeded?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InvalidEmail<T> value)? invalidUserName,
+    TResult Function(InvlidPassword<T> value)? invalidPassword,
+    TResult Function(LimitReached<T> value)? limitReached,
+    TResult Function(InvalidAmount<T> value)? invalidAmount,
+    TResult Function(MonthlyLimitExeeded<T> value)? monthlyLimitExeeded,
+    required TResult orElse(),
+  }) {
+    if (monthlyLimitExeeded != null) {
+      return monthlyLimitExeeded(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class MonthlyLimitExeeded<T> implements ValueFailure<T> {
+  const factory MonthlyLimitExeeded({required final String errorMsg}) =
+      _$MonthlyLimitExeededImpl<T>;
+
+  @override
+  String get errorMsg;
+  @override
+  @JsonKey(ignore: true)
+  _$$MonthlyLimitExeededImplCopyWith<T, _$MonthlyLimitExeededImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
 }

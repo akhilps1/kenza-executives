@@ -1,4 +1,4 @@
-import 'package:executives/domain/user_details/models/transaction.dart';
+import 'package:executives/domain/transactions/models/transaction.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
@@ -14,21 +14,27 @@ class TransactionDetailsWidget extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
       width: 340,
-      height: 60,
-      padding: const EdgeInsets.all(10),
+      height: 70,
+      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
       decoration: ShapeDecoration(
         color: Colors.white,
         shape: RoundedRectangleBorder(
           side: const BorderSide(color: Color(0x336F0F10)),
           borderRadius: BorderRadius.circular(6),
         ),
+        shadows: const [
+          BoxShadow(
+            color: Color(0x3F000000),
+            blurRadius: 1,
+          )
+        ],
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               SizedBox(
                 width: 150,
@@ -45,6 +51,18 @@ class TransactionDetailsWidget extends StatelessWidget {
                   ),
                 ),
               ),
+              Opacity(
+                opacity: 0.80,
+                child: Text(
+                  'Note: ${transaction.note.isNotEmpty ? transaction.note : 'nill'}',
+                  style: const TextStyle(
+                    color: Colors.black54,
+                    fontSize: 12,
+                    fontFamily: 'Montserrat',
+                    fontWeight: FontWeight.w400,
+                  ),
+                ),
+              ),
             ],
           ),
           Column(
@@ -58,22 +76,10 @@ class TransactionDetailsWidget extends StatelessWidget {
                     transaction.timestamp.toDate(),
                   ),
                   style: const TextStyle(
-                    color: Colors.black,
+                    color: Colors.black54,
                     fontSize: 12,
                     fontFamily: 'Montserrat',
                     fontWeight: FontWeight.w600,
-                  ),
-                ),
-              ),
-              Opacity(
-                opacity: 0.80,
-                child: Text(
-                  'Note: ${transaction.note.isNotEmpty ? transaction.note : 'nill'}',
-                  style: const TextStyle(
-                    color: Colors.black,
-                    fontSize: 12,
-                    fontFamily: 'Montserrat',
-                    fontWeight: FontWeight.w400,
                   ),
                 ),
               ),

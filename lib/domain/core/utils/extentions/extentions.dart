@@ -7,6 +7,7 @@ extension BuildContextSettig on BuildContext {
   TextTheme get theme => Theme.of(this).textTheme;
   String get branchId =>
       BlocProvider.of<AuthBloc>(this).state.executive!.branchId;
+  String get employeeId => BlocProvider.of<AuthBloc>(this).state.executive!.id!;
 }
 
 extension StringCapitalization on String {

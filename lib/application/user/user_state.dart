@@ -8,12 +8,16 @@ class UserState with _$UserState {
     required Option<UserDetails> failureOption,
     required List<UserDetails> users,
     required SearchTeram searchTeram,
+    required DailyCollection? dailyCollection,
+    required DailyCollection? branchdailyCollection,
   }) = _UserState;
 
   factory UserState.initial() => UserState(
         isLoading: false,
         failureOption: none(),
         users: [],
+        dailyCollection: null,
+        branchdailyCollection: null,
         noMoreData: false,
         searchTeram: SearchTeram(''),
       );

@@ -24,6 +24,8 @@ mixin _$UserEvent {
     required TResult Function(String branchId) getAllusers,
     required TResult Function() clearUserData,
     required TResult Function() clearUserFailure,
+    required TResult Function(String employeeId) getEmployeeDailyCollection,
+    required TResult Function(String branchId) getBranchDailyCollection,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -34,6 +36,8 @@ mixin _$UserEvent {
     TResult? Function(String branchId)? getAllusers,
     TResult? Function()? clearUserData,
     TResult? Function()? clearUserFailure,
+    TResult? Function(String employeeId)? getEmployeeDailyCollection,
+    TResult? Function(String branchId)? getBranchDailyCollection,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -44,6 +48,8 @@ mixin _$UserEvent {
     TResult Function(String branchId)? getAllusers,
     TResult Function()? clearUserData,
     TResult Function()? clearUserFailure,
+    TResult Function(String employeeId)? getEmployeeDailyCollection,
+    TResult Function(String branchId)? getBranchDailyCollection,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -55,6 +61,10 @@ mixin _$UserEvent {
     required TResult Function(GetAllusers value) getAllusers,
     required TResult Function(ClearUserData value) clearUserData,
     required TResult Function(ClearUserFailure value) clearUserFailure,
+    required TResult Function(GetEmployeeDailyCollection value)
+        getEmployeeDailyCollection,
+    required TResult Function(GetBranchDailyCollection value)
+        getBranchDailyCollection,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -65,6 +75,9 @@ mixin _$UserEvent {
     TResult? Function(GetAllusers value)? getAllusers,
     TResult? Function(ClearUserData value)? clearUserData,
     TResult? Function(ClearUserFailure value)? clearUserFailure,
+    TResult? Function(GetEmployeeDailyCollection value)?
+        getEmployeeDailyCollection,
+    TResult? Function(GetBranchDailyCollection value)? getBranchDailyCollection,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -75,6 +88,9 @@ mixin _$UserEvent {
     TResult Function(GetAllusers value)? getAllusers,
     TResult Function(ClearUserData value)? clearUserData,
     TResult Function(ClearUserFailure value)? clearUserFailure,
+    TResult Function(GetEmployeeDailyCollection value)?
+        getEmployeeDailyCollection,
+    TResult Function(GetBranchDailyCollection value)? getBranchDailyCollection,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -168,6 +184,8 @@ class _$SerchTearmChangedImpl implements SerchTearmChanged {
     required TResult Function(String branchId) getAllusers,
     required TResult Function() clearUserData,
     required TResult Function() clearUserFailure,
+    required TResult Function(String employeeId) getEmployeeDailyCollection,
+    required TResult Function(String branchId) getBranchDailyCollection,
   }) {
     return serchTearmChanged(value);
   }
@@ -181,6 +199,8 @@ class _$SerchTearmChangedImpl implements SerchTearmChanged {
     TResult? Function(String branchId)? getAllusers,
     TResult? Function()? clearUserData,
     TResult? Function()? clearUserFailure,
+    TResult? Function(String employeeId)? getEmployeeDailyCollection,
+    TResult? Function(String branchId)? getBranchDailyCollection,
   }) {
     return serchTearmChanged?.call(value);
   }
@@ -194,6 +214,8 @@ class _$SerchTearmChangedImpl implements SerchTearmChanged {
     TResult Function(String branchId)? getAllusers,
     TResult Function()? clearUserData,
     TResult Function()? clearUserFailure,
+    TResult Function(String employeeId)? getEmployeeDailyCollection,
+    TResult Function(String branchId)? getBranchDailyCollection,
     required TResult orElse(),
   }) {
     if (serchTearmChanged != null) {
@@ -211,6 +233,10 @@ class _$SerchTearmChangedImpl implements SerchTearmChanged {
     required TResult Function(GetAllusers value) getAllusers,
     required TResult Function(ClearUserData value) clearUserData,
     required TResult Function(ClearUserFailure value) clearUserFailure,
+    required TResult Function(GetEmployeeDailyCollection value)
+        getEmployeeDailyCollection,
+    required TResult Function(GetBranchDailyCollection value)
+        getBranchDailyCollection,
   }) {
     return serchTearmChanged(this);
   }
@@ -224,6 +250,9 @@ class _$SerchTearmChangedImpl implements SerchTearmChanged {
     TResult? Function(GetAllusers value)? getAllusers,
     TResult? Function(ClearUserData value)? clearUserData,
     TResult? Function(ClearUserFailure value)? clearUserFailure,
+    TResult? Function(GetEmployeeDailyCollection value)?
+        getEmployeeDailyCollection,
+    TResult? Function(GetBranchDailyCollection value)? getBranchDailyCollection,
   }) {
     return serchTearmChanged?.call(this);
   }
@@ -237,6 +266,9 @@ class _$SerchTearmChangedImpl implements SerchTearmChanged {
     TResult Function(GetAllusers value)? getAllusers,
     TResult Function(ClearUserData value)? clearUserData,
     TResult Function(ClearUserFailure value)? clearUserFailure,
+    TResult Function(GetEmployeeDailyCollection value)?
+        getEmployeeDailyCollection,
+    TResult Function(GetBranchDailyCollection value)? getBranchDailyCollection,
     required TResult orElse(),
   }) {
     if (serchTearmChanged != null) {
@@ -326,6 +358,8 @@ class _$SearchClickedImpl implements SearchClicked {
     required TResult Function(String branchId) getAllusers,
     required TResult Function() clearUserData,
     required TResult Function() clearUserFailure,
+    required TResult Function(String employeeId) getEmployeeDailyCollection,
+    required TResult Function(String branchId) getBranchDailyCollection,
   }) {
     return searchClicked(branchId);
   }
@@ -339,6 +373,8 @@ class _$SearchClickedImpl implements SearchClicked {
     TResult? Function(String branchId)? getAllusers,
     TResult? Function()? clearUserData,
     TResult? Function()? clearUserFailure,
+    TResult? Function(String employeeId)? getEmployeeDailyCollection,
+    TResult? Function(String branchId)? getBranchDailyCollection,
   }) {
     return searchClicked?.call(branchId);
   }
@@ -352,6 +388,8 @@ class _$SearchClickedImpl implements SearchClicked {
     TResult Function(String branchId)? getAllusers,
     TResult Function()? clearUserData,
     TResult Function()? clearUserFailure,
+    TResult Function(String employeeId)? getEmployeeDailyCollection,
+    TResult Function(String branchId)? getBranchDailyCollection,
     required TResult orElse(),
   }) {
     if (searchClicked != null) {
@@ -369,6 +407,10 @@ class _$SearchClickedImpl implements SearchClicked {
     required TResult Function(GetAllusers value) getAllusers,
     required TResult Function(ClearUserData value) clearUserData,
     required TResult Function(ClearUserFailure value) clearUserFailure,
+    required TResult Function(GetEmployeeDailyCollection value)
+        getEmployeeDailyCollection,
+    required TResult Function(GetBranchDailyCollection value)
+        getBranchDailyCollection,
   }) {
     return searchClicked(this);
   }
@@ -382,6 +424,9 @@ class _$SearchClickedImpl implements SearchClicked {
     TResult? Function(GetAllusers value)? getAllusers,
     TResult? Function(ClearUserData value)? clearUserData,
     TResult? Function(ClearUserFailure value)? clearUserFailure,
+    TResult? Function(GetEmployeeDailyCollection value)?
+        getEmployeeDailyCollection,
+    TResult? Function(GetBranchDailyCollection value)? getBranchDailyCollection,
   }) {
     return searchClicked?.call(this);
   }
@@ -395,6 +440,9 @@ class _$SearchClickedImpl implements SearchClicked {
     TResult Function(GetAllusers value)? getAllusers,
     TResult Function(ClearUserData value)? clearUserData,
     TResult Function(ClearUserFailure value)? clearUserFailure,
+    TResult Function(GetEmployeeDailyCollection value)?
+        getEmployeeDailyCollection,
+    TResult Function(GetBranchDailyCollection value)? getBranchDailyCollection,
     required TResult orElse(),
   }) {
     if (searchClicked != null) {
@@ -483,6 +531,8 @@ class _$SearchClosedImpl implements SearchClosed {
     required TResult Function(String branchId) getAllusers,
     required TResult Function() clearUserData,
     required TResult Function() clearUserFailure,
+    required TResult Function(String employeeId) getEmployeeDailyCollection,
+    required TResult Function(String branchId) getBranchDailyCollection,
   }) {
     return searchClosed(value);
   }
@@ -496,6 +546,8 @@ class _$SearchClosedImpl implements SearchClosed {
     TResult? Function(String branchId)? getAllusers,
     TResult? Function()? clearUserData,
     TResult? Function()? clearUserFailure,
+    TResult? Function(String employeeId)? getEmployeeDailyCollection,
+    TResult? Function(String branchId)? getBranchDailyCollection,
   }) {
     return searchClosed?.call(value);
   }
@@ -509,6 +561,8 @@ class _$SearchClosedImpl implements SearchClosed {
     TResult Function(String branchId)? getAllusers,
     TResult Function()? clearUserData,
     TResult Function()? clearUserFailure,
+    TResult Function(String employeeId)? getEmployeeDailyCollection,
+    TResult Function(String branchId)? getBranchDailyCollection,
     required TResult orElse(),
   }) {
     if (searchClosed != null) {
@@ -526,6 +580,10 @@ class _$SearchClosedImpl implements SearchClosed {
     required TResult Function(GetAllusers value) getAllusers,
     required TResult Function(ClearUserData value) clearUserData,
     required TResult Function(ClearUserFailure value) clearUserFailure,
+    required TResult Function(GetEmployeeDailyCollection value)
+        getEmployeeDailyCollection,
+    required TResult Function(GetBranchDailyCollection value)
+        getBranchDailyCollection,
   }) {
     return searchClosed(this);
   }
@@ -539,6 +597,9 @@ class _$SearchClosedImpl implements SearchClosed {
     TResult? Function(GetAllusers value)? getAllusers,
     TResult? Function(ClearUserData value)? clearUserData,
     TResult? Function(ClearUserFailure value)? clearUserFailure,
+    TResult? Function(GetEmployeeDailyCollection value)?
+        getEmployeeDailyCollection,
+    TResult? Function(GetBranchDailyCollection value)? getBranchDailyCollection,
   }) {
     return searchClosed?.call(this);
   }
@@ -552,6 +613,9 @@ class _$SearchClosedImpl implements SearchClosed {
     TResult Function(GetAllusers value)? getAllusers,
     TResult Function(ClearUserData value)? clearUserData,
     TResult Function(ClearUserFailure value)? clearUserFailure,
+    TResult Function(GetEmployeeDailyCollection value)?
+        getEmployeeDailyCollection,
+    TResult Function(GetBranchDailyCollection value)? getBranchDailyCollection,
     required TResult orElse(),
   }) {
     if (searchClosed != null) {
@@ -641,6 +705,8 @@ class _$GetAllusersImpl implements GetAllusers {
     required TResult Function(String branchId) getAllusers,
     required TResult Function() clearUserData,
     required TResult Function() clearUserFailure,
+    required TResult Function(String employeeId) getEmployeeDailyCollection,
+    required TResult Function(String branchId) getBranchDailyCollection,
   }) {
     return getAllusers(branchId);
   }
@@ -654,6 +720,8 @@ class _$GetAllusersImpl implements GetAllusers {
     TResult? Function(String branchId)? getAllusers,
     TResult? Function()? clearUserData,
     TResult? Function()? clearUserFailure,
+    TResult? Function(String employeeId)? getEmployeeDailyCollection,
+    TResult? Function(String branchId)? getBranchDailyCollection,
   }) {
     return getAllusers?.call(branchId);
   }
@@ -667,6 +735,8 @@ class _$GetAllusersImpl implements GetAllusers {
     TResult Function(String branchId)? getAllusers,
     TResult Function()? clearUserData,
     TResult Function()? clearUserFailure,
+    TResult Function(String employeeId)? getEmployeeDailyCollection,
+    TResult Function(String branchId)? getBranchDailyCollection,
     required TResult orElse(),
   }) {
     if (getAllusers != null) {
@@ -684,6 +754,10 @@ class _$GetAllusersImpl implements GetAllusers {
     required TResult Function(GetAllusers value) getAllusers,
     required TResult Function(ClearUserData value) clearUserData,
     required TResult Function(ClearUserFailure value) clearUserFailure,
+    required TResult Function(GetEmployeeDailyCollection value)
+        getEmployeeDailyCollection,
+    required TResult Function(GetBranchDailyCollection value)
+        getBranchDailyCollection,
   }) {
     return getAllusers(this);
   }
@@ -697,6 +771,9 @@ class _$GetAllusersImpl implements GetAllusers {
     TResult? Function(GetAllusers value)? getAllusers,
     TResult? Function(ClearUserData value)? clearUserData,
     TResult? Function(ClearUserFailure value)? clearUserFailure,
+    TResult? Function(GetEmployeeDailyCollection value)?
+        getEmployeeDailyCollection,
+    TResult? Function(GetBranchDailyCollection value)? getBranchDailyCollection,
   }) {
     return getAllusers?.call(this);
   }
@@ -710,6 +787,9 @@ class _$GetAllusersImpl implements GetAllusers {
     TResult Function(GetAllusers value)? getAllusers,
     TResult Function(ClearUserData value)? clearUserData,
     TResult Function(ClearUserFailure value)? clearUserFailure,
+    TResult Function(GetEmployeeDailyCollection value)?
+        getEmployeeDailyCollection,
+    TResult Function(GetBranchDailyCollection value)? getBranchDailyCollection,
     required TResult orElse(),
   }) {
     if (getAllusers != null) {
@@ -772,6 +852,8 @@ class _$ClearUserDataImpl implements ClearUserData {
     required TResult Function(String branchId) getAllusers,
     required TResult Function() clearUserData,
     required TResult Function() clearUserFailure,
+    required TResult Function(String employeeId) getEmployeeDailyCollection,
+    required TResult Function(String branchId) getBranchDailyCollection,
   }) {
     return clearUserData();
   }
@@ -785,6 +867,8 @@ class _$ClearUserDataImpl implements ClearUserData {
     TResult? Function(String branchId)? getAllusers,
     TResult? Function()? clearUserData,
     TResult? Function()? clearUserFailure,
+    TResult? Function(String employeeId)? getEmployeeDailyCollection,
+    TResult? Function(String branchId)? getBranchDailyCollection,
   }) {
     return clearUserData?.call();
   }
@@ -798,6 +882,8 @@ class _$ClearUserDataImpl implements ClearUserData {
     TResult Function(String branchId)? getAllusers,
     TResult Function()? clearUserData,
     TResult Function()? clearUserFailure,
+    TResult Function(String employeeId)? getEmployeeDailyCollection,
+    TResult Function(String branchId)? getBranchDailyCollection,
     required TResult orElse(),
   }) {
     if (clearUserData != null) {
@@ -815,6 +901,10 @@ class _$ClearUserDataImpl implements ClearUserData {
     required TResult Function(GetAllusers value) getAllusers,
     required TResult Function(ClearUserData value) clearUserData,
     required TResult Function(ClearUserFailure value) clearUserFailure,
+    required TResult Function(GetEmployeeDailyCollection value)
+        getEmployeeDailyCollection,
+    required TResult Function(GetBranchDailyCollection value)
+        getBranchDailyCollection,
   }) {
     return clearUserData(this);
   }
@@ -828,6 +918,9 @@ class _$ClearUserDataImpl implements ClearUserData {
     TResult? Function(GetAllusers value)? getAllusers,
     TResult? Function(ClearUserData value)? clearUserData,
     TResult? Function(ClearUserFailure value)? clearUserFailure,
+    TResult? Function(GetEmployeeDailyCollection value)?
+        getEmployeeDailyCollection,
+    TResult? Function(GetBranchDailyCollection value)? getBranchDailyCollection,
   }) {
     return clearUserData?.call(this);
   }
@@ -841,6 +934,9 @@ class _$ClearUserDataImpl implements ClearUserData {
     TResult Function(GetAllusers value)? getAllusers,
     TResult Function(ClearUserData value)? clearUserData,
     TResult Function(ClearUserFailure value)? clearUserFailure,
+    TResult Function(GetEmployeeDailyCollection value)?
+        getEmployeeDailyCollection,
+    TResult Function(GetBranchDailyCollection value)? getBranchDailyCollection,
     required TResult orElse(),
   }) {
     if (clearUserData != null) {
@@ -898,6 +994,8 @@ class _$ClearUserFailureImpl implements ClearUserFailure {
     required TResult Function(String branchId) getAllusers,
     required TResult Function() clearUserData,
     required TResult Function() clearUserFailure,
+    required TResult Function(String employeeId) getEmployeeDailyCollection,
+    required TResult Function(String branchId) getBranchDailyCollection,
   }) {
     return clearUserFailure();
   }
@@ -911,6 +1009,8 @@ class _$ClearUserFailureImpl implements ClearUserFailure {
     TResult? Function(String branchId)? getAllusers,
     TResult? Function()? clearUserData,
     TResult? Function()? clearUserFailure,
+    TResult? Function(String employeeId)? getEmployeeDailyCollection,
+    TResult? Function(String branchId)? getBranchDailyCollection,
   }) {
     return clearUserFailure?.call();
   }
@@ -924,6 +1024,8 @@ class _$ClearUserFailureImpl implements ClearUserFailure {
     TResult Function(String branchId)? getAllusers,
     TResult Function()? clearUserData,
     TResult Function()? clearUserFailure,
+    TResult Function(String employeeId)? getEmployeeDailyCollection,
+    TResult Function(String branchId)? getBranchDailyCollection,
     required TResult orElse(),
   }) {
     if (clearUserFailure != null) {
@@ -941,6 +1043,10 @@ class _$ClearUserFailureImpl implements ClearUserFailure {
     required TResult Function(GetAllusers value) getAllusers,
     required TResult Function(ClearUserData value) clearUserData,
     required TResult Function(ClearUserFailure value) clearUserFailure,
+    required TResult Function(GetEmployeeDailyCollection value)
+        getEmployeeDailyCollection,
+    required TResult Function(GetBranchDailyCollection value)
+        getBranchDailyCollection,
   }) {
     return clearUserFailure(this);
   }
@@ -954,6 +1060,9 @@ class _$ClearUserFailureImpl implements ClearUserFailure {
     TResult? Function(GetAllusers value)? getAllusers,
     TResult? Function(ClearUserData value)? clearUserData,
     TResult? Function(ClearUserFailure value)? clearUserFailure,
+    TResult? Function(GetEmployeeDailyCollection value)?
+        getEmployeeDailyCollection,
+    TResult? Function(GetBranchDailyCollection value)? getBranchDailyCollection,
   }) {
     return clearUserFailure?.call(this);
   }
@@ -967,6 +1076,9 @@ class _$ClearUserFailureImpl implements ClearUserFailure {
     TResult Function(GetAllusers value)? getAllusers,
     TResult Function(ClearUserData value)? clearUserData,
     TResult Function(ClearUserFailure value)? clearUserFailure,
+    TResult Function(GetEmployeeDailyCollection value)?
+        getEmployeeDailyCollection,
+    TResult Function(GetBranchDailyCollection value)? getBranchDailyCollection,
     required TResult orElse(),
   }) {
     if (clearUserFailure != null) {
@@ -981,12 +1093,371 @@ abstract class ClearUserFailure implements UserEvent {
 }
 
 /// @nodoc
+abstract class _$$GetEmployeeDailyCollectionImplCopyWith<$Res> {
+  factory _$$GetEmployeeDailyCollectionImplCopyWith(
+          _$GetEmployeeDailyCollectionImpl value,
+          $Res Function(_$GetEmployeeDailyCollectionImpl) then) =
+      __$$GetEmployeeDailyCollectionImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String employeeId});
+}
+
+/// @nodoc
+class __$$GetEmployeeDailyCollectionImplCopyWithImpl<$Res>
+    extends _$UserEventCopyWithImpl<$Res, _$GetEmployeeDailyCollectionImpl>
+    implements _$$GetEmployeeDailyCollectionImplCopyWith<$Res> {
+  __$$GetEmployeeDailyCollectionImplCopyWithImpl(
+      _$GetEmployeeDailyCollectionImpl _value,
+      $Res Function(_$GetEmployeeDailyCollectionImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? employeeId = null,
+  }) {
+    return _then(_$GetEmployeeDailyCollectionImpl(
+      null == employeeId
+          ? _value.employeeId
+          : employeeId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetEmployeeDailyCollectionImpl implements GetEmployeeDailyCollection {
+  const _$GetEmployeeDailyCollectionImpl(this.employeeId);
+
+  @override
+  final String employeeId;
+
+  @override
+  String toString() {
+    return 'UserEvent.getEmployeeDailyCollection(employeeId: $employeeId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetEmployeeDailyCollectionImpl &&
+            (identical(other.employeeId, employeeId) ||
+                other.employeeId == employeeId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, employeeId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetEmployeeDailyCollectionImplCopyWith<_$GetEmployeeDailyCollectionImpl>
+      get copyWith => __$$GetEmployeeDailyCollectionImplCopyWithImpl<
+          _$GetEmployeeDailyCollectionImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String value) serchTearmChanged,
+    required TResult Function(String branchId) searchClicked,
+    required TResult Function(String value) searchClosed,
+    required TResult Function(String branchId) getAllusers,
+    required TResult Function() clearUserData,
+    required TResult Function() clearUserFailure,
+    required TResult Function(String employeeId) getEmployeeDailyCollection,
+    required TResult Function(String branchId) getBranchDailyCollection,
+  }) {
+    return getEmployeeDailyCollection(employeeId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String value)? serchTearmChanged,
+    TResult? Function(String branchId)? searchClicked,
+    TResult? Function(String value)? searchClosed,
+    TResult? Function(String branchId)? getAllusers,
+    TResult? Function()? clearUserData,
+    TResult? Function()? clearUserFailure,
+    TResult? Function(String employeeId)? getEmployeeDailyCollection,
+    TResult? Function(String branchId)? getBranchDailyCollection,
+  }) {
+    return getEmployeeDailyCollection?.call(employeeId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String value)? serchTearmChanged,
+    TResult Function(String branchId)? searchClicked,
+    TResult Function(String value)? searchClosed,
+    TResult Function(String branchId)? getAllusers,
+    TResult Function()? clearUserData,
+    TResult Function()? clearUserFailure,
+    TResult Function(String employeeId)? getEmployeeDailyCollection,
+    TResult Function(String branchId)? getBranchDailyCollection,
+    required TResult orElse(),
+  }) {
+    if (getEmployeeDailyCollection != null) {
+      return getEmployeeDailyCollection(employeeId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(SerchTearmChanged value) serchTearmChanged,
+    required TResult Function(SearchClicked value) searchClicked,
+    required TResult Function(SearchClosed value) searchClosed,
+    required TResult Function(GetAllusers value) getAllusers,
+    required TResult Function(ClearUserData value) clearUserData,
+    required TResult Function(ClearUserFailure value) clearUserFailure,
+    required TResult Function(GetEmployeeDailyCollection value)
+        getEmployeeDailyCollection,
+    required TResult Function(GetBranchDailyCollection value)
+        getBranchDailyCollection,
+  }) {
+    return getEmployeeDailyCollection(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(SerchTearmChanged value)? serchTearmChanged,
+    TResult? Function(SearchClicked value)? searchClicked,
+    TResult? Function(SearchClosed value)? searchClosed,
+    TResult? Function(GetAllusers value)? getAllusers,
+    TResult? Function(ClearUserData value)? clearUserData,
+    TResult? Function(ClearUserFailure value)? clearUserFailure,
+    TResult? Function(GetEmployeeDailyCollection value)?
+        getEmployeeDailyCollection,
+    TResult? Function(GetBranchDailyCollection value)? getBranchDailyCollection,
+  }) {
+    return getEmployeeDailyCollection?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(SerchTearmChanged value)? serchTearmChanged,
+    TResult Function(SearchClicked value)? searchClicked,
+    TResult Function(SearchClosed value)? searchClosed,
+    TResult Function(GetAllusers value)? getAllusers,
+    TResult Function(ClearUserData value)? clearUserData,
+    TResult Function(ClearUserFailure value)? clearUserFailure,
+    TResult Function(GetEmployeeDailyCollection value)?
+        getEmployeeDailyCollection,
+    TResult Function(GetBranchDailyCollection value)? getBranchDailyCollection,
+    required TResult orElse(),
+  }) {
+    if (getEmployeeDailyCollection != null) {
+      return getEmployeeDailyCollection(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetEmployeeDailyCollection implements UserEvent {
+  const factory GetEmployeeDailyCollection(final String employeeId) =
+      _$GetEmployeeDailyCollectionImpl;
+
+  String get employeeId;
+  @JsonKey(ignore: true)
+  _$$GetEmployeeDailyCollectionImplCopyWith<_$GetEmployeeDailyCollectionImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GetBranchDailyCollectionImplCopyWith<$Res> {
+  factory _$$GetBranchDailyCollectionImplCopyWith(
+          _$GetBranchDailyCollectionImpl value,
+          $Res Function(_$GetBranchDailyCollectionImpl) then) =
+      __$$GetBranchDailyCollectionImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String branchId});
+}
+
+/// @nodoc
+class __$$GetBranchDailyCollectionImplCopyWithImpl<$Res>
+    extends _$UserEventCopyWithImpl<$Res, _$GetBranchDailyCollectionImpl>
+    implements _$$GetBranchDailyCollectionImplCopyWith<$Res> {
+  __$$GetBranchDailyCollectionImplCopyWithImpl(
+      _$GetBranchDailyCollectionImpl _value,
+      $Res Function(_$GetBranchDailyCollectionImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? branchId = null,
+  }) {
+    return _then(_$GetBranchDailyCollectionImpl(
+      null == branchId
+          ? _value.branchId
+          : branchId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetBranchDailyCollectionImpl implements GetBranchDailyCollection {
+  const _$GetBranchDailyCollectionImpl(this.branchId);
+
+  @override
+  final String branchId;
+
+  @override
+  String toString() {
+    return 'UserEvent.getBranchDailyCollection(branchId: $branchId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetBranchDailyCollectionImpl &&
+            (identical(other.branchId, branchId) ||
+                other.branchId == branchId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, branchId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetBranchDailyCollectionImplCopyWith<_$GetBranchDailyCollectionImpl>
+      get copyWith => __$$GetBranchDailyCollectionImplCopyWithImpl<
+          _$GetBranchDailyCollectionImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String value) serchTearmChanged,
+    required TResult Function(String branchId) searchClicked,
+    required TResult Function(String value) searchClosed,
+    required TResult Function(String branchId) getAllusers,
+    required TResult Function() clearUserData,
+    required TResult Function() clearUserFailure,
+    required TResult Function(String employeeId) getEmployeeDailyCollection,
+    required TResult Function(String branchId) getBranchDailyCollection,
+  }) {
+    return getBranchDailyCollection(branchId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String value)? serchTearmChanged,
+    TResult? Function(String branchId)? searchClicked,
+    TResult? Function(String value)? searchClosed,
+    TResult? Function(String branchId)? getAllusers,
+    TResult? Function()? clearUserData,
+    TResult? Function()? clearUserFailure,
+    TResult? Function(String employeeId)? getEmployeeDailyCollection,
+    TResult? Function(String branchId)? getBranchDailyCollection,
+  }) {
+    return getBranchDailyCollection?.call(branchId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String value)? serchTearmChanged,
+    TResult Function(String branchId)? searchClicked,
+    TResult Function(String value)? searchClosed,
+    TResult Function(String branchId)? getAllusers,
+    TResult Function()? clearUserData,
+    TResult Function()? clearUserFailure,
+    TResult Function(String employeeId)? getEmployeeDailyCollection,
+    TResult Function(String branchId)? getBranchDailyCollection,
+    required TResult orElse(),
+  }) {
+    if (getBranchDailyCollection != null) {
+      return getBranchDailyCollection(branchId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(SerchTearmChanged value) serchTearmChanged,
+    required TResult Function(SearchClicked value) searchClicked,
+    required TResult Function(SearchClosed value) searchClosed,
+    required TResult Function(GetAllusers value) getAllusers,
+    required TResult Function(ClearUserData value) clearUserData,
+    required TResult Function(ClearUserFailure value) clearUserFailure,
+    required TResult Function(GetEmployeeDailyCollection value)
+        getEmployeeDailyCollection,
+    required TResult Function(GetBranchDailyCollection value)
+        getBranchDailyCollection,
+  }) {
+    return getBranchDailyCollection(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(SerchTearmChanged value)? serchTearmChanged,
+    TResult? Function(SearchClicked value)? searchClicked,
+    TResult? Function(SearchClosed value)? searchClosed,
+    TResult? Function(GetAllusers value)? getAllusers,
+    TResult? Function(ClearUserData value)? clearUserData,
+    TResult? Function(ClearUserFailure value)? clearUserFailure,
+    TResult? Function(GetEmployeeDailyCollection value)?
+        getEmployeeDailyCollection,
+    TResult? Function(GetBranchDailyCollection value)? getBranchDailyCollection,
+  }) {
+    return getBranchDailyCollection?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(SerchTearmChanged value)? serchTearmChanged,
+    TResult Function(SearchClicked value)? searchClicked,
+    TResult Function(SearchClosed value)? searchClosed,
+    TResult Function(GetAllusers value)? getAllusers,
+    TResult Function(ClearUserData value)? clearUserData,
+    TResult Function(ClearUserFailure value)? clearUserFailure,
+    TResult Function(GetEmployeeDailyCollection value)?
+        getEmployeeDailyCollection,
+    TResult Function(GetBranchDailyCollection value)? getBranchDailyCollection,
+    required TResult orElse(),
+  }) {
+    if (getBranchDailyCollection != null) {
+      return getBranchDailyCollection(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetBranchDailyCollection implements UserEvent {
+  const factory GetBranchDailyCollection(final String branchId) =
+      _$GetBranchDailyCollectionImpl;
+
+  String get branchId;
+  @JsonKey(ignore: true)
+  _$$GetBranchDailyCollectionImplCopyWith<_$GetBranchDailyCollectionImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$UserState {
   bool get isLoading => throw _privateConstructorUsedError;
   bool get noMoreData => throw _privateConstructorUsedError;
   Option<UserDetails> get failureOption => throw _privateConstructorUsedError;
   List<UserDetails> get users => throw _privateConstructorUsedError;
   SearchTeram get searchTeram => throw _privateConstructorUsedError;
+  DailyCollection? get dailyCollection => throw _privateConstructorUsedError;
+  DailyCollection? get branchdailyCollection =>
+      throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $UserStateCopyWith<UserState> get copyWith =>
@@ -1003,7 +1474,9 @@ abstract class $UserStateCopyWith<$Res> {
       bool noMoreData,
       Option<UserDetails> failureOption,
       List<UserDetails> users,
-      SearchTeram searchTeram});
+      SearchTeram searchTeram,
+      DailyCollection? dailyCollection,
+      DailyCollection? branchdailyCollection});
 }
 
 /// @nodoc
@@ -1024,6 +1497,8 @@ class _$UserStateCopyWithImpl<$Res, $Val extends UserState>
     Object? failureOption = null,
     Object? users = null,
     Object? searchTeram = null,
+    Object? dailyCollection = freezed,
+    Object? branchdailyCollection = freezed,
   }) {
     return _then(_value.copyWith(
       isLoading: null == isLoading
@@ -1046,6 +1521,14 @@ class _$UserStateCopyWithImpl<$Res, $Val extends UserState>
           ? _value.searchTeram
           : searchTeram // ignore: cast_nullable_to_non_nullable
               as SearchTeram,
+      dailyCollection: freezed == dailyCollection
+          ? _value.dailyCollection
+          : dailyCollection // ignore: cast_nullable_to_non_nullable
+              as DailyCollection?,
+      branchdailyCollection: freezed == branchdailyCollection
+          ? _value.branchdailyCollection
+          : branchdailyCollection // ignore: cast_nullable_to_non_nullable
+              as DailyCollection?,
     ) as $Val);
   }
 }
@@ -1063,7 +1546,9 @@ abstract class _$$UserStateImplCopyWith<$Res>
       bool noMoreData,
       Option<UserDetails> failureOption,
       List<UserDetails> users,
-      SearchTeram searchTeram});
+      SearchTeram searchTeram,
+      DailyCollection? dailyCollection,
+      DailyCollection? branchdailyCollection});
 }
 
 /// @nodoc
@@ -1082,6 +1567,8 @@ class __$$UserStateImplCopyWithImpl<$Res>
     Object? failureOption = null,
     Object? users = null,
     Object? searchTeram = null,
+    Object? dailyCollection = freezed,
+    Object? branchdailyCollection = freezed,
   }) {
     return _then(_$UserStateImpl(
       isLoading: null == isLoading
@@ -1104,6 +1591,14 @@ class __$$UserStateImplCopyWithImpl<$Res>
           ? _value.searchTeram
           : searchTeram // ignore: cast_nullable_to_non_nullable
               as SearchTeram,
+      dailyCollection: freezed == dailyCollection
+          ? _value.dailyCollection
+          : dailyCollection // ignore: cast_nullable_to_non_nullable
+              as DailyCollection?,
+      branchdailyCollection: freezed == branchdailyCollection
+          ? _value.branchdailyCollection
+          : branchdailyCollection // ignore: cast_nullable_to_non_nullable
+              as DailyCollection?,
     ));
   }
 }
@@ -1116,7 +1611,9 @@ class _$UserStateImpl implements _UserState {
       required this.noMoreData,
       required this.failureOption,
       required final List<UserDetails> users,
-      required this.searchTeram})
+      required this.searchTeram,
+      required this.dailyCollection,
+      required this.branchdailyCollection})
       : _users = users;
 
   @override
@@ -1135,10 +1632,14 @@ class _$UserStateImpl implements _UserState {
 
   @override
   final SearchTeram searchTeram;
+  @override
+  final DailyCollection? dailyCollection;
+  @override
+  final DailyCollection? branchdailyCollection;
 
   @override
   String toString() {
-    return 'UserState(isLoading: $isLoading, noMoreData: $noMoreData, failureOption: $failureOption, users: $users, searchTeram: $searchTeram)';
+    return 'UserState(isLoading: $isLoading, noMoreData: $noMoreData, failureOption: $failureOption, users: $users, searchTeram: $searchTeram, dailyCollection: $dailyCollection, branchdailyCollection: $branchdailyCollection)';
   }
 
   @override
@@ -1154,12 +1655,23 @@ class _$UserStateImpl implements _UserState {
                 other.failureOption == failureOption) &&
             const DeepCollectionEquality().equals(other._users, _users) &&
             (identical(other.searchTeram, searchTeram) ||
-                other.searchTeram == searchTeram));
+                other.searchTeram == searchTeram) &&
+            (identical(other.dailyCollection, dailyCollection) ||
+                other.dailyCollection == dailyCollection) &&
+            (identical(other.branchdailyCollection, branchdailyCollection) ||
+                other.branchdailyCollection == branchdailyCollection));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, isLoading, noMoreData,
-      failureOption, const DeepCollectionEquality().hash(_users), searchTeram);
+  int get hashCode => Object.hash(
+      runtimeType,
+      isLoading,
+      noMoreData,
+      failureOption,
+      const DeepCollectionEquality().hash(_users),
+      searchTeram,
+      dailyCollection,
+      branchdailyCollection);
 
   @JsonKey(ignore: true)
   @override
@@ -1174,7 +1686,9 @@ abstract class _UserState implements UserState {
       required final bool noMoreData,
       required final Option<UserDetails> failureOption,
       required final List<UserDetails> users,
-      required final SearchTeram searchTeram}) = _$UserStateImpl;
+      required final SearchTeram searchTeram,
+      required final DailyCollection? dailyCollection,
+      required final DailyCollection? branchdailyCollection}) = _$UserStateImpl;
 
   @override
   bool get isLoading;
@@ -1186,6 +1700,10 @@ abstract class _UserState implements UserState {
   List<UserDetails> get users;
   @override
   SearchTeram get searchTeram;
+  @override
+  DailyCollection? get dailyCollection;
+  @override
+  DailyCollection? get branchdailyCollection;
   @override
   @JsonKey(ignore: true)
   _$$UserStateImplCopyWith<_$UserStateImpl> get copyWith =>

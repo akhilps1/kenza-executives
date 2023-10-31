@@ -1,6 +1,7 @@
 import 'package:bot_toast/bot_toast.dart';
 import 'package:executives/application/auth/auth_bloc.dart';
 import 'package:executives/application/user/user_bloc.dart';
+import 'package:executives/application/user_details/otp_verification/otp_verification_cubit.dart';
 import 'package:executives/application/user_details/user_details_bloc.dart';
 import 'package:executives/domain/auth/i_auth_facade.dart';
 import 'package:executives/domain/core/di/injection.dart';
@@ -40,8 +41,12 @@ class MyApp extends StatelessWidget {
             sl<IUserDeatailsFacade>(),
           ),
         ),
+        BlocProvider(
+          create: (_) => OtpVerificationCubit(),
+        ),
       ],
       child: MaterialApp(
+        debugShowCheckedModeBanner: false,
         builder: BotToastInit(),
         navigatorObservers: [
           BotToastNavigatorObserver(),

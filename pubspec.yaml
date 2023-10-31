@@ -23,7 +23,7 @@ dependencies:
   injectable: ^2.3.2
   dartz: ^0.10.1
   cloud_firestore: ^4.8.5
-  firebase_auth: ^4.9.0
+  firebase_auth: ^4.12.0
   firebase_core: ^2.15.1
   firebase_messaging: ^14.6.6
  
@@ -37,6 +37,10 @@ dependencies:
   equatable: ^2.0.5
   shared_preferences: ^2.2.2
   shimmer: ^3.0.0
+  googleapis_auth: ^1.4.1
+  http: ^1.1.0
+  pinput: ^3.0.1
+  syncfusion_flutter_datepicker: ^23.1.43
 
 dev_dependencies:
   flutter_test:
