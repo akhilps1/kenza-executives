@@ -1,3 +1,4 @@
+import 'package:executives/application/transactions/employee_detais/get_emloyee_details_cubit.dart';
 import 'package:executives/application/user/user_bloc.dart';
 import 'package:executives/domain/core/utils/extentions/extentions.dart';
 import 'package:executives/domain/core/utils/media_res/media_res.dart';
@@ -23,6 +24,12 @@ class _UsersScreenState extends State<UsersScreen> {
   void initState() {
     if (context.read<UserBloc>().state.users.isEmpty) {
       context.read<UserBloc>().add(GetAllusers(context.branchId));
+    }
+
+    if (context.read<GetEmloyeeDetailsCubit>().state.executive == null) {
+      context
+          .read<GetEmloyeeDetailsCubit>()
+          .getEmployeeDetails(context.employeeId);
     }
     if (context.read<UserBloc>().state.dailyCollection == null) {
       context.read<UserBloc>().add(
@@ -217,7 +224,7 @@ class ShimmerWidget extends StatelessWidget {
             ),
             height: height ?? 86,
             decoration: ShapeDecoration(
-              color: Colors.white.withOpacity(0.6),
+              color: AppColor.bgWhiteColor,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(12),
               ),

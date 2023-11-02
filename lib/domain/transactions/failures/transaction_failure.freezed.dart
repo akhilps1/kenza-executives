@@ -20,32 +20,38 @@ mixin _$TransactionFailure {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String errorMsg) serverFailure,
+    required TResult Function(String errorMsg) notFount,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String errorMsg)? serverFailure,
+    TResult? Function(String errorMsg)? notFount,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String errorMsg)? serverFailure,
+    TResult Function(String errorMsg)? notFount,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_ServerFailure value) serverFailure,
+    required TResult Function(_NotFount value) notFount,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_ServerFailure value)? serverFailure,
+    TResult? Function(_NotFount value)? notFount,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ServerFailure value)? serverFailure,
+    TResult Function(_NotFount value)? notFount,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -156,6 +162,7 @@ class _$ServerFailureImpl implements _ServerFailure {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String errorMsg) serverFailure,
+    required TResult Function(String errorMsg) notFount,
   }) {
     return serverFailure(errorMsg);
   }
@@ -164,6 +171,7 @@ class _$ServerFailureImpl implements _ServerFailure {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String errorMsg)? serverFailure,
+    TResult? Function(String errorMsg)? notFount,
   }) {
     return serverFailure?.call(errorMsg);
   }
@@ -172,6 +180,7 @@ class _$ServerFailureImpl implements _ServerFailure {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String errorMsg)? serverFailure,
+    TResult Function(String errorMsg)? notFount,
     required TResult orElse(),
   }) {
     if (serverFailure != null) {
@@ -184,6 +193,7 @@ class _$ServerFailureImpl implements _ServerFailure {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_ServerFailure value) serverFailure,
+    required TResult Function(_NotFount value) notFount,
   }) {
     return serverFailure(this);
   }
@@ -192,6 +202,7 @@ class _$ServerFailureImpl implements _ServerFailure {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_ServerFailure value)? serverFailure,
+    TResult? Function(_NotFount value)? notFount,
   }) {
     return serverFailure?.call(this);
   }
@@ -200,6 +211,7 @@ class _$ServerFailureImpl implements _ServerFailure {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ServerFailure value)? serverFailure,
+    TResult Function(_NotFount value)? notFount,
     required TResult orElse(),
   }) {
     if (serverFailure != null) {
@@ -218,5 +230,143 @@ abstract class _ServerFailure implements TransactionFailure {
   @override
   @JsonKey(ignore: true)
   _$$ServerFailureImplCopyWith<_$ServerFailureImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$NotFountImplCopyWith<$Res>
+    implements $TransactionFailureCopyWith<$Res> {
+  factory _$$NotFountImplCopyWith(
+          _$NotFountImpl value, $Res Function(_$NotFountImpl) then) =
+      __$$NotFountImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String errorMsg});
+}
+
+/// @nodoc
+class __$$NotFountImplCopyWithImpl<$Res>
+    extends _$TransactionFailureCopyWithImpl<$Res, _$NotFountImpl>
+    implements _$$NotFountImplCopyWith<$Res> {
+  __$$NotFountImplCopyWithImpl(
+      _$NotFountImpl _value, $Res Function(_$NotFountImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? errorMsg = null,
+  }) {
+    return _then(_$NotFountImpl(
+      errorMsg: null == errorMsg
+          ? _value.errorMsg
+          : errorMsg // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$NotFountImpl implements _NotFount {
+  const _$NotFountImpl({required this.errorMsg});
+
+  @override
+  final String errorMsg;
+
+  @override
+  String toString() {
+    return 'TransactionFailure.notFount(errorMsg: $errorMsg)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$NotFountImpl &&
+            (identical(other.errorMsg, errorMsg) ||
+                other.errorMsg == errorMsg));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, errorMsg);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$NotFountImplCopyWith<_$NotFountImpl> get copyWith =>
+      __$$NotFountImplCopyWithImpl<_$NotFountImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String errorMsg) serverFailure,
+    required TResult Function(String errorMsg) notFount,
+  }) {
+    return notFount(errorMsg);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String errorMsg)? serverFailure,
+    TResult? Function(String errorMsg)? notFount,
+  }) {
+    return notFount?.call(errorMsg);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String errorMsg)? serverFailure,
+    TResult Function(String errorMsg)? notFount,
+    required TResult orElse(),
+  }) {
+    if (notFount != null) {
+      return notFount(errorMsg);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_ServerFailure value) serverFailure,
+    required TResult Function(_NotFount value) notFount,
+  }) {
+    return notFount(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_ServerFailure value)? serverFailure,
+    TResult? Function(_NotFount value)? notFount,
+  }) {
+    return notFount?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_ServerFailure value)? serverFailure,
+    TResult Function(_NotFount value)? notFount,
+    required TResult orElse(),
+  }) {
+    if (notFount != null) {
+      return notFount(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _NotFount implements TransactionFailure {
+  const factory _NotFount({required final String errorMsg}) = _$NotFountImpl;
+
+  @override
+  String get errorMsg;
+  @override
+  @JsonKey(ignore: true)
+  _$$NotFountImplCopyWith<_$NotFountImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

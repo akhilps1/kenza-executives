@@ -6,7 +6,7 @@ import 'package:dartz/dartz.dart';
 import 'package:executives/domain/core/serveice/custom_toast.dart';
 import 'package:executives/domain/users/failures/value_validator.dart';
 import 'package:executives/domain/users/i_user_facade.dart';
-import 'package:executives/domain/users/models/employee_daily_collection.dart';
+import 'package:executives/domain/users/models/daily_collection.dart';
 import 'package:executives/domain/users/models/user_details.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';

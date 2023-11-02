@@ -41,6 +41,7 @@ dependencies:
   http: ^1.1.0
   pinput: ^3.0.1
   syncfusion_flutter_datepicker: ^23.1.43
+  url_launcher: ^6.2.1
 
 dev_dependencies:
   flutter_test:

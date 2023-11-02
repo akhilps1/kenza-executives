@@ -84,7 +84,7 @@ class _AppWidgetState extends State<AppWidget> {
             ),
           ),
           BottomNavigationBarItem(
-            label: 'Account',
+            label: 'Profile',
             icon: ImageIcon(
               AssetImage(
                 MediaRes.user,

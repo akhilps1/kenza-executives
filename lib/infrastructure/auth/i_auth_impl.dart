@@ -107,6 +107,19 @@ class IAuthImpl implements IAuthFacde {
     }
   }
 
+  @override
+  Future<Either<AuthFailure, Unit>> logOut() async {
+    final userNameRemoved = await _preferences.remove('userName');
+    final passwordRemoved = await _preferences.remove('password');
+    if (!userNameRemoved || !passwordRemoved) {
+      return left(
+        const AuthFailure.serverFailure(errorMsg: 'Somthig went wrong'),
+      );
+    } else {
+      return right(unit);
+    }
+  }
+
   // Private method to save user credentials to SharedPreferences
   Future<void> _saveUser({
     required String userName,

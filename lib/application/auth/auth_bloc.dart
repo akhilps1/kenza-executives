@@ -5,6 +5,7 @@ import 'package:executives/domain/auth/failures/value_validater.dart';
 import 'package:executives/domain/auth/i_auth_facade.dart';
 import 'package:executives/domain/auth/models/app_user.dart';
 import 'package:executives/domain/auth/models/executive.dart';
+import 'package:executives/domain/core/serveice/custom_toast.dart';
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
@@ -123,6 +124,28 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         state.copyWith(
           failureOption: none(),
         ),
+      ),
+    );
+
+    on<Logout>(
+      (event, emit) async {
+        final failureOrSuccess = await _authFacde.logOut();
+
+        failureOrSuccess.fold(
+          (l) => CustomToast.errorToast(message: 'Somthig went wrong'),
+          (r) {
+            emit(
+              state.copyWith(
+                logoutSuccessOption: some(r),
+              ),
+            );
+          },
+        );
+      },
+    );
+    on<ClearAuth>(
+      (event, emit) => emit(
+        AuthState.initial(),
       ),
     );
   }

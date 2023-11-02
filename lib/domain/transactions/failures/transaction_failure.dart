@@ -5,4 +5,6 @@ part 'transaction_failure.freezed.dart';
 class TransactionFailure with _$TransactionFailure {
   const factory TransactionFailure.serverFailure({required String errorMsg}) =
       _ServerFailure;
+  const factory TransactionFailure.notFount({required String errorMsg}) =
+      _NotFount;
 }

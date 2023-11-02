@@ -22,6 +22,7 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
+    context.read<AuthBloc>().add(const checkLoginStatus());
     super.initState();
   }
 

@@ -155,8 +155,10 @@ class UserDetailsBloc extends Bloc<UserDetailsEvent, UserDetailsState> {
     );
 
     on<NoteChanged>(
-      (event, emit) => state.copyWith(
-        note: event.note,
+      (event, emit) => emit(
+        state.copyWith(
+          note: event.note,
+        ),
       ),
     );
 

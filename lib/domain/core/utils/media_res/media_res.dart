@@ -11,7 +11,7 @@ class MediaRes {
   static const call = '$iconBaseDir/call.png';
   static const exit = '$iconBaseDir/exit.png';
   static const filter = '$iconBaseDir/filter.png';
-
+  static const refresh = '$iconBaseDir/refresh.png';
   static const geoup = '$iconBaseDir/group.png';
   static const history = '$iconBaseDir/history.png';
   static const insurance = '$iconBaseDir/insurance.png';

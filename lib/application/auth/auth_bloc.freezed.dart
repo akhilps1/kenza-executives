@@ -24,6 +24,9 @@ mixin _$AuthEvent {
     required TResult Function() checkloginStatus,
     required TResult Function(AppUser appUser) validateEmployee,
     required TResult Function() clearFailure,
+    required TResult Function(Executive executive) employyeDetailsUpdated,
+    required TResult Function() logOut,
+    required TResult Function() clearAuth,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -34,6 +37,9 @@ mixin _$AuthEvent {
     TResult? Function()? checkloginStatus,
     TResult? Function(AppUser appUser)? validateEmployee,
     TResult? Function()? clearFailure,
+    TResult? Function(Executive executive)? employyeDetailsUpdated,
+    TResult? Function()? logOut,
+    TResult? Function()? clearAuth,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -44,6 +50,9 @@ mixin _$AuthEvent {
     TResult Function()? checkloginStatus,
     TResult Function(AppUser appUser)? validateEmployee,
     TResult Function()? clearFailure,
+    TResult Function(Executive executive)? employyeDetailsUpdated,
+    TResult Function()? logOut,
+    TResult Function()? clearAuth,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -55,6 +64,10 @@ mixin _$AuthEvent {
     required TResult Function(checkLoginStatus value) checkloginStatus,
     required TResult Function(_ValidateEmployee value) validateEmployee,
     required TResult Function(ClearFailure value) clearFailure,
+    required TResult Function(EmployyeDetailsUpdated value)
+        employyeDetailsUpdated,
+    required TResult Function(Logout value) logOut,
+    required TResult Function(ClearAuth value) clearAuth,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -65,6 +78,9 @@ mixin _$AuthEvent {
     TResult? Function(checkLoginStatus value)? checkloginStatus,
     TResult? Function(_ValidateEmployee value)? validateEmployee,
     TResult? Function(ClearFailure value)? clearFailure,
+    TResult? Function(EmployyeDetailsUpdated value)? employyeDetailsUpdated,
+    TResult? Function(Logout value)? logOut,
+    TResult? Function(ClearAuth value)? clearAuth,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -75,6 +91,9 @@ mixin _$AuthEvent {
     TResult Function(checkLoginStatus value)? checkloginStatus,
     TResult Function(_ValidateEmployee value)? validateEmployee,
     TResult Function(ClearFailure value)? clearFailure,
+    TResult Function(EmployyeDetailsUpdated value)? employyeDetailsUpdated,
+    TResult Function(Logout value)? logOut,
+    TResult Function(ClearAuth value)? clearAuth,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -168,6 +187,9 @@ class _$UserNameChangedImpl implements UserNameChanged {
     required TResult Function() checkloginStatus,
     required TResult Function(AppUser appUser) validateEmployee,
     required TResult Function() clearFailure,
+    required TResult Function(Executive executive) employyeDetailsUpdated,
+    required TResult Function() logOut,
+    required TResult Function() clearAuth,
   }) {
     return userNameChanged(value);
   }
@@ -181,6 +203,9 @@ class _$UserNameChangedImpl implements UserNameChanged {
     TResult? Function()? checkloginStatus,
     TResult? Function(AppUser appUser)? validateEmployee,
     TResult? Function()? clearFailure,
+    TResult? Function(Executive executive)? employyeDetailsUpdated,
+    TResult? Function()? logOut,
+    TResult? Function()? clearAuth,
   }) {
     return userNameChanged?.call(value);
   }
@@ -194,6 +219,9 @@ class _$UserNameChangedImpl implements UserNameChanged {
     TResult Function()? checkloginStatus,
     TResult Function(AppUser appUser)? validateEmployee,
     TResult Function()? clearFailure,
+    TResult Function(Executive executive)? employyeDetailsUpdated,
+    TResult Function()? logOut,
+    TResult Function()? clearAuth,
     required TResult orElse(),
   }) {
     if (userNameChanged != null) {
@@ -211,6 +239,10 @@ class _$UserNameChangedImpl implements UserNameChanged {
     required TResult Function(checkLoginStatus value) checkloginStatus,
     required TResult Function(_ValidateEmployee value) validateEmployee,
     required TResult Function(ClearFailure value) clearFailure,
+    required TResult Function(EmployyeDetailsUpdated value)
+        employyeDetailsUpdated,
+    required TResult Function(Logout value) logOut,
+    required TResult Function(ClearAuth value) clearAuth,
   }) {
     return userNameChanged(this);
   }
@@ -224,6 +256,9 @@ class _$UserNameChangedImpl implements UserNameChanged {
     TResult? Function(checkLoginStatus value)? checkloginStatus,
     TResult? Function(_ValidateEmployee value)? validateEmployee,
     TResult? Function(ClearFailure value)? clearFailure,
+    TResult? Function(EmployyeDetailsUpdated value)? employyeDetailsUpdated,
+    TResult? Function(Logout value)? logOut,
+    TResult? Function(ClearAuth value)? clearAuth,
   }) {
     return userNameChanged?.call(this);
   }
@@ -237,6 +272,9 @@ class _$UserNameChangedImpl implements UserNameChanged {
     TResult Function(checkLoginStatus value)? checkloginStatus,
     TResult Function(_ValidateEmployee value)? validateEmployee,
     TResult Function(ClearFailure value)? clearFailure,
+    TResult Function(EmployyeDetailsUpdated value)? employyeDetailsUpdated,
+    TResult Function(Logout value)? logOut,
+    TResult Function(ClearAuth value)? clearAuth,
     required TResult orElse(),
   }) {
     if (userNameChanged != null) {
@@ -326,6 +364,9 @@ class _$PasswordChangedImpl implements PasswordChanged {
     required TResult Function() checkloginStatus,
     required TResult Function(AppUser appUser) validateEmployee,
     required TResult Function() clearFailure,
+    required TResult Function(Executive executive) employyeDetailsUpdated,
+    required TResult Function() logOut,
+    required TResult Function() clearAuth,
   }) {
     return passwordChanged(value);
   }
@@ -339,6 +380,9 @@ class _$PasswordChangedImpl implements PasswordChanged {
     TResult? Function()? checkloginStatus,
     TResult? Function(AppUser appUser)? validateEmployee,
     TResult? Function()? clearFailure,
+    TResult? Function(Executive executive)? employyeDetailsUpdated,
+    TResult? Function()? logOut,
+    TResult? Function()? clearAuth,
   }) {
     return passwordChanged?.call(value);
   }
@@ -352,6 +396,9 @@ class _$PasswordChangedImpl implements PasswordChanged {
     TResult Function()? checkloginStatus,
     TResult Function(AppUser appUser)? validateEmployee,
     TResult Function()? clearFailure,
+    TResult Function(Executive executive)? employyeDetailsUpdated,
+    TResult Function()? logOut,
+    TResult Function()? clearAuth,
     required TResult orElse(),
   }) {
     if (passwordChanged != null) {
@@ -369,6 +416,10 @@ class _$PasswordChangedImpl implements PasswordChanged {
     required TResult Function(checkLoginStatus value) checkloginStatus,
     required TResult Function(_ValidateEmployee value) validateEmployee,
     required TResult Function(ClearFailure value) clearFailure,
+    required TResult Function(EmployyeDetailsUpdated value)
+        employyeDetailsUpdated,
+    required TResult Function(Logout value) logOut,
+    required TResult Function(ClearAuth value) clearAuth,
   }) {
     return passwordChanged(this);
   }
@@ -382,6 +433,9 @@ class _$PasswordChangedImpl implements PasswordChanged {
     TResult? Function(checkLoginStatus value)? checkloginStatus,
     TResult? Function(_ValidateEmployee value)? validateEmployee,
     TResult? Function(ClearFailure value)? clearFailure,
+    TResult? Function(EmployyeDetailsUpdated value)? employyeDetailsUpdated,
+    TResult? Function(Logout value)? logOut,
+    TResult? Function(ClearAuth value)? clearAuth,
   }) {
     return passwordChanged?.call(this);
   }
@@ -395,6 +449,9 @@ class _$PasswordChangedImpl implements PasswordChanged {
     TResult Function(checkLoginStatus value)? checkloginStatus,
     TResult Function(_ValidateEmployee value)? validateEmployee,
     TResult Function(ClearFailure value)? clearFailure,
+    TResult Function(EmployyeDetailsUpdated value)? employyeDetailsUpdated,
+    TResult Function(Logout value)? logOut,
+    TResult Function(ClearAuth value)? clearAuth,
     required TResult orElse(),
   }) {
     if (passwordChanged != null) {
@@ -457,6 +514,9 @@ class _$LoginClickedImpl implements LoginClicked {
     required TResult Function() checkloginStatus,
     required TResult Function(AppUser appUser) validateEmployee,
     required TResult Function() clearFailure,
+    required TResult Function(Executive executive) employyeDetailsUpdated,
+    required TResult Function() logOut,
+    required TResult Function() clearAuth,
   }) {
     return loginClicked();
   }
@@ -470,6 +530,9 @@ class _$LoginClickedImpl implements LoginClicked {
     TResult? Function()? checkloginStatus,
     TResult? Function(AppUser appUser)? validateEmployee,
     TResult? Function()? clearFailure,
+    TResult? Function(Executive executive)? employyeDetailsUpdated,
+    TResult? Function()? logOut,
+    TResult? Function()? clearAuth,
   }) {
     return loginClicked?.call();
   }
@@ -483,6 +546,9 @@ class _$LoginClickedImpl implements LoginClicked {
     TResult Function()? checkloginStatus,
     TResult Function(AppUser appUser)? validateEmployee,
     TResult Function()? clearFailure,
+    TResult Function(Executive executive)? employyeDetailsUpdated,
+    TResult Function()? logOut,
+    TResult Function()? clearAuth,
     required TResult orElse(),
   }) {
     if (loginClicked != null) {
@@ -500,6 +566,10 @@ class _$LoginClickedImpl implements LoginClicked {
     required TResult Function(checkLoginStatus value) checkloginStatus,
     required TResult Function(_ValidateEmployee value) validateEmployee,
     required TResult Function(ClearFailure value) clearFailure,
+    required TResult Function(EmployyeDetailsUpdated value)
+        employyeDetailsUpdated,
+    required TResult Function(Logout value) logOut,
+    required TResult Function(ClearAuth value) clearAuth,
   }) {
     return loginClicked(this);
   }
@@ -513,6 +583,9 @@ class _$LoginClickedImpl implements LoginClicked {
     TResult? Function(checkLoginStatus value)? checkloginStatus,
     TResult? Function(_ValidateEmployee value)? validateEmployee,
     TResult? Function(ClearFailure value)? clearFailure,
+    TResult? Function(EmployyeDetailsUpdated value)? employyeDetailsUpdated,
+    TResult? Function(Logout value)? logOut,
+    TResult? Function(ClearAuth value)? clearAuth,
   }) {
     return loginClicked?.call(this);
   }
@@ -526,6 +599,9 @@ class _$LoginClickedImpl implements LoginClicked {
     TResult Function(checkLoginStatus value)? checkloginStatus,
     TResult Function(_ValidateEmployee value)? validateEmployee,
     TResult Function(ClearFailure value)? clearFailure,
+    TResult Function(EmployyeDetailsUpdated value)? employyeDetailsUpdated,
+    TResult Function(Logout value)? logOut,
+    TResult Function(ClearAuth value)? clearAuth,
     required TResult orElse(),
   }) {
     if (loginClicked != null) {
@@ -583,6 +659,9 @@ class _$checkLoginStatusImpl implements checkLoginStatus {
     required TResult Function() checkloginStatus,
     required TResult Function(AppUser appUser) validateEmployee,
     required TResult Function() clearFailure,
+    required TResult Function(Executive executive) employyeDetailsUpdated,
+    required TResult Function() logOut,
+    required TResult Function() clearAuth,
   }) {
     return checkloginStatus();
   }
@@ -596,6 +675,9 @@ class _$checkLoginStatusImpl implements checkLoginStatus {
     TResult? Function()? checkloginStatus,
     TResult? Function(AppUser appUser)? validateEmployee,
     TResult? Function()? clearFailure,
+    TResult? Function(Executive executive)? employyeDetailsUpdated,
+    TResult? Function()? logOut,
+    TResult? Function()? clearAuth,
   }) {
     return checkloginStatus?.call();
   }
@@ -609,6 +691,9 @@ class _$checkLoginStatusImpl implements checkLoginStatus {
     TResult Function()? checkloginStatus,
     TResult Function(AppUser appUser)? validateEmployee,
     TResult Function()? clearFailure,
+    TResult Function(Executive executive)? employyeDetailsUpdated,
+    TResult Function()? logOut,
+    TResult Function()? clearAuth,
     required TResult orElse(),
   }) {
     if (checkloginStatus != null) {
@@ -626,6 +711,10 @@ class _$checkLoginStatusImpl implements checkLoginStatus {
     required TResult Function(checkLoginStatus value) checkloginStatus,
     required TResult Function(_ValidateEmployee value) validateEmployee,
     required TResult Function(ClearFailure value) clearFailure,
+    required TResult Function(EmployyeDetailsUpdated value)
+        employyeDetailsUpdated,
+    required TResult Function(Logout value) logOut,
+    required TResult Function(ClearAuth value) clearAuth,
   }) {
     return checkloginStatus(this);
   }
@@ -639,6 +728,9 @@ class _$checkLoginStatusImpl implements checkLoginStatus {
     TResult? Function(checkLoginStatus value)? checkloginStatus,
     TResult? Function(_ValidateEmployee value)? validateEmployee,
     TResult? Function(ClearFailure value)? clearFailure,
+    TResult? Function(EmployyeDetailsUpdated value)? employyeDetailsUpdated,
+    TResult? Function(Logout value)? logOut,
+    TResult? Function(ClearAuth value)? clearAuth,
   }) {
     return checkloginStatus?.call(this);
   }
@@ -652,6 +744,9 @@ class _$checkLoginStatusImpl implements checkLoginStatus {
     TResult Function(checkLoginStatus value)? checkloginStatus,
     TResult Function(_ValidateEmployee value)? validateEmployee,
     TResult Function(ClearFailure value)? clearFailure,
+    TResult Function(EmployyeDetailsUpdated value)? employyeDetailsUpdated,
+    TResult Function(Logout value)? logOut,
+    TResult Function(ClearAuth value)? clearAuth,
     required TResult orElse(),
   }) {
     if (checkloginStatus != null) {
@@ -736,6 +831,9 @@ class _$ValidateEmployeeImpl implements _ValidateEmployee {
     required TResult Function() checkloginStatus,
     required TResult Function(AppUser appUser) validateEmployee,
     required TResult Function() clearFailure,
+    required TResult Function(Executive executive) employyeDetailsUpdated,
+    required TResult Function() logOut,
+    required TResult Function() clearAuth,
   }) {
     return validateEmployee(appUser);
   }
@@ -749,6 +847,9 @@ class _$ValidateEmployeeImpl implements _ValidateEmployee {
     TResult? Function()? checkloginStatus,
     TResult? Function(AppUser appUser)? validateEmployee,
     TResult? Function()? clearFailure,
+    TResult? Function(Executive executive)? employyeDetailsUpdated,
+    TResult? Function()? logOut,
+    TResult? Function()? clearAuth,
   }) {
     return validateEmployee?.call(appUser);
   }
@@ -762,6 +863,9 @@ class _$ValidateEmployeeImpl implements _ValidateEmployee {
     TResult Function()? checkloginStatus,
     TResult Function(AppUser appUser)? validateEmployee,
     TResult Function()? clearFailure,
+    TResult Function(Executive executive)? employyeDetailsUpdated,
+    TResult Function()? logOut,
+    TResult Function()? clearAuth,
     required TResult orElse(),
   }) {
     if (validateEmployee != null) {
@@ -779,6 +883,10 @@ class _$ValidateEmployeeImpl implements _ValidateEmployee {
     required TResult Function(checkLoginStatus value) checkloginStatus,
     required TResult Function(_ValidateEmployee value) validateEmployee,
     required TResult Function(ClearFailure value) clearFailure,
+    required TResult Function(EmployyeDetailsUpdated value)
+        employyeDetailsUpdated,
+    required TResult Function(Logout value) logOut,
+    required TResult Function(ClearAuth value) clearAuth,
   }) {
     return validateEmployee(this);
   }
@@ -792,6 +900,9 @@ class _$ValidateEmployeeImpl implements _ValidateEmployee {
     TResult? Function(checkLoginStatus value)? checkloginStatus,
     TResult? Function(_ValidateEmployee value)? validateEmployee,
     TResult? Function(ClearFailure value)? clearFailure,
+    TResult? Function(EmployyeDetailsUpdated value)? employyeDetailsUpdated,
+    TResult? Function(Logout value)? logOut,
+    TResult? Function(ClearAuth value)? clearAuth,
   }) {
     return validateEmployee?.call(this);
   }
@@ -805,6 +916,9 @@ class _$ValidateEmployeeImpl implements _ValidateEmployee {
     TResult Function(checkLoginStatus value)? checkloginStatus,
     TResult Function(_ValidateEmployee value)? validateEmployee,
     TResult Function(ClearFailure value)? clearFailure,
+    TResult Function(EmployyeDetailsUpdated value)? employyeDetailsUpdated,
+    TResult Function(Logout value)? logOut,
+    TResult Function(ClearAuth value)? clearAuth,
     required TResult orElse(),
   }) {
     if (validateEmployee != null) {
@@ -868,6 +982,9 @@ class _$ClearFailureImpl implements ClearFailure {
     required TResult Function() checkloginStatus,
     required TResult Function(AppUser appUser) validateEmployee,
     required TResult Function() clearFailure,
+    required TResult Function(Executive executive) employyeDetailsUpdated,
+    required TResult Function() logOut,
+    required TResult Function() clearAuth,
   }) {
     return clearFailure();
   }
@@ -881,6 +998,9 @@ class _$ClearFailureImpl implements ClearFailure {
     TResult? Function()? checkloginStatus,
     TResult? Function(AppUser appUser)? validateEmployee,
     TResult? Function()? clearFailure,
+    TResult? Function(Executive executive)? employyeDetailsUpdated,
+    TResult? Function()? logOut,
+    TResult? Function()? clearAuth,
   }) {
     return clearFailure?.call();
   }
@@ -894,6 +1014,9 @@ class _$ClearFailureImpl implements ClearFailure {
     TResult Function()? checkloginStatus,
     TResult Function(AppUser appUser)? validateEmployee,
     TResult Function()? clearFailure,
+    TResult Function(Executive executive)? employyeDetailsUpdated,
+    TResult Function()? logOut,
+    TResult Function()? clearAuth,
     required TResult orElse(),
   }) {
     if (clearFailure != null) {
@@ -911,6 +1034,10 @@ class _$ClearFailureImpl implements ClearFailure {
     required TResult Function(checkLoginStatus value) checkloginStatus,
     required TResult Function(_ValidateEmployee value) validateEmployee,
     required TResult Function(ClearFailure value) clearFailure,
+    required TResult Function(EmployyeDetailsUpdated value)
+        employyeDetailsUpdated,
+    required TResult Function(Logout value) logOut,
+    required TResult Function(ClearAuth value) clearAuth,
   }) {
     return clearFailure(this);
   }
@@ -924,6 +1051,9 @@ class _$ClearFailureImpl implements ClearFailure {
     TResult? Function(checkLoginStatus value)? checkloginStatus,
     TResult? Function(_ValidateEmployee value)? validateEmployee,
     TResult? Function(ClearFailure value)? clearFailure,
+    TResult? Function(EmployyeDetailsUpdated value)? employyeDetailsUpdated,
+    TResult? Function(Logout value)? logOut,
+    TResult? Function(ClearAuth value)? clearAuth,
   }) {
     return clearFailure?.call(this);
   }
@@ -937,6 +1067,9 @@ class _$ClearFailureImpl implements ClearFailure {
     TResult Function(checkLoginStatus value)? checkloginStatus,
     TResult Function(_ValidateEmployee value)? validateEmployee,
     TResult Function(ClearFailure value)? clearFailure,
+    TResult Function(EmployyeDetailsUpdated value)? employyeDetailsUpdated,
+    TResult Function(Logout value)? logOut,
+    TResult Function(ClearAuth value)? clearAuth,
     required TResult orElse(),
   }) {
     if (clearFailure != null) {
@@ -951,11 +1084,483 @@ abstract class ClearFailure implements AuthEvent {
 }
 
 /// @nodoc
+abstract class _$$EmployyeDetailsUpdatedImplCopyWith<$Res> {
+  factory _$$EmployyeDetailsUpdatedImplCopyWith(
+          _$EmployyeDetailsUpdatedImpl value,
+          $Res Function(_$EmployyeDetailsUpdatedImpl) then) =
+      __$$EmployyeDetailsUpdatedImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({Executive executive});
+}
+
+/// @nodoc
+class __$$EmployyeDetailsUpdatedImplCopyWithImpl<$Res>
+    extends _$AuthEventCopyWithImpl<$Res, _$EmployyeDetailsUpdatedImpl>
+    implements _$$EmployyeDetailsUpdatedImplCopyWith<$Res> {
+  __$$EmployyeDetailsUpdatedImplCopyWithImpl(
+      _$EmployyeDetailsUpdatedImpl _value,
+      $Res Function(_$EmployyeDetailsUpdatedImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? executive = null,
+  }) {
+    return _then(_$EmployyeDetailsUpdatedImpl(
+      null == executive
+          ? _value.executive
+          : executive // ignore: cast_nullable_to_non_nullable
+              as Executive,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$EmployyeDetailsUpdatedImpl implements EmployyeDetailsUpdated {
+  const _$EmployyeDetailsUpdatedImpl(this.executive);
+
+  @override
+  final Executive executive;
+
+  @override
+  String toString() {
+    return 'AuthEvent.employyeDetailsUpdated(executive: $executive)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$EmployyeDetailsUpdatedImpl &&
+            (identical(other.executive, executive) ||
+                other.executive == executive));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, executive);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$EmployyeDetailsUpdatedImplCopyWith<_$EmployyeDetailsUpdatedImpl>
+      get copyWith => __$$EmployyeDetailsUpdatedImplCopyWithImpl<
+          _$EmployyeDetailsUpdatedImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String value) userNameChanged,
+    required TResult Function(String value) passwordChanged,
+    required TResult Function() loginClicked,
+    required TResult Function() checkloginStatus,
+    required TResult Function(AppUser appUser) validateEmployee,
+    required TResult Function() clearFailure,
+    required TResult Function(Executive executive) employyeDetailsUpdated,
+    required TResult Function() logOut,
+    required TResult Function() clearAuth,
+  }) {
+    return employyeDetailsUpdated(executive);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String value)? userNameChanged,
+    TResult? Function(String value)? passwordChanged,
+    TResult? Function()? loginClicked,
+    TResult? Function()? checkloginStatus,
+    TResult? Function(AppUser appUser)? validateEmployee,
+    TResult? Function()? clearFailure,
+    TResult? Function(Executive executive)? employyeDetailsUpdated,
+    TResult? Function()? logOut,
+    TResult? Function()? clearAuth,
+  }) {
+    return employyeDetailsUpdated?.call(executive);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String value)? userNameChanged,
+    TResult Function(String value)? passwordChanged,
+    TResult Function()? loginClicked,
+    TResult Function()? checkloginStatus,
+    TResult Function(AppUser appUser)? validateEmployee,
+    TResult Function()? clearFailure,
+    TResult Function(Executive executive)? employyeDetailsUpdated,
+    TResult Function()? logOut,
+    TResult Function()? clearAuth,
+    required TResult orElse(),
+  }) {
+    if (employyeDetailsUpdated != null) {
+      return employyeDetailsUpdated(executive);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(UserNameChanged value) userNameChanged,
+    required TResult Function(PasswordChanged value) passwordChanged,
+    required TResult Function(LoginClicked value) loginClicked,
+    required TResult Function(checkLoginStatus value) checkloginStatus,
+    required TResult Function(_ValidateEmployee value) validateEmployee,
+    required TResult Function(ClearFailure value) clearFailure,
+    required TResult Function(EmployyeDetailsUpdated value)
+        employyeDetailsUpdated,
+    required TResult Function(Logout value) logOut,
+    required TResult Function(ClearAuth value) clearAuth,
+  }) {
+    return employyeDetailsUpdated(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(UserNameChanged value)? userNameChanged,
+    TResult? Function(PasswordChanged value)? passwordChanged,
+    TResult? Function(LoginClicked value)? loginClicked,
+    TResult? Function(checkLoginStatus value)? checkloginStatus,
+    TResult? Function(_ValidateEmployee value)? validateEmployee,
+    TResult? Function(ClearFailure value)? clearFailure,
+    TResult? Function(EmployyeDetailsUpdated value)? employyeDetailsUpdated,
+    TResult? Function(Logout value)? logOut,
+    TResult? Function(ClearAuth value)? clearAuth,
+  }) {
+    return employyeDetailsUpdated?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(UserNameChanged value)? userNameChanged,
+    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(LoginClicked value)? loginClicked,
+    TResult Function(checkLoginStatus value)? checkloginStatus,
+    TResult Function(_ValidateEmployee value)? validateEmployee,
+    TResult Function(ClearFailure value)? clearFailure,
+    TResult Function(EmployyeDetailsUpdated value)? employyeDetailsUpdated,
+    TResult Function(Logout value)? logOut,
+    TResult Function(ClearAuth value)? clearAuth,
+    required TResult orElse(),
+  }) {
+    if (employyeDetailsUpdated != null) {
+      return employyeDetailsUpdated(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class EmployyeDetailsUpdated implements AuthEvent {
+  const factory EmployyeDetailsUpdated(final Executive executive) =
+      _$EmployyeDetailsUpdatedImpl;
+
+  Executive get executive;
+  @JsonKey(ignore: true)
+  _$$EmployyeDetailsUpdatedImplCopyWith<_$EmployyeDetailsUpdatedImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$LogoutImplCopyWith<$Res> {
+  factory _$$LogoutImplCopyWith(
+          _$LogoutImpl value, $Res Function(_$LogoutImpl) then) =
+      __$$LogoutImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$LogoutImplCopyWithImpl<$Res>
+    extends _$AuthEventCopyWithImpl<$Res, _$LogoutImpl>
+    implements _$$LogoutImplCopyWith<$Res> {
+  __$$LogoutImplCopyWithImpl(
+      _$LogoutImpl _value, $Res Function(_$LogoutImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$LogoutImpl implements Logout {
+  const _$LogoutImpl();
+
+  @override
+  String toString() {
+    return 'AuthEvent.logOut()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$LogoutImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String value) userNameChanged,
+    required TResult Function(String value) passwordChanged,
+    required TResult Function() loginClicked,
+    required TResult Function() checkloginStatus,
+    required TResult Function(AppUser appUser) validateEmployee,
+    required TResult Function() clearFailure,
+    required TResult Function(Executive executive) employyeDetailsUpdated,
+    required TResult Function() logOut,
+    required TResult Function() clearAuth,
+  }) {
+    return logOut();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String value)? userNameChanged,
+    TResult? Function(String value)? passwordChanged,
+    TResult? Function()? loginClicked,
+    TResult? Function()? checkloginStatus,
+    TResult? Function(AppUser appUser)? validateEmployee,
+    TResult? Function()? clearFailure,
+    TResult? Function(Executive executive)? employyeDetailsUpdated,
+    TResult? Function()? logOut,
+    TResult? Function()? clearAuth,
+  }) {
+    return logOut?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String value)? userNameChanged,
+    TResult Function(String value)? passwordChanged,
+    TResult Function()? loginClicked,
+    TResult Function()? checkloginStatus,
+    TResult Function(AppUser appUser)? validateEmployee,
+    TResult Function()? clearFailure,
+    TResult Function(Executive executive)? employyeDetailsUpdated,
+    TResult Function()? logOut,
+    TResult Function()? clearAuth,
+    required TResult orElse(),
+  }) {
+    if (logOut != null) {
+      return logOut();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(UserNameChanged value) userNameChanged,
+    required TResult Function(PasswordChanged value) passwordChanged,
+    required TResult Function(LoginClicked value) loginClicked,
+    required TResult Function(checkLoginStatus value) checkloginStatus,
+    required TResult Function(_ValidateEmployee value) validateEmployee,
+    required TResult Function(ClearFailure value) clearFailure,
+    required TResult Function(EmployyeDetailsUpdated value)
+        employyeDetailsUpdated,
+    required TResult Function(Logout value) logOut,
+    required TResult Function(ClearAuth value) clearAuth,
+  }) {
+    return logOut(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(UserNameChanged value)? userNameChanged,
+    TResult? Function(PasswordChanged value)? passwordChanged,
+    TResult? Function(LoginClicked value)? loginClicked,
+    TResult? Function(checkLoginStatus value)? checkloginStatus,
+    TResult? Function(_ValidateEmployee value)? validateEmployee,
+    TResult? Function(ClearFailure value)? clearFailure,
+    TResult? Function(EmployyeDetailsUpdated value)? employyeDetailsUpdated,
+    TResult? Function(Logout value)? logOut,
+    TResult? Function(ClearAuth value)? clearAuth,
+  }) {
+    return logOut?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(UserNameChanged value)? userNameChanged,
+    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(LoginClicked value)? loginClicked,
+    TResult Function(checkLoginStatus value)? checkloginStatus,
+    TResult Function(_ValidateEmployee value)? validateEmployee,
+    TResult Function(ClearFailure value)? clearFailure,
+    TResult Function(EmployyeDetailsUpdated value)? employyeDetailsUpdated,
+    TResult Function(Logout value)? logOut,
+    TResult Function(ClearAuth value)? clearAuth,
+    required TResult orElse(),
+  }) {
+    if (logOut != null) {
+      return logOut(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class Logout implements AuthEvent {
+  const factory Logout() = _$LogoutImpl;
+}
+
+/// @nodoc
+abstract class _$$ClearAuthImplCopyWith<$Res> {
+  factory _$$ClearAuthImplCopyWith(
+          _$ClearAuthImpl value, $Res Function(_$ClearAuthImpl) then) =
+      __$$ClearAuthImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$ClearAuthImplCopyWithImpl<$Res>
+    extends _$AuthEventCopyWithImpl<$Res, _$ClearAuthImpl>
+    implements _$$ClearAuthImplCopyWith<$Res> {
+  __$$ClearAuthImplCopyWithImpl(
+      _$ClearAuthImpl _value, $Res Function(_$ClearAuthImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$ClearAuthImpl implements ClearAuth {
+  const _$ClearAuthImpl();
+
+  @override
+  String toString() {
+    return 'AuthEvent.clearAuth()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$ClearAuthImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String value) userNameChanged,
+    required TResult Function(String value) passwordChanged,
+    required TResult Function() loginClicked,
+    required TResult Function() checkloginStatus,
+    required TResult Function(AppUser appUser) validateEmployee,
+    required TResult Function() clearFailure,
+    required TResult Function(Executive executive) employyeDetailsUpdated,
+    required TResult Function() logOut,
+    required TResult Function() clearAuth,
+  }) {
+    return clearAuth();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String value)? userNameChanged,
+    TResult? Function(String value)? passwordChanged,
+    TResult? Function()? loginClicked,
+    TResult? Function()? checkloginStatus,
+    TResult? Function(AppUser appUser)? validateEmployee,
+    TResult? Function()? clearFailure,
+    TResult? Function(Executive executive)? employyeDetailsUpdated,
+    TResult? Function()? logOut,
+    TResult? Function()? clearAuth,
+  }) {
+    return clearAuth?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String value)? userNameChanged,
+    TResult Function(String value)? passwordChanged,
+    TResult Function()? loginClicked,
+    TResult Function()? checkloginStatus,
+    TResult Function(AppUser appUser)? validateEmployee,
+    TResult Function()? clearFailure,
+    TResult Function(Executive executive)? employyeDetailsUpdated,
+    TResult Function()? logOut,
+    TResult Function()? clearAuth,
+    required TResult orElse(),
+  }) {
+    if (clearAuth != null) {
+      return clearAuth();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(UserNameChanged value) userNameChanged,
+    required TResult Function(PasswordChanged value) passwordChanged,
+    required TResult Function(LoginClicked value) loginClicked,
+    required TResult Function(checkLoginStatus value) checkloginStatus,
+    required TResult Function(_ValidateEmployee value) validateEmployee,
+    required TResult Function(ClearFailure value) clearFailure,
+    required TResult Function(EmployyeDetailsUpdated value)
+        employyeDetailsUpdated,
+    required TResult Function(Logout value) logOut,
+    required TResult Function(ClearAuth value) clearAuth,
+  }) {
+    return clearAuth(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(UserNameChanged value)? userNameChanged,
+    TResult? Function(PasswordChanged value)? passwordChanged,
+    TResult? Function(LoginClicked value)? loginClicked,
+    TResult? Function(checkLoginStatus value)? checkloginStatus,
+    TResult? Function(_ValidateEmployee value)? validateEmployee,
+    TResult? Function(ClearFailure value)? clearFailure,
+    TResult? Function(EmployyeDetailsUpdated value)? employyeDetailsUpdated,
+    TResult? Function(Logout value)? logOut,
+    TResult? Function(ClearAuth value)? clearAuth,
+  }) {
+    return clearAuth?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(UserNameChanged value)? userNameChanged,
+    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(LoginClicked value)? loginClicked,
+    TResult Function(checkLoginStatus value)? checkloginStatus,
+    TResult Function(_ValidateEmployee value)? validateEmployee,
+    TResult Function(ClearFailure value)? clearFailure,
+    TResult Function(EmployyeDetailsUpdated value)? employyeDetailsUpdated,
+    TResult Function(Logout value)? logOut,
+    TResult Function(ClearAuth value)? clearAuth,
+    required TResult orElse(),
+  }) {
+    if (clearAuth != null) {
+      return clearAuth(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ClearAuth implements AuthEvent {
+  const factory ClearAuth() = _$ClearAuthImpl;
+}
+
+/// @nodoc
 mixin _$AuthState {
   Username get username => throw _privateConstructorUsedError;
   bool get isLoading => throw _privateConstructorUsedError;
   Password get password => throw _privateConstructorUsedError;
   Option<Executive> get succssOption => throw _privateConstructorUsedError;
+  Option<Unit> get logoutSuccessOption => throw _privateConstructorUsedError;
   Executive? get executive => throw _privateConstructorUsedError;
   Option<AuthFailure> get failureOption => throw _privateConstructorUsedError;
   AutovalidateMode get showError => throw _privateConstructorUsedError;
@@ -976,6 +1581,7 @@ abstract class $AuthStateCopyWith<$Res> {
       bool isLoading,
       Password password,
       Option<Executive> succssOption,
+      Option<Unit> logoutSuccessOption,
       Executive? executive,
       Option<AuthFailure> failureOption,
       AutovalidateMode showError,
@@ -999,6 +1605,7 @@ class _$AuthStateCopyWithImpl<$Res, $Val extends AuthState>
     Object? isLoading = null,
     Object? password = null,
     Object? succssOption = null,
+    Object? logoutSuccessOption = null,
     Object? executive = freezed,
     Object? failureOption = null,
     Object? showError = null,
@@ -1021,6 +1628,10 @@ class _$AuthStateCopyWithImpl<$Res, $Val extends AuthState>
           ? _value.succssOption
           : succssOption // ignore: cast_nullable_to_non_nullable
               as Option<Executive>,
+      logoutSuccessOption: null == logoutSuccessOption
+          ? _value.logoutSuccessOption
+          : logoutSuccessOption // ignore: cast_nullable_to_non_nullable
+              as Option<Unit>,
       executive: freezed == executive
           ? _value.executive
           : executive // ignore: cast_nullable_to_non_nullable
@@ -1054,6 +1665,7 @@ abstract class _$$AuthStateImplCopyWith<$Res>
       bool isLoading,
       Password password,
       Option<Executive> succssOption,
+      Option<Unit> logoutSuccessOption,
       Executive? executive,
       Option<AuthFailure> failureOption,
       AutovalidateMode showError,
@@ -1075,6 +1687,7 @@ class __$$AuthStateImplCopyWithImpl<$Res>
     Object? isLoading = null,
     Object? password = null,
     Object? succssOption = null,
+    Object? logoutSuccessOption = null,
     Object? executive = freezed,
     Object? failureOption = null,
     Object? showError = null,
@@ -1097,6 +1710,10 @@ class __$$AuthStateImplCopyWithImpl<$Res>
           ? _value.succssOption
           : succssOption // ignore: cast_nullable_to_non_nullable
               as Option<Executive>,
+      logoutSuccessOption: null == logoutSuccessOption
+          ? _value.logoutSuccessOption
+          : logoutSuccessOption // ignore: cast_nullable_to_non_nullable
+              as Option<Unit>,
       executive: freezed == executive
           ? _value.executive
           : executive // ignore: cast_nullable_to_non_nullable
@@ -1125,6 +1742,7 @@ class _$AuthStateImpl implements _AuthState {
       required this.isLoading,
       required this.password,
       required this.succssOption,
+      required this.logoutSuccessOption,
       required this.executive,
       required this.failureOption,
       required this.showError,
@@ -1139,6 +1757,8 @@ class _$AuthStateImpl implements _AuthState {
   @override
   final Option<Executive> succssOption;
   @override
+  final Option<Unit> logoutSuccessOption;
+  @override
   final Executive? executive;
   @override
   final Option<AuthFailure> failureOption;
@@ -1149,7 +1769,7 @@ class _$AuthStateImpl implements _AuthState {
 
   @override
   String toString() {
-    return 'AuthState(username: $username, isLoading: $isLoading, password: $password, succssOption: $succssOption, executive: $executive, failureOption: $failureOption, showError: $showError, authStatusOption: $authStatusOption)';
+    return 'AuthState(username: $username, isLoading: $isLoading, password: $password, succssOption: $succssOption, logoutSuccessOption: $logoutSuccessOption, executive: $executive, failureOption: $failureOption, showError: $showError, authStatusOption: $authStatusOption)';
   }
 
   @override
@@ -1165,6 +1785,8 @@ class _$AuthStateImpl implements _AuthState {
                 other.password == password) &&
             (identical(other.succssOption, succssOption) ||
                 other.succssOption == succssOption) &&
+            (identical(other.logoutSuccessOption, logoutSuccessOption) ||
+                other.logoutSuccessOption == logoutSuccessOption) &&
             (identical(other.executive, executive) ||
                 other.executive == executive) &&
             (identical(other.failureOption, failureOption) ||
@@ -1176,8 +1798,17 @@ class _$AuthStateImpl implements _AuthState {
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, username, isLoading, password,
-      succssOption, executive, failureOption, showError, authStatusOption);
+  int get hashCode => Object.hash(
+      runtimeType,
+      username,
+      isLoading,
+      password,
+      succssOption,
+      logoutSuccessOption,
+      executive,
+      failureOption,
+      showError,
+      authStatusOption);
 
   @JsonKey(ignore: true)
   @override
@@ -1192,6 +1823,7 @@ abstract class _AuthState implements AuthState {
       required final bool isLoading,
       required final Password password,
       required final Option<Executive> succssOption,
+      required final Option<Unit> logoutSuccessOption,
       required final Executive? executive,
       required final Option<AuthFailure> failureOption,
       required final AutovalidateMode showError,
@@ -1205,6 +1837,8 @@ abstract class _AuthState implements AuthState {
   Password get password;
   @override
   Option<Executive> get succssOption;
+  @override
+  Option<Unit> get logoutSuccessOption;
   @override
   Executive? get executive;
   @override

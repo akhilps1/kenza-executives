@@ -8,4 +8,8 @@ class AuthEvent with _$AuthEvent {
   const factory AuthEvent.checkloginStatus() = checkLoginStatus;
   const factory AuthEvent.validateEmployee(AppUser appUser) = _ValidateEmployee;
   const factory AuthEvent.clearFailure() = ClearFailure;
+  const factory AuthEvent.employyeDetailsUpdated(Executive executive) =
+      EmployyeDetailsUpdated;
+  const factory AuthEvent.logOut() = Logout;
+  const factory AuthEvent.clearAuth() = ClearAuth;
 }

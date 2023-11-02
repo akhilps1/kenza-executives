@@ -1,10 +1,15 @@
-import 'package:executives/application/core/constants.dart';
+import 'package:executives/application/transactions/transactions_bloc.dart';
 import 'package:executives/domain/core/utils/extentions/extentions.dart';
-import 'package:executives/domain/core/utils/media_res/media_res.dart';
 import 'package:executives/domain/core/utils/theme/app_colors.dart';
-import 'package:executives/presentation/core/widgets/custom_catched_network_image.dart';
+import 'package:executives/presentation/core/widgets/custom_circular_progress.dart';
 import 'package:executives/presentation/transactions/widgets/app_bar_widget.dart';
+import 'package:executives/presentation/transactions/widgets/transaction_details_card.dart';
+import 'package:executives/presentation/transactions/widgets/transaction_shimmer.dart';
+import 'package:executives/presentation/user_details/user_details.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:intl/intl.dart';
+import 'package:page_transition/page_transition.dart';
 
 class TransactionScreen extends StatefulWidget {
   const TransactionScreen({super.key});
@@ -14,163 +19,142 @@ class TransactionScreen extends StatefulWidget {
 }
 
 class _TransactionScreenState extends State<TransactionScreen> {
+  final ScrollController scrollController = ScrollController();
+
+  @override
+  void initState() {
+    if (context.read<TransactionsBloc>().state.transactions.isEmpty) {
+      context.read<TransactionsBloc>().add(
+            GetAllTransactions(
+              employeeId: context.employeeId,
+              branchId: context.branchId,
+            ),
+          );
+    }
+    scrollController.addListener(
+      () {
+        double delta = MediaQuery.of(context).size.height * 0.16;
+        if (scrollController.position.atEdge) {
+          if (scrollController.position.pixels != 0 &&
+              scrollController.position.pixels >= delta) {
+            if (context.read<TransactionsBloc>().state.noMoredata == false) {
+              context.read<TransactionsBloc>().add(
+                    GetAllTransactions(
+                      employeeId: context.employeeId,
+                      branchId: context.branchId,
+                    ),
+                  );
+            }
+          }
+        }
+      },
+    );
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return ColoredBox(
       color: AppColor.scaffoldColor,
-      child: CustomScrollView(
-        slivers: [
-          const SliverAppBar(
-            expandedHeight: 231,
-            toolbarHeight: 10,
-            floating: true,
-            pinned: true,
-            backgroundColor: AppColor.scaffoldColor,
-            surfaceTintColor: AppColor.scaffoldColor,
-            flexibleSpace: FlexibleSpaceBar(
-              background: AppbarWidgets(),
-            ),
-          ),
-          const SliverToBoxAdapter(
-            child: Padding(
-              padding: EdgeInsets.only(left: 10, top: 5, bottom: 5),
-              child: Opacity(
-                opacity: 0.70,
-                child: Text(
-                  'All',
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 14,
-                    fontFamily: 'Montserrat',
-                    fontWeight: FontWeight.w600,
-                    height: 0,
+      child: RefreshIndicator(
+        onRefresh: () async {
+          context.read<TransactionsBloc>().add(
+                RefreshTransaction(
+                  employeeId: context.employeeId,
+                  branchId: context.branchId,
+                ),
+              );
+        },
+        child: BlocBuilder<TransactionsBloc, TransactionsState>(
+          builder: (context, state) {
+            return CustomScrollView(
+              controller: scrollController,
+              slivers: [
+                const SliverAppBar(
+                  expandedHeight: 202,
+                  toolbarHeight: 10,
+                  floating: true,
+                  pinned: true,
+                  backgroundColor: AppColor.scaffoldColor,
+                  surfaceTintColor: AppColor.scaffoldColor,
+                  flexibleSpace: FlexibleSpaceBar(
+                    background: AppbarWidgets(),
                   ),
                 ),
-              ),
-            ),
-          ),
-          SliverList.builder(
-            itemCount: 10,
-            itemBuilder: (context, index) {
-              return Stack(
-                children: [
-                  Container(
-                    margin:
-                        const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-                    padding: const EdgeInsets.all(10),
-                    width: context.getsize.width - 20,
-                    height: 86,
-                    decoration: ShapeDecoration(
-                      color: Colors.white,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(12),
+                SliverToBoxAdapter(
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 10, top: 5, bottom: 8),
+                    child: Opacity(
+                      opacity: 0.70,
+                      child: Text(
+                        state.dailyCollection == null
+                            ? 'All'
+                            : '${DateFormat.yMMMd().format(state.dateRange!.startDate!)} to ${DateFormat.yMMMd().format(state.dateRange!.endDate!)}',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: state.dailyCollection == null ? 14 : 12,
+                          fontFamily: 'Montserrat',
+                          fontWeight: FontWeight.w600,
+                        ),
                       ),
-                      shadows: const [
-                        BoxShadow(
-                          color: Color(0x3F000000),
-                          blurRadius: 1,
-                        )
-                      ],
                     ),
-                    child: Row(
-                      children: [
-                        Container(
-                          width: 70,
-                          height: 66,
-                          decoration: ShapeDecoration(
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(6),
-                            ),
-                          ),
-                          child: Hero(
-                            tag: 'profile${index}',
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(6),
-                              child: true == false
-                                  ? CustomCachedNetworkImage(url: '')
-                                  : ColoredBox(
-                                      color: AppColor.primaryColor,
-                                      child: Image.asset(
-                                        MediaRes.logo,
-                                      ),
-                                    ),
-                            ),
-                          ),
-                        ),
-                        const SizedBox(
-                          width: 5,
-                        ),
-                        const Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            SizedBox(
-                              height: 2,
-                            ),
-                            Text(
-                              'Jaydon Vetrovs',
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 13,
-                                fontFamily: 'Montserrat',
-                                fontWeight: FontWeight.w600,
+                  ),
+                ),
+                if (state.transactions.isNotEmpty)
+                  SliverList.builder(
+                    itemCount: state.transactions.length,
+                    itemBuilder: (context, index) {
+                      final transaction = state.transactions[index];
+                      return InkWell(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            PageTransition(
+                              child: UserDetailsScreen(
+                                userDetails: transaction.userDetails,
                               ),
+                              type: PageTransitionType.rightToLeft,
                             ),
-                            SizedBox(
-                              height: 3,
-                            ),
-                            Opacity(
-                              opacity: 0.70,
+                          );
+                        },
+                        child: TransactionDetailsCard(transaction: transaction),
+                      );
+                    },
+                  )
+                else
+                  SliverFillRemaining(
+                    child: state.isLoading == true
+                        ? const TranscatinShimmer()
+                        : const Center(
+                            child: Opacity(
+                              opacity: 0.50,
                               child: Text(
-                                'Note: first payment',
+                                'Nothing to show',
                                 style: TextStyle(
                                   color: Colors.black,
                                   fontSize: 12,
                                   fontFamily: 'Montserrat',
                                   fontWeight: FontWeight.w500,
+                                  height: 0,
                                 ),
                               ),
                             ),
-                            SizedBox(
-                              height: 3,
-                            ),
-                            Opacity(
-                              opacity: 0.70,
-                              child: Text(
-                                'July 28, 2023',
-                                style: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 10,
-                                  fontFamily: 'Montserrat',
-                                  fontWeight: FontWeight.w500,
-                                ),
-                              ),
-                            )
-                          ],
-                        ),
-                      ],
-                    ),
+                          ),
                   ),
-                  const Positioned(
-                    top: 15,
-                    right: 20,
-                    child: Opacity(
-                      opacity: 0.90,
-                      child: Text(
-                        '\u{20B9}5000.00',
-                        style: TextStyle(
-                          color: Color(0xFF289C00),
-                          fontSize: 17,
-                          fontFamily: 'Montserrat',
-                          fontWeight: FontWeight.w500,
-                        ),
+                if (state.isLoading && state.transactions.length >= 15)
+                  const SliverToBoxAdapter(
+                    child: Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: Center(
+                        child: CustomCircularProgress(
+                            color: AppColor.primaryColor),
                       ),
                     ),
-                  )
-                ],
-              );
-            },
-          )
-        ],
+                  ),
+              ],
+            );
+          },
+        ),
       ),
     );
   }

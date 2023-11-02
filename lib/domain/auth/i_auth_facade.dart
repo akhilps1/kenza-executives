@@ -19,4 +19,10 @@ abstract class IAuthFacde {
       'checkAuthStatus() not implemented, implement this function before you calling it.',
     );
   }
+
+  Future<Either<AuthFailure, Unit>> logOut() {
+    throw UnimplementedError(
+      'logOut() not implemented, implement this function before you calling it.',
+    );
+  }
 }
