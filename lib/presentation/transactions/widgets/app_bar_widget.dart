@@ -22,10 +22,28 @@ class _AppbarWidgetsState extends State<AppbarWidgets> {
   void _onSelectionChanged(DateRangePickerSelectionChangedArgs args) {
     if (args.value is PickerDateRange) {
       final PickerDateRange selectedRanges = args.value;
+      if (selectedRanges.startDate == null || selectedRanges.endDate == null) {
+        return;
+      }
+
+      final start = DateTime(selectedRanges.startDate!.year,
+              selectedRanges.startDate!.month, selectedRanges.startDate!.day)
+          .add(const Duration(hours: 5, minutes: 30));
+
+      final end = DateTime(
+              selectedRanges.endDate!.year,
+              selectedRanges.endDate!.month,
+              selectedRanges.endDate!.day,
+              11,
+              59,
+              59,
+              999,
+              999999)
+          .add(const Duration(hours: 5, minutes: 30));
 
       context.read<TransactionsBloc>().add(
             DateRangeChanged(
-              range: selectedRanges,
+              range: PickerDateRange(start, end),
             ),
           );
     }
@@ -33,6 +51,8 @@ class _AppbarWidgetsState extends State<AppbarWidgets> {
 
   @override
   Widget build(BuildContext context) {
+    DateTime now = DateTime.now();
+    DateTime todayStart = DateTime(now.year, now.month, now.day);
     return BlocBuilder<TransactionsBloc, TransactionsState>(
       builder: (context, state) {
         return Container(
@@ -133,18 +153,14 @@ class _AppbarWidgetsState extends State<AppbarWidgets> {
                                                   DateRangePickerSelectionMode
                                                       .range,
                                               allowViewNavigation: true,
-                                              initialSelectedRange:
-                                                  state.dateRange,
-                                              initialDisplayDate:
-                                                  DateTime.now(),
+                                              initialDisplayDate: todayStart,
                                               extendableRangeSelectionDirection:
                                                   ExtendableRangeSelectionDirection
                                                       .backward,
                                               selectionShape:
                                                   DateRangePickerSelectionShape
                                                       .rectangle,
-                                              initialSelectedDate:
-                                                  DateTime.now(),
+                                              initialSelectedDate: todayStart,
                                               maxDate: DateTime.now(),
                                               showNavigationArrow: true,
                                               showActionButtons: true,

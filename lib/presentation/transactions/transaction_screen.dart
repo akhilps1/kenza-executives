@@ -23,14 +23,16 @@ class _TransactionScreenState extends State<TransactionScreen> {
 
   @override
   void initState() {
-    if (context.read<TransactionsBloc>().state.transactions.isEmpty) {
-      context.read<TransactionsBloc>().add(
-            GetAllTransactions(
-              employeeId: context.employeeId,
-              branchId: context.branchId,
-            ),
-          );
-    }
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+      if (context.read<TransactionsBloc>().state.transactions.isEmpty) {
+        context.read<TransactionsBloc>().add(
+              GetAllTransactions(
+                employeeId: context.employeeId,
+                branchId: context.branchId,
+              ),
+            );
+      }
+    });
     scrollController.addListener(
       () {
         double delta = MediaQuery.of(context).size.height * 0.16;
@@ -87,9 +89,11 @@ class _TransactionScreenState extends State<TransactionScreen> {
                     child: Opacity(
                       opacity: 0.70,
                       child: Text(
-                        state.dailyCollection == null
-                            ? 'All'
-                            : '${DateFormat.yMMMd().format(state.dateRange!.startDate!)} to ${DateFormat.yMMMd().format(state.dateRange!.endDate!)}',
+                        state.dateRange != null &&
+                                state.dateRange!.startDate != null &&
+                                state.dateRange!.endDate != null
+                            ? '${DateFormat.yMMMd().format(state.dateRange!.startDate!)} to ${DateFormat.yMMMd().format(state.dateRange!.endDate!)}'
+                            : 'All',
                         style: TextStyle(
                           color: Colors.black,
                           fontSize: state.dailyCollection == null ? 14 : 12,
@@ -122,7 +126,7 @@ class _TransactionScreenState extends State<TransactionScreen> {
                     },
                   )
                 else
-                  SliverFillRemaining(
+                  SliverToBoxAdapter(
                     child: state.isLoading == true
                         ? const TranscatinShimmer()
                         : const Center(

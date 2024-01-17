@@ -33,6 +33,10 @@ mixin _$UserDetailsEvent {
     required TResult Function(UserDetails userDetails, String employeeId)
         createNewAccount,
     required TResult Function(bool firstTime) firstTimePayment,
+    required TResult Function(String branchId) getCashAndBankDetails,
+    required TResult Function(bool isOffline) setTransactionType,
+    required TResult Function() validateAmount,
+    required TResult Function() clearSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -50,6 +54,10 @@ mixin _$UserDetailsEvent {
     TResult? Function(UserDetails userDetails, String employeeId)?
         createNewAccount,
     TResult? Function(bool firstTime)? firstTimePayment,
+    TResult? Function(String branchId)? getCashAndBankDetails,
+    TResult? Function(bool isOffline)? setTransactionType,
+    TResult? Function()? validateAmount,
+    TResult? Function()? clearSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -67,6 +75,10 @@ mixin _$UserDetailsEvent {
     TResult Function(UserDetails userDetails, String employeeId)?
         createNewAccount,
     TResult Function(bool firstTime)? firstTimePayment,
+    TResult Function(String branchId)? getCashAndBankDetails,
+    TResult Function(bool isOffline)? setTransactionType,
+    TResult Function()? validateAmount,
+    TResult Function()? clearSuccess,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -82,6 +94,11 @@ mixin _$UserDetailsEvent {
     required TResult Function(_AddTransaction value) addTransaction,
     required TResult Function(CreateNewAccount value) createNewAccount,
     required TResult Function(FirstTimePayment value) firstTimePayment,
+    required TResult Function(GetCashAndBankDetails value)
+        getCashAndBankDetails,
+    required TResult Function(SetTransactionType value) setTransactionType,
+    required TResult Function(ValidateAmount value) validateAmount,
+    required TResult Function(ClearSuccess value) clearSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -96,6 +113,10 @@ mixin _$UserDetailsEvent {
     TResult? Function(_AddTransaction value)? addTransaction,
     TResult? Function(CreateNewAccount value)? createNewAccount,
     TResult? Function(FirstTimePayment value)? firstTimePayment,
+    TResult? Function(GetCashAndBankDetails value)? getCashAndBankDetails,
+    TResult? Function(SetTransactionType value)? setTransactionType,
+    TResult? Function(ValidateAmount value)? validateAmount,
+    TResult? Function(ClearSuccess value)? clearSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -110,6 +131,10 @@ mixin _$UserDetailsEvent {
     TResult Function(_AddTransaction value)? addTransaction,
     TResult Function(CreateNewAccount value)? createNewAccount,
     TResult Function(FirstTimePayment value)? firstTimePayment,
+    TResult Function(GetCashAndBankDetails value)? getCashAndBankDetails,
+    TResult Function(SetTransactionType value)? setTransactionType,
+    TResult Function(ValidateAmount value)? validateAmount,
+    TResult Function(ClearSuccess value)? clearSuccess,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -185,7 +210,7 @@ class _$GetAllAccountsImpl implements GetAllAccounts {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$GetAllAccountsImpl &&
@@ -222,6 +247,10 @@ class _$GetAllAccountsImpl implements GetAllAccounts {
     required TResult Function(UserDetails userDetails, String employeeId)
         createNewAccount,
     required TResult Function(bool firstTime) firstTimePayment,
+    required TResult Function(String branchId) getCashAndBankDetails,
+    required TResult Function(bool isOffline) setTransactionType,
+    required TResult Function() validateAmount,
+    required TResult Function() clearSuccess,
   }) {
     return getAllAccounts(userId, branchId);
   }
@@ -242,6 +271,10 @@ class _$GetAllAccountsImpl implements GetAllAccounts {
     TResult? Function(UserDetails userDetails, String employeeId)?
         createNewAccount,
     TResult? Function(bool firstTime)? firstTimePayment,
+    TResult? Function(String branchId)? getCashAndBankDetails,
+    TResult? Function(bool isOffline)? setTransactionType,
+    TResult? Function()? validateAmount,
+    TResult? Function()? clearSuccess,
   }) {
     return getAllAccounts?.call(userId, branchId);
   }
@@ -262,6 +295,10 @@ class _$GetAllAccountsImpl implements GetAllAccounts {
     TResult Function(UserDetails userDetails, String employeeId)?
         createNewAccount,
     TResult Function(bool firstTime)? firstTimePayment,
+    TResult Function(String branchId)? getCashAndBankDetails,
+    TResult Function(bool isOffline)? setTransactionType,
+    TResult Function()? validateAmount,
+    TResult Function()? clearSuccess,
     required TResult orElse(),
   }) {
     if (getAllAccounts != null) {
@@ -283,6 +320,11 @@ class _$GetAllAccountsImpl implements GetAllAccounts {
     required TResult Function(_AddTransaction value) addTransaction,
     required TResult Function(CreateNewAccount value) createNewAccount,
     required TResult Function(FirstTimePayment value) firstTimePayment,
+    required TResult Function(GetCashAndBankDetails value)
+        getCashAndBankDetails,
+    required TResult Function(SetTransactionType value) setTransactionType,
+    required TResult Function(ValidateAmount value) validateAmount,
+    required TResult Function(ClearSuccess value) clearSuccess,
   }) {
     return getAllAccounts(this);
   }
@@ -300,6 +342,10 @@ class _$GetAllAccountsImpl implements GetAllAccounts {
     TResult? Function(_AddTransaction value)? addTransaction,
     TResult? Function(CreateNewAccount value)? createNewAccount,
     TResult? Function(FirstTimePayment value)? firstTimePayment,
+    TResult? Function(GetCashAndBankDetails value)? getCashAndBankDetails,
+    TResult? Function(SetTransactionType value)? setTransactionType,
+    TResult? Function(ValidateAmount value)? validateAmount,
+    TResult? Function(ClearSuccess value)? clearSuccess,
   }) {
     return getAllAccounts?.call(this);
   }
@@ -317,6 +363,10 @@ class _$GetAllAccountsImpl implements GetAllAccounts {
     TResult Function(_AddTransaction value)? addTransaction,
     TResult Function(CreateNewAccount value)? createNewAccount,
     TResult Function(FirstTimePayment value)? firstTimePayment,
+    TResult Function(GetCashAndBankDetails value)? getCashAndBankDetails,
+    TResult Function(SetTransactionType value)? setTransactionType,
+    TResult Function(ValidateAmount value)? validateAmount,
+    TResult Function(ClearSuccess value)? clearSuccess,
     required TResult orElse(),
   }) {
     if (getAllAccounts != null) {
@@ -391,7 +441,7 @@ class _$GetAllTransactionsImpl implements GetAllTransactions {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$GetAllTransactionsImpl &&
@@ -428,6 +478,10 @@ class _$GetAllTransactionsImpl implements GetAllTransactions {
     required TResult Function(UserDetails userDetails, String employeeId)
         createNewAccount,
     required TResult Function(bool firstTime) firstTimePayment,
+    required TResult Function(String branchId) getCashAndBankDetails,
+    required TResult Function(bool isOffline) setTransactionType,
+    required TResult Function() validateAmount,
+    required TResult Function() clearSuccess,
   }) {
     return getAllTransactions(userId, branchId);
   }
@@ -448,6 +502,10 @@ class _$GetAllTransactionsImpl implements GetAllTransactions {
     TResult? Function(UserDetails userDetails, String employeeId)?
         createNewAccount,
     TResult? Function(bool firstTime)? firstTimePayment,
+    TResult? Function(String branchId)? getCashAndBankDetails,
+    TResult? Function(bool isOffline)? setTransactionType,
+    TResult? Function()? validateAmount,
+    TResult? Function()? clearSuccess,
   }) {
     return getAllTransactions?.call(userId, branchId);
   }
@@ -468,6 +526,10 @@ class _$GetAllTransactionsImpl implements GetAllTransactions {
     TResult Function(UserDetails userDetails, String employeeId)?
         createNewAccount,
     TResult Function(bool firstTime)? firstTimePayment,
+    TResult Function(String branchId)? getCashAndBankDetails,
+    TResult Function(bool isOffline)? setTransactionType,
+    TResult Function()? validateAmount,
+    TResult Function()? clearSuccess,
     required TResult orElse(),
   }) {
     if (getAllTransactions != null) {
@@ -489,6 +551,11 @@ class _$GetAllTransactionsImpl implements GetAllTransactions {
     required TResult Function(_AddTransaction value) addTransaction,
     required TResult Function(CreateNewAccount value) createNewAccount,
     required TResult Function(FirstTimePayment value) firstTimePayment,
+    required TResult Function(GetCashAndBankDetails value)
+        getCashAndBankDetails,
+    required TResult Function(SetTransactionType value) setTransactionType,
+    required TResult Function(ValidateAmount value) validateAmount,
+    required TResult Function(ClearSuccess value) clearSuccess,
   }) {
     return getAllTransactions(this);
   }
@@ -506,6 +573,10 @@ class _$GetAllTransactionsImpl implements GetAllTransactions {
     TResult? Function(_AddTransaction value)? addTransaction,
     TResult? Function(CreateNewAccount value)? createNewAccount,
     TResult? Function(FirstTimePayment value)? firstTimePayment,
+    TResult? Function(GetCashAndBankDetails value)? getCashAndBankDetails,
+    TResult? Function(SetTransactionType value)? setTransactionType,
+    TResult? Function(ValidateAmount value)? validateAmount,
+    TResult? Function(ClearSuccess value)? clearSuccess,
   }) {
     return getAllTransactions?.call(this);
   }
@@ -523,6 +594,10 @@ class _$GetAllTransactionsImpl implements GetAllTransactions {
     TResult Function(_AddTransaction value)? addTransaction,
     TResult Function(CreateNewAccount value)? createNewAccount,
     TResult Function(FirstTimePayment value)? firstTimePayment,
+    TResult Function(GetCashAndBankDetails value)? getCashAndBankDetails,
+    TResult Function(SetTransactionType value)? setTransactionType,
+    TResult Function(ValidateAmount value)? validateAmount,
+    TResult Function(ClearSuccess value)? clearSuccess,
     required TResult orElse(),
   }) {
     if (getAllTransactions != null) {
@@ -571,7 +646,7 @@ class _$ClearUserDetailsDataImpl implements ClearUserDetailsData {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ClearUserDetailsDataImpl);
@@ -598,6 +673,10 @@ class _$ClearUserDetailsDataImpl implements ClearUserDetailsData {
     required TResult Function(UserDetails userDetails, String employeeId)
         createNewAccount,
     required TResult Function(bool firstTime) firstTimePayment,
+    required TResult Function(String branchId) getCashAndBankDetails,
+    required TResult Function(bool isOffline) setTransactionType,
+    required TResult Function() validateAmount,
+    required TResult Function() clearSuccess,
   }) {
     return clearUserDetailsData();
   }
@@ -618,6 +697,10 @@ class _$ClearUserDetailsDataImpl implements ClearUserDetailsData {
     TResult? Function(UserDetails userDetails, String employeeId)?
         createNewAccount,
     TResult? Function(bool firstTime)? firstTimePayment,
+    TResult? Function(String branchId)? getCashAndBankDetails,
+    TResult? Function(bool isOffline)? setTransactionType,
+    TResult? Function()? validateAmount,
+    TResult? Function()? clearSuccess,
   }) {
     return clearUserDetailsData?.call();
   }
@@ -638,6 +721,10 @@ class _$ClearUserDetailsDataImpl implements ClearUserDetailsData {
     TResult Function(UserDetails userDetails, String employeeId)?
         createNewAccount,
     TResult Function(bool firstTime)? firstTimePayment,
+    TResult Function(String branchId)? getCashAndBankDetails,
+    TResult Function(bool isOffline)? setTransactionType,
+    TResult Function()? validateAmount,
+    TResult Function()? clearSuccess,
     required TResult orElse(),
   }) {
     if (clearUserDetailsData != null) {
@@ -659,6 +746,11 @@ class _$ClearUserDetailsDataImpl implements ClearUserDetailsData {
     required TResult Function(_AddTransaction value) addTransaction,
     required TResult Function(CreateNewAccount value) createNewAccount,
     required TResult Function(FirstTimePayment value) firstTimePayment,
+    required TResult Function(GetCashAndBankDetails value)
+        getCashAndBankDetails,
+    required TResult Function(SetTransactionType value) setTransactionType,
+    required TResult Function(ValidateAmount value) validateAmount,
+    required TResult Function(ClearSuccess value) clearSuccess,
   }) {
     return clearUserDetailsData(this);
   }
@@ -676,6 +768,10 @@ class _$ClearUserDetailsDataImpl implements ClearUserDetailsData {
     TResult? Function(_AddTransaction value)? addTransaction,
     TResult? Function(CreateNewAccount value)? createNewAccount,
     TResult? Function(FirstTimePayment value)? firstTimePayment,
+    TResult? Function(GetCashAndBankDetails value)? getCashAndBankDetails,
+    TResult? Function(SetTransactionType value)? setTransactionType,
+    TResult? Function(ValidateAmount value)? validateAmount,
+    TResult? Function(ClearSuccess value)? clearSuccess,
   }) {
     return clearUserDetailsData?.call(this);
   }
@@ -693,6 +789,10 @@ class _$ClearUserDetailsDataImpl implements ClearUserDetailsData {
     TResult Function(_AddTransaction value)? addTransaction,
     TResult Function(CreateNewAccount value)? createNewAccount,
     TResult Function(FirstTimePayment value)? firstTimePayment,
+    TResult Function(GetCashAndBankDetails value)? getCashAndBankDetails,
+    TResult Function(SetTransactionType value)? setTransactionType,
+    TResult Function(ValidateAmount value)? validateAmount,
+    TResult Function(ClearSuccess value)? clearSuccess,
     required TResult orElse(),
   }) {
     if (clearUserDetailsData != null) {
@@ -751,7 +851,7 @@ class _$AmountChangedImpl implements AmountChanged {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AmountChangedImpl &&
@@ -785,6 +885,10 @@ class _$AmountChangedImpl implements AmountChanged {
     required TResult Function(UserDetails userDetails, String employeeId)
         createNewAccount,
     required TResult Function(bool firstTime) firstTimePayment,
+    required TResult Function(String branchId) getCashAndBankDetails,
+    required TResult Function(bool isOffline) setTransactionType,
+    required TResult Function() validateAmount,
+    required TResult Function() clearSuccess,
   }) {
     return amountChanged(amount);
   }
@@ -805,6 +909,10 @@ class _$AmountChangedImpl implements AmountChanged {
     TResult? Function(UserDetails userDetails, String employeeId)?
         createNewAccount,
     TResult? Function(bool firstTime)? firstTimePayment,
+    TResult? Function(String branchId)? getCashAndBankDetails,
+    TResult? Function(bool isOffline)? setTransactionType,
+    TResult? Function()? validateAmount,
+    TResult? Function()? clearSuccess,
   }) {
     return amountChanged?.call(amount);
   }
@@ -825,6 +933,10 @@ class _$AmountChangedImpl implements AmountChanged {
     TResult Function(UserDetails userDetails, String employeeId)?
         createNewAccount,
     TResult Function(bool firstTime)? firstTimePayment,
+    TResult Function(String branchId)? getCashAndBankDetails,
+    TResult Function(bool isOffline)? setTransactionType,
+    TResult Function()? validateAmount,
+    TResult Function()? clearSuccess,
     required TResult orElse(),
   }) {
     if (amountChanged != null) {
@@ -846,6 +958,11 @@ class _$AmountChangedImpl implements AmountChanged {
     required TResult Function(_AddTransaction value) addTransaction,
     required TResult Function(CreateNewAccount value) createNewAccount,
     required TResult Function(FirstTimePayment value) firstTimePayment,
+    required TResult Function(GetCashAndBankDetails value)
+        getCashAndBankDetails,
+    required TResult Function(SetTransactionType value) setTransactionType,
+    required TResult Function(ValidateAmount value) validateAmount,
+    required TResult Function(ClearSuccess value) clearSuccess,
   }) {
     return amountChanged(this);
   }
@@ -863,6 +980,10 @@ class _$AmountChangedImpl implements AmountChanged {
     TResult? Function(_AddTransaction value)? addTransaction,
     TResult? Function(CreateNewAccount value)? createNewAccount,
     TResult? Function(FirstTimePayment value)? firstTimePayment,
+    TResult? Function(GetCashAndBankDetails value)? getCashAndBankDetails,
+    TResult? Function(SetTransactionType value)? setTransactionType,
+    TResult? Function(ValidateAmount value)? validateAmount,
+    TResult? Function(ClearSuccess value)? clearSuccess,
   }) {
     return amountChanged?.call(this);
   }
@@ -880,6 +1001,10 @@ class _$AmountChangedImpl implements AmountChanged {
     TResult Function(_AddTransaction value)? addTransaction,
     TResult Function(CreateNewAccount value)? createNewAccount,
     TResult Function(FirstTimePayment value)? firstTimePayment,
+    TResult Function(GetCashAndBankDetails value)? getCashAndBankDetails,
+    TResult Function(SetTransactionType value)? setTransactionType,
+    TResult Function(ValidateAmount value)? validateAmount,
+    TResult Function(ClearSuccess value)? clearSuccess,
     required TResult orElse(),
   }) {
     if (amountChanged != null) {
@@ -943,7 +1068,7 @@ class _$NoteChangedImpl implements NoteChanged {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$NoteChangedImpl &&
@@ -977,6 +1102,10 @@ class _$NoteChangedImpl implements NoteChanged {
     required TResult Function(UserDetails userDetails, String employeeId)
         createNewAccount,
     required TResult Function(bool firstTime) firstTimePayment,
+    required TResult Function(String branchId) getCashAndBankDetails,
+    required TResult Function(bool isOffline) setTransactionType,
+    required TResult Function() validateAmount,
+    required TResult Function() clearSuccess,
   }) {
     return noteChanged(note);
   }
@@ -997,6 +1126,10 @@ class _$NoteChangedImpl implements NoteChanged {
     TResult? Function(UserDetails userDetails, String employeeId)?
         createNewAccount,
     TResult? Function(bool firstTime)? firstTimePayment,
+    TResult? Function(String branchId)? getCashAndBankDetails,
+    TResult? Function(bool isOffline)? setTransactionType,
+    TResult? Function()? validateAmount,
+    TResult? Function()? clearSuccess,
   }) {
     return noteChanged?.call(note);
   }
@@ -1017,6 +1150,10 @@ class _$NoteChangedImpl implements NoteChanged {
     TResult Function(UserDetails userDetails, String employeeId)?
         createNewAccount,
     TResult Function(bool firstTime)? firstTimePayment,
+    TResult Function(String branchId)? getCashAndBankDetails,
+    TResult Function(bool isOffline)? setTransactionType,
+    TResult Function()? validateAmount,
+    TResult Function()? clearSuccess,
     required TResult orElse(),
   }) {
     if (noteChanged != null) {
@@ -1038,6 +1175,11 @@ class _$NoteChangedImpl implements NoteChanged {
     required TResult Function(_AddTransaction value) addTransaction,
     required TResult Function(CreateNewAccount value) createNewAccount,
     required TResult Function(FirstTimePayment value) firstTimePayment,
+    required TResult Function(GetCashAndBankDetails value)
+        getCashAndBankDetails,
+    required TResult Function(SetTransactionType value) setTransactionType,
+    required TResult Function(ValidateAmount value) validateAmount,
+    required TResult Function(ClearSuccess value) clearSuccess,
   }) {
     return noteChanged(this);
   }
@@ -1055,6 +1197,10 @@ class _$NoteChangedImpl implements NoteChanged {
     TResult? Function(_AddTransaction value)? addTransaction,
     TResult? Function(CreateNewAccount value)? createNewAccount,
     TResult? Function(FirstTimePayment value)? firstTimePayment,
+    TResult? Function(GetCashAndBankDetails value)? getCashAndBankDetails,
+    TResult? Function(SetTransactionType value)? setTransactionType,
+    TResult? Function(ValidateAmount value)? validateAmount,
+    TResult? Function(ClearSuccess value)? clearSuccess,
   }) {
     return noteChanged?.call(this);
   }
@@ -1072,6 +1218,10 @@ class _$NoteChangedImpl implements NoteChanged {
     TResult Function(_AddTransaction value)? addTransaction,
     TResult Function(CreateNewAccount value)? createNewAccount,
     TResult Function(FirstTimePayment value)? firstTimePayment,
+    TResult Function(GetCashAndBankDetails value)? getCashAndBankDetails,
+    TResult Function(SetTransactionType value)? setTransactionType,
+    TResult Function(ValidateAmount value)? validateAmount,
+    TResult Function(ClearSuccess value)? clearSuccess,
     required TResult orElse(),
   }) {
     if (noteChanged != null) {
@@ -1135,7 +1285,7 @@ class _$GetMonthlyLimitImpl implements GetMonthlyLimit {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$GetMonthlyLimitImpl &&
@@ -1171,6 +1321,10 @@ class _$GetMonthlyLimitImpl implements GetMonthlyLimit {
     required TResult Function(UserDetails userDetails, String employeeId)
         createNewAccount,
     required TResult Function(bool firstTime) firstTimePayment,
+    required TResult Function(String branchId) getCashAndBankDetails,
+    required TResult Function(bool isOffline) setTransactionType,
+    required TResult Function() validateAmount,
+    required TResult Function() clearSuccess,
   }) {
     return getMonthlyLimit(userDetails);
   }
@@ -1191,6 +1345,10 @@ class _$GetMonthlyLimitImpl implements GetMonthlyLimit {
     TResult? Function(UserDetails userDetails, String employeeId)?
         createNewAccount,
     TResult? Function(bool firstTime)? firstTimePayment,
+    TResult? Function(String branchId)? getCashAndBankDetails,
+    TResult? Function(bool isOffline)? setTransactionType,
+    TResult? Function()? validateAmount,
+    TResult? Function()? clearSuccess,
   }) {
     return getMonthlyLimit?.call(userDetails);
   }
@@ -1211,6 +1369,10 @@ class _$GetMonthlyLimitImpl implements GetMonthlyLimit {
     TResult Function(UserDetails userDetails, String employeeId)?
         createNewAccount,
     TResult Function(bool firstTime)? firstTimePayment,
+    TResult Function(String branchId)? getCashAndBankDetails,
+    TResult Function(bool isOffline)? setTransactionType,
+    TResult Function()? validateAmount,
+    TResult Function()? clearSuccess,
     required TResult orElse(),
   }) {
     if (getMonthlyLimit != null) {
@@ -1232,6 +1394,11 @@ class _$GetMonthlyLimitImpl implements GetMonthlyLimit {
     required TResult Function(_AddTransaction value) addTransaction,
     required TResult Function(CreateNewAccount value) createNewAccount,
     required TResult Function(FirstTimePayment value) firstTimePayment,
+    required TResult Function(GetCashAndBankDetails value)
+        getCashAndBankDetails,
+    required TResult Function(SetTransactionType value) setTransactionType,
+    required TResult Function(ValidateAmount value) validateAmount,
+    required TResult Function(ClearSuccess value) clearSuccess,
   }) {
     return getMonthlyLimit(this);
   }
@@ -1249,6 +1416,10 @@ class _$GetMonthlyLimitImpl implements GetMonthlyLimit {
     TResult? Function(_AddTransaction value)? addTransaction,
     TResult? Function(CreateNewAccount value)? createNewAccount,
     TResult? Function(FirstTimePayment value)? firstTimePayment,
+    TResult? Function(GetCashAndBankDetails value)? getCashAndBankDetails,
+    TResult? Function(SetTransactionType value)? setTransactionType,
+    TResult? Function(ValidateAmount value)? validateAmount,
+    TResult? Function(ClearSuccess value)? clearSuccess,
   }) {
     return getMonthlyLimit?.call(this);
   }
@@ -1266,6 +1437,10 @@ class _$GetMonthlyLimitImpl implements GetMonthlyLimit {
     TResult Function(_AddTransaction value)? addTransaction,
     TResult Function(CreateNewAccount value)? createNewAccount,
     TResult Function(FirstTimePayment value)? firstTimePayment,
+    TResult Function(GetCashAndBankDetails value)? getCashAndBankDetails,
+    TResult Function(SetTransactionType value)? setTransactionType,
+    TResult Function(ValidateAmount value)? validateAmount,
+    TResult Function(ClearSuccess value)? clearSuccess,
     required TResult orElse(),
   }) {
     if (getMonthlyLimit != null) {
@@ -1338,7 +1513,7 @@ class _$ReceveAmountImpl implements ReceveAmount {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ReceveAmountImpl &&
@@ -1375,6 +1550,10 @@ class _$ReceveAmountImpl implements ReceveAmount {
     required TResult Function(UserDetails userDetails, String employeeId)
         createNewAccount,
     required TResult Function(bool firstTime) firstTimePayment,
+    required TResult Function(String branchId) getCashAndBankDetails,
+    required TResult Function(bool isOffline) setTransactionType,
+    required TResult Function() validateAmount,
+    required TResult Function() clearSuccess,
   }) {
     return receveAmount(userDetails, employeeId);
   }
@@ -1395,6 +1574,10 @@ class _$ReceveAmountImpl implements ReceveAmount {
     TResult? Function(UserDetails userDetails, String employeeId)?
         createNewAccount,
     TResult? Function(bool firstTime)? firstTimePayment,
+    TResult? Function(String branchId)? getCashAndBankDetails,
+    TResult? Function(bool isOffline)? setTransactionType,
+    TResult? Function()? validateAmount,
+    TResult? Function()? clearSuccess,
   }) {
     return receveAmount?.call(userDetails, employeeId);
   }
@@ -1415,6 +1598,10 @@ class _$ReceveAmountImpl implements ReceveAmount {
     TResult Function(UserDetails userDetails, String employeeId)?
         createNewAccount,
     TResult Function(bool firstTime)? firstTimePayment,
+    TResult Function(String branchId)? getCashAndBankDetails,
+    TResult Function(bool isOffline)? setTransactionType,
+    TResult Function()? validateAmount,
+    TResult Function()? clearSuccess,
     required TResult orElse(),
   }) {
     if (receveAmount != null) {
@@ -1436,6 +1623,11 @@ class _$ReceveAmountImpl implements ReceveAmount {
     required TResult Function(_AddTransaction value) addTransaction,
     required TResult Function(CreateNewAccount value) createNewAccount,
     required TResult Function(FirstTimePayment value) firstTimePayment,
+    required TResult Function(GetCashAndBankDetails value)
+        getCashAndBankDetails,
+    required TResult Function(SetTransactionType value) setTransactionType,
+    required TResult Function(ValidateAmount value) validateAmount,
+    required TResult Function(ClearSuccess value) clearSuccess,
   }) {
     return receveAmount(this);
   }
@@ -1453,6 +1645,10 @@ class _$ReceveAmountImpl implements ReceveAmount {
     TResult? Function(_AddTransaction value)? addTransaction,
     TResult? Function(CreateNewAccount value)? createNewAccount,
     TResult? Function(FirstTimePayment value)? firstTimePayment,
+    TResult? Function(GetCashAndBankDetails value)? getCashAndBankDetails,
+    TResult? Function(SetTransactionType value)? setTransactionType,
+    TResult? Function(ValidateAmount value)? validateAmount,
+    TResult? Function(ClearSuccess value)? clearSuccess,
   }) {
     return receveAmount?.call(this);
   }
@@ -1470,6 +1666,10 @@ class _$ReceveAmountImpl implements ReceveAmount {
     TResult Function(_AddTransaction value)? addTransaction,
     TResult Function(CreateNewAccount value)? createNewAccount,
     TResult Function(FirstTimePayment value)? firstTimePayment,
+    TResult Function(GetCashAndBankDetails value)? getCashAndBankDetails,
+    TResult Function(SetTransactionType value)? setTransactionType,
+    TResult Function(ValidateAmount value)? validateAmount,
+    TResult Function(ClearSuccess value)? clearSuccess,
     required TResult orElse(),
   }) {
     if (receveAmount != null) {
@@ -1545,7 +1745,7 @@ class _$AddTransactionImpl implements _AddTransaction {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AddTransactionImpl &&
@@ -1584,6 +1784,10 @@ class _$AddTransactionImpl implements _AddTransaction {
     required TResult Function(UserDetails userDetails, String employeeId)
         createNewAccount,
     required TResult Function(bool firstTime) firstTimePayment,
+    required TResult Function(String branchId) getCashAndBankDetails,
+    required TResult Function(bool isOffline) setTransactionType,
+    required TResult Function() validateAmount,
+    required TResult Function() clearSuccess,
   }) {
     return addTransaction(userDetails, dailyCollectionDetails);
   }
@@ -1604,6 +1808,10 @@ class _$AddTransactionImpl implements _AddTransaction {
     TResult? Function(UserDetails userDetails, String employeeId)?
         createNewAccount,
     TResult? Function(bool firstTime)? firstTimePayment,
+    TResult? Function(String branchId)? getCashAndBankDetails,
+    TResult? Function(bool isOffline)? setTransactionType,
+    TResult? Function()? validateAmount,
+    TResult? Function()? clearSuccess,
   }) {
     return addTransaction?.call(userDetails, dailyCollectionDetails);
   }
@@ -1624,6 +1832,10 @@ class _$AddTransactionImpl implements _AddTransaction {
     TResult Function(UserDetails userDetails, String employeeId)?
         createNewAccount,
     TResult Function(bool firstTime)? firstTimePayment,
+    TResult Function(String branchId)? getCashAndBankDetails,
+    TResult Function(bool isOffline)? setTransactionType,
+    TResult Function()? validateAmount,
+    TResult Function()? clearSuccess,
     required TResult orElse(),
   }) {
     if (addTransaction != null) {
@@ -1645,6 +1857,11 @@ class _$AddTransactionImpl implements _AddTransaction {
     required TResult Function(_AddTransaction value) addTransaction,
     required TResult Function(CreateNewAccount value) createNewAccount,
     required TResult Function(FirstTimePayment value) firstTimePayment,
+    required TResult Function(GetCashAndBankDetails value)
+        getCashAndBankDetails,
+    required TResult Function(SetTransactionType value) setTransactionType,
+    required TResult Function(ValidateAmount value) validateAmount,
+    required TResult Function(ClearSuccess value) clearSuccess,
   }) {
     return addTransaction(this);
   }
@@ -1662,6 +1879,10 @@ class _$AddTransactionImpl implements _AddTransaction {
     TResult? Function(_AddTransaction value)? addTransaction,
     TResult? Function(CreateNewAccount value)? createNewAccount,
     TResult? Function(FirstTimePayment value)? firstTimePayment,
+    TResult? Function(GetCashAndBankDetails value)? getCashAndBankDetails,
+    TResult? Function(SetTransactionType value)? setTransactionType,
+    TResult? Function(ValidateAmount value)? validateAmount,
+    TResult? Function(ClearSuccess value)? clearSuccess,
   }) {
     return addTransaction?.call(this);
   }
@@ -1679,6 +1900,10 @@ class _$AddTransactionImpl implements _AddTransaction {
     TResult Function(_AddTransaction value)? addTransaction,
     TResult Function(CreateNewAccount value)? createNewAccount,
     TResult Function(FirstTimePayment value)? firstTimePayment,
+    TResult Function(GetCashAndBankDetails value)? getCashAndBankDetails,
+    TResult Function(SetTransactionType value)? setTransactionType,
+    TResult Function(ValidateAmount value)? validateAmount,
+    TResult Function(ClearSuccess value)? clearSuccess,
     required TResult orElse(),
   }) {
     if (addTransaction != null) {
@@ -1754,7 +1979,7 @@ class _$CreateNewAccountImpl implements CreateNewAccount {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$CreateNewAccountImpl &&
@@ -1792,6 +2017,10 @@ class _$CreateNewAccountImpl implements CreateNewAccount {
     required TResult Function(UserDetails userDetails, String employeeId)
         createNewAccount,
     required TResult Function(bool firstTime) firstTimePayment,
+    required TResult Function(String branchId) getCashAndBankDetails,
+    required TResult Function(bool isOffline) setTransactionType,
+    required TResult Function() validateAmount,
+    required TResult Function() clearSuccess,
   }) {
     return createNewAccount(userDetails, employeeId);
   }
@@ -1812,6 +2041,10 @@ class _$CreateNewAccountImpl implements CreateNewAccount {
     TResult? Function(UserDetails userDetails, String employeeId)?
         createNewAccount,
     TResult? Function(bool firstTime)? firstTimePayment,
+    TResult? Function(String branchId)? getCashAndBankDetails,
+    TResult? Function(bool isOffline)? setTransactionType,
+    TResult? Function()? validateAmount,
+    TResult? Function()? clearSuccess,
   }) {
     return createNewAccount?.call(userDetails, employeeId);
   }
@@ -1832,6 +2065,10 @@ class _$CreateNewAccountImpl implements CreateNewAccount {
     TResult Function(UserDetails userDetails, String employeeId)?
         createNewAccount,
     TResult Function(bool firstTime)? firstTimePayment,
+    TResult Function(String branchId)? getCashAndBankDetails,
+    TResult Function(bool isOffline)? setTransactionType,
+    TResult Function()? validateAmount,
+    TResult Function()? clearSuccess,
     required TResult orElse(),
   }) {
     if (createNewAccount != null) {
@@ -1853,6 +2090,11 @@ class _$CreateNewAccountImpl implements CreateNewAccount {
     required TResult Function(_AddTransaction value) addTransaction,
     required TResult Function(CreateNewAccount value) createNewAccount,
     required TResult Function(FirstTimePayment value) firstTimePayment,
+    required TResult Function(GetCashAndBankDetails value)
+        getCashAndBankDetails,
+    required TResult Function(SetTransactionType value) setTransactionType,
+    required TResult Function(ValidateAmount value) validateAmount,
+    required TResult Function(ClearSuccess value) clearSuccess,
   }) {
     return createNewAccount(this);
   }
@@ -1870,6 +2112,10 @@ class _$CreateNewAccountImpl implements CreateNewAccount {
     TResult? Function(_AddTransaction value)? addTransaction,
     TResult? Function(CreateNewAccount value)? createNewAccount,
     TResult? Function(FirstTimePayment value)? firstTimePayment,
+    TResult? Function(GetCashAndBankDetails value)? getCashAndBankDetails,
+    TResult? Function(SetTransactionType value)? setTransactionType,
+    TResult? Function(ValidateAmount value)? validateAmount,
+    TResult? Function(ClearSuccess value)? clearSuccess,
   }) {
     return createNewAccount?.call(this);
   }
@@ -1887,6 +2133,10 @@ class _$CreateNewAccountImpl implements CreateNewAccount {
     TResult Function(_AddTransaction value)? addTransaction,
     TResult Function(CreateNewAccount value)? createNewAccount,
     TResult Function(FirstTimePayment value)? firstTimePayment,
+    TResult Function(GetCashAndBankDetails value)? getCashAndBankDetails,
+    TResult Function(SetTransactionType value)? setTransactionType,
+    TResult Function(ValidateAmount value)? validateAmount,
+    TResult Function(ClearSuccess value)? clearSuccess,
     required TResult orElse(),
   }) {
     if (createNewAccount != null) {
@@ -1953,7 +2203,7 @@ class _$FirstTimePaymentImpl implements FirstTimePayment {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$FirstTimePaymentImpl &&
@@ -1989,6 +2239,10 @@ class _$FirstTimePaymentImpl implements FirstTimePayment {
     required TResult Function(UserDetails userDetails, String employeeId)
         createNewAccount,
     required TResult Function(bool firstTime) firstTimePayment,
+    required TResult Function(String branchId) getCashAndBankDetails,
+    required TResult Function(bool isOffline) setTransactionType,
+    required TResult Function() validateAmount,
+    required TResult Function() clearSuccess,
   }) {
     return firstTimePayment(firstTime);
   }
@@ -2009,6 +2263,10 @@ class _$FirstTimePaymentImpl implements FirstTimePayment {
     TResult? Function(UserDetails userDetails, String employeeId)?
         createNewAccount,
     TResult? Function(bool firstTime)? firstTimePayment,
+    TResult? Function(String branchId)? getCashAndBankDetails,
+    TResult? Function(bool isOffline)? setTransactionType,
+    TResult? Function()? validateAmount,
+    TResult? Function()? clearSuccess,
   }) {
     return firstTimePayment?.call(firstTime);
   }
@@ -2029,6 +2287,10 @@ class _$FirstTimePaymentImpl implements FirstTimePayment {
     TResult Function(UserDetails userDetails, String employeeId)?
         createNewAccount,
     TResult Function(bool firstTime)? firstTimePayment,
+    TResult Function(String branchId)? getCashAndBankDetails,
+    TResult Function(bool isOffline)? setTransactionType,
+    TResult Function()? validateAmount,
+    TResult Function()? clearSuccess,
     required TResult orElse(),
   }) {
     if (firstTimePayment != null) {
@@ -2050,6 +2312,11 @@ class _$FirstTimePaymentImpl implements FirstTimePayment {
     required TResult Function(_AddTransaction value) addTransaction,
     required TResult Function(CreateNewAccount value) createNewAccount,
     required TResult Function(FirstTimePayment value) firstTimePayment,
+    required TResult Function(GetCashAndBankDetails value)
+        getCashAndBankDetails,
+    required TResult Function(SetTransactionType value) setTransactionType,
+    required TResult Function(ValidateAmount value) validateAmount,
+    required TResult Function(ClearSuccess value) clearSuccess,
   }) {
     return firstTimePayment(this);
   }
@@ -2067,6 +2334,10 @@ class _$FirstTimePaymentImpl implements FirstTimePayment {
     TResult? Function(_AddTransaction value)? addTransaction,
     TResult? Function(CreateNewAccount value)? createNewAccount,
     TResult? Function(FirstTimePayment value)? firstTimePayment,
+    TResult? Function(GetCashAndBankDetails value)? getCashAndBankDetails,
+    TResult? Function(SetTransactionType value)? setTransactionType,
+    TResult? Function(ValidateAmount value)? validateAmount,
+    TResult? Function(ClearSuccess value)? clearSuccess,
   }) {
     return firstTimePayment?.call(this);
   }
@@ -2084,6 +2355,10 @@ class _$FirstTimePaymentImpl implements FirstTimePayment {
     TResult Function(_AddTransaction value)? addTransaction,
     TResult Function(CreateNewAccount value)? createNewAccount,
     TResult Function(FirstTimePayment value)? firstTimePayment,
+    TResult Function(GetCashAndBankDetails value)? getCashAndBankDetails,
+    TResult Function(SetTransactionType value)? setTransactionType,
+    TResult Function(ValidateAmount value)? validateAmount,
+    TResult Function(ClearSuccess value)? clearSuccess,
     required TResult orElse(),
   }) {
     if (firstTimePayment != null) {
@@ -2103,8 +2378,822 @@ abstract class FirstTimePayment implements UserDetailsEvent {
 }
 
 /// @nodoc
+abstract class _$$GetCashAndBankDetailsImplCopyWith<$Res> {
+  factory _$$GetCashAndBankDetailsImplCopyWith(
+          _$GetCashAndBankDetailsImpl value,
+          $Res Function(_$GetCashAndBankDetailsImpl) then) =
+      __$$GetCashAndBankDetailsImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String branchId});
+}
+
+/// @nodoc
+class __$$GetCashAndBankDetailsImplCopyWithImpl<$Res>
+    extends _$UserDetailsEventCopyWithImpl<$Res, _$GetCashAndBankDetailsImpl>
+    implements _$$GetCashAndBankDetailsImplCopyWith<$Res> {
+  __$$GetCashAndBankDetailsImplCopyWithImpl(_$GetCashAndBankDetailsImpl _value,
+      $Res Function(_$GetCashAndBankDetailsImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? branchId = null,
+  }) {
+    return _then(_$GetCashAndBankDetailsImpl(
+      null == branchId
+          ? _value.branchId
+          : branchId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetCashAndBankDetailsImpl implements GetCashAndBankDetails {
+  const _$GetCashAndBankDetailsImpl(this.branchId);
+
+  @override
+  final String branchId;
+
+  @override
+  String toString() {
+    return 'UserDetailsEvent.getCashAndBankDetails(branchId: $branchId)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetCashAndBankDetailsImpl &&
+            (identical(other.branchId, branchId) ||
+                other.branchId == branchId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, branchId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetCashAndBankDetailsImplCopyWith<_$GetCashAndBankDetailsImpl>
+      get copyWith => __$$GetCashAndBankDetailsImplCopyWithImpl<
+          _$GetCashAndBankDetailsImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String userId, String branchId) getAllAccounts,
+    required TResult Function(String userId, String branchId)
+        getAllTransactions,
+    required TResult Function() clearUserDetailsData,
+    required TResult Function(num amount) amountChanged,
+    required TResult Function(String note) noteChanged,
+    required TResult Function(UserDetails userDetails) getMonthlyLimit,
+    required TResult Function(UserDetails userDetails, String employeeId)
+        receveAmount,
+    required TResult Function(UserDetails userDetails,
+            DailyCollectionDetails dailyCollectionDetails)
+        addTransaction,
+    required TResult Function(UserDetails userDetails, String employeeId)
+        createNewAccount,
+    required TResult Function(bool firstTime) firstTimePayment,
+    required TResult Function(String branchId) getCashAndBankDetails,
+    required TResult Function(bool isOffline) setTransactionType,
+    required TResult Function() validateAmount,
+    required TResult Function() clearSuccess,
+  }) {
+    return getCashAndBankDetails(branchId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String userId, String branchId)? getAllAccounts,
+    TResult? Function(String userId, String branchId)? getAllTransactions,
+    TResult? Function()? clearUserDetailsData,
+    TResult? Function(num amount)? amountChanged,
+    TResult? Function(String note)? noteChanged,
+    TResult? Function(UserDetails userDetails)? getMonthlyLimit,
+    TResult? Function(UserDetails userDetails, String employeeId)? receveAmount,
+    TResult? Function(UserDetails userDetails,
+            DailyCollectionDetails dailyCollectionDetails)?
+        addTransaction,
+    TResult? Function(UserDetails userDetails, String employeeId)?
+        createNewAccount,
+    TResult? Function(bool firstTime)? firstTimePayment,
+    TResult? Function(String branchId)? getCashAndBankDetails,
+    TResult? Function(bool isOffline)? setTransactionType,
+    TResult? Function()? validateAmount,
+    TResult? Function()? clearSuccess,
+  }) {
+    return getCashAndBankDetails?.call(branchId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String userId, String branchId)? getAllAccounts,
+    TResult Function(String userId, String branchId)? getAllTransactions,
+    TResult Function()? clearUserDetailsData,
+    TResult Function(num amount)? amountChanged,
+    TResult Function(String note)? noteChanged,
+    TResult Function(UserDetails userDetails)? getMonthlyLimit,
+    TResult Function(UserDetails userDetails, String employeeId)? receveAmount,
+    TResult Function(UserDetails userDetails,
+            DailyCollectionDetails dailyCollectionDetails)?
+        addTransaction,
+    TResult Function(UserDetails userDetails, String employeeId)?
+        createNewAccount,
+    TResult Function(bool firstTime)? firstTimePayment,
+    TResult Function(String branchId)? getCashAndBankDetails,
+    TResult Function(bool isOffline)? setTransactionType,
+    TResult Function()? validateAmount,
+    TResult Function()? clearSuccess,
+    required TResult orElse(),
+  }) {
+    if (getCashAndBankDetails != null) {
+      return getCashAndBankDetails(branchId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetAllAccounts value) getAllAccounts,
+    required TResult Function(GetAllTransactions value) getAllTransactions,
+    required TResult Function(ClearUserDetailsData value) clearUserDetailsData,
+    required TResult Function(AmountChanged value) amountChanged,
+    required TResult Function(NoteChanged value) noteChanged,
+    required TResult Function(GetMonthlyLimit value) getMonthlyLimit,
+    required TResult Function(ReceveAmount value) receveAmount,
+    required TResult Function(_AddTransaction value) addTransaction,
+    required TResult Function(CreateNewAccount value) createNewAccount,
+    required TResult Function(FirstTimePayment value) firstTimePayment,
+    required TResult Function(GetCashAndBankDetails value)
+        getCashAndBankDetails,
+    required TResult Function(SetTransactionType value) setTransactionType,
+    required TResult Function(ValidateAmount value) validateAmount,
+    required TResult Function(ClearSuccess value) clearSuccess,
+  }) {
+    return getCashAndBankDetails(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GetAllAccounts value)? getAllAccounts,
+    TResult? Function(GetAllTransactions value)? getAllTransactions,
+    TResult? Function(ClearUserDetailsData value)? clearUserDetailsData,
+    TResult? Function(AmountChanged value)? amountChanged,
+    TResult? Function(NoteChanged value)? noteChanged,
+    TResult? Function(GetMonthlyLimit value)? getMonthlyLimit,
+    TResult? Function(ReceveAmount value)? receveAmount,
+    TResult? Function(_AddTransaction value)? addTransaction,
+    TResult? Function(CreateNewAccount value)? createNewAccount,
+    TResult? Function(FirstTimePayment value)? firstTimePayment,
+    TResult? Function(GetCashAndBankDetails value)? getCashAndBankDetails,
+    TResult? Function(SetTransactionType value)? setTransactionType,
+    TResult? Function(ValidateAmount value)? validateAmount,
+    TResult? Function(ClearSuccess value)? clearSuccess,
+  }) {
+    return getCashAndBankDetails?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetAllAccounts value)? getAllAccounts,
+    TResult Function(GetAllTransactions value)? getAllTransactions,
+    TResult Function(ClearUserDetailsData value)? clearUserDetailsData,
+    TResult Function(AmountChanged value)? amountChanged,
+    TResult Function(NoteChanged value)? noteChanged,
+    TResult Function(GetMonthlyLimit value)? getMonthlyLimit,
+    TResult Function(ReceveAmount value)? receveAmount,
+    TResult Function(_AddTransaction value)? addTransaction,
+    TResult Function(CreateNewAccount value)? createNewAccount,
+    TResult Function(FirstTimePayment value)? firstTimePayment,
+    TResult Function(GetCashAndBankDetails value)? getCashAndBankDetails,
+    TResult Function(SetTransactionType value)? setTransactionType,
+    TResult Function(ValidateAmount value)? validateAmount,
+    TResult Function(ClearSuccess value)? clearSuccess,
+    required TResult orElse(),
+  }) {
+    if (getCashAndBankDetails != null) {
+      return getCashAndBankDetails(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetCashAndBankDetails implements UserDetailsEvent {
+  const factory GetCashAndBankDetails(final String branchId) =
+      _$GetCashAndBankDetailsImpl;
+
+  String get branchId;
+  @JsonKey(ignore: true)
+  _$$GetCashAndBankDetailsImplCopyWith<_$GetCashAndBankDetailsImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SetTransactionTypeImplCopyWith<$Res> {
+  factory _$$SetTransactionTypeImplCopyWith(_$SetTransactionTypeImpl value,
+          $Res Function(_$SetTransactionTypeImpl) then) =
+      __$$SetTransactionTypeImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({bool isOffline});
+}
+
+/// @nodoc
+class __$$SetTransactionTypeImplCopyWithImpl<$Res>
+    extends _$UserDetailsEventCopyWithImpl<$Res, _$SetTransactionTypeImpl>
+    implements _$$SetTransactionTypeImplCopyWith<$Res> {
+  __$$SetTransactionTypeImplCopyWithImpl(_$SetTransactionTypeImpl _value,
+      $Res Function(_$SetTransactionTypeImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? isOffline = null,
+  }) {
+    return _then(_$SetTransactionTypeImpl(
+      isOffline: null == isOffline
+          ? _value.isOffline
+          : isOffline // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SetTransactionTypeImpl implements SetTransactionType {
+  const _$SetTransactionTypeImpl({required this.isOffline});
+
+  @override
+  final bool isOffline;
+
+  @override
+  String toString() {
+    return 'UserDetailsEvent.setTransactionType(isOffline: $isOffline)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SetTransactionTypeImpl &&
+            (identical(other.isOffline, isOffline) ||
+                other.isOffline == isOffline));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, isOffline);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SetTransactionTypeImplCopyWith<_$SetTransactionTypeImpl> get copyWith =>
+      __$$SetTransactionTypeImplCopyWithImpl<_$SetTransactionTypeImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String userId, String branchId) getAllAccounts,
+    required TResult Function(String userId, String branchId)
+        getAllTransactions,
+    required TResult Function() clearUserDetailsData,
+    required TResult Function(num amount) amountChanged,
+    required TResult Function(String note) noteChanged,
+    required TResult Function(UserDetails userDetails) getMonthlyLimit,
+    required TResult Function(UserDetails userDetails, String employeeId)
+        receveAmount,
+    required TResult Function(UserDetails userDetails,
+            DailyCollectionDetails dailyCollectionDetails)
+        addTransaction,
+    required TResult Function(UserDetails userDetails, String employeeId)
+        createNewAccount,
+    required TResult Function(bool firstTime) firstTimePayment,
+    required TResult Function(String branchId) getCashAndBankDetails,
+    required TResult Function(bool isOffline) setTransactionType,
+    required TResult Function() validateAmount,
+    required TResult Function() clearSuccess,
+  }) {
+    return setTransactionType(isOffline);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String userId, String branchId)? getAllAccounts,
+    TResult? Function(String userId, String branchId)? getAllTransactions,
+    TResult? Function()? clearUserDetailsData,
+    TResult? Function(num amount)? amountChanged,
+    TResult? Function(String note)? noteChanged,
+    TResult? Function(UserDetails userDetails)? getMonthlyLimit,
+    TResult? Function(UserDetails userDetails, String employeeId)? receveAmount,
+    TResult? Function(UserDetails userDetails,
+            DailyCollectionDetails dailyCollectionDetails)?
+        addTransaction,
+    TResult? Function(UserDetails userDetails, String employeeId)?
+        createNewAccount,
+    TResult? Function(bool firstTime)? firstTimePayment,
+    TResult? Function(String branchId)? getCashAndBankDetails,
+    TResult? Function(bool isOffline)? setTransactionType,
+    TResult? Function()? validateAmount,
+    TResult? Function()? clearSuccess,
+  }) {
+    return setTransactionType?.call(isOffline);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String userId, String branchId)? getAllAccounts,
+    TResult Function(String userId, String branchId)? getAllTransactions,
+    TResult Function()? clearUserDetailsData,
+    TResult Function(num amount)? amountChanged,
+    TResult Function(String note)? noteChanged,
+    TResult Function(UserDetails userDetails)? getMonthlyLimit,
+    TResult Function(UserDetails userDetails, String employeeId)? receveAmount,
+    TResult Function(UserDetails userDetails,
+            DailyCollectionDetails dailyCollectionDetails)?
+        addTransaction,
+    TResult Function(UserDetails userDetails, String employeeId)?
+        createNewAccount,
+    TResult Function(bool firstTime)? firstTimePayment,
+    TResult Function(String branchId)? getCashAndBankDetails,
+    TResult Function(bool isOffline)? setTransactionType,
+    TResult Function()? validateAmount,
+    TResult Function()? clearSuccess,
+    required TResult orElse(),
+  }) {
+    if (setTransactionType != null) {
+      return setTransactionType(isOffline);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetAllAccounts value) getAllAccounts,
+    required TResult Function(GetAllTransactions value) getAllTransactions,
+    required TResult Function(ClearUserDetailsData value) clearUserDetailsData,
+    required TResult Function(AmountChanged value) amountChanged,
+    required TResult Function(NoteChanged value) noteChanged,
+    required TResult Function(GetMonthlyLimit value) getMonthlyLimit,
+    required TResult Function(ReceveAmount value) receveAmount,
+    required TResult Function(_AddTransaction value) addTransaction,
+    required TResult Function(CreateNewAccount value) createNewAccount,
+    required TResult Function(FirstTimePayment value) firstTimePayment,
+    required TResult Function(GetCashAndBankDetails value)
+        getCashAndBankDetails,
+    required TResult Function(SetTransactionType value) setTransactionType,
+    required TResult Function(ValidateAmount value) validateAmount,
+    required TResult Function(ClearSuccess value) clearSuccess,
+  }) {
+    return setTransactionType(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GetAllAccounts value)? getAllAccounts,
+    TResult? Function(GetAllTransactions value)? getAllTransactions,
+    TResult? Function(ClearUserDetailsData value)? clearUserDetailsData,
+    TResult? Function(AmountChanged value)? amountChanged,
+    TResult? Function(NoteChanged value)? noteChanged,
+    TResult? Function(GetMonthlyLimit value)? getMonthlyLimit,
+    TResult? Function(ReceveAmount value)? receveAmount,
+    TResult? Function(_AddTransaction value)? addTransaction,
+    TResult? Function(CreateNewAccount value)? createNewAccount,
+    TResult? Function(FirstTimePayment value)? firstTimePayment,
+    TResult? Function(GetCashAndBankDetails value)? getCashAndBankDetails,
+    TResult? Function(SetTransactionType value)? setTransactionType,
+    TResult? Function(ValidateAmount value)? validateAmount,
+    TResult? Function(ClearSuccess value)? clearSuccess,
+  }) {
+    return setTransactionType?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetAllAccounts value)? getAllAccounts,
+    TResult Function(GetAllTransactions value)? getAllTransactions,
+    TResult Function(ClearUserDetailsData value)? clearUserDetailsData,
+    TResult Function(AmountChanged value)? amountChanged,
+    TResult Function(NoteChanged value)? noteChanged,
+    TResult Function(GetMonthlyLimit value)? getMonthlyLimit,
+    TResult Function(ReceveAmount value)? receveAmount,
+    TResult Function(_AddTransaction value)? addTransaction,
+    TResult Function(CreateNewAccount value)? createNewAccount,
+    TResult Function(FirstTimePayment value)? firstTimePayment,
+    TResult Function(GetCashAndBankDetails value)? getCashAndBankDetails,
+    TResult Function(SetTransactionType value)? setTransactionType,
+    TResult Function(ValidateAmount value)? validateAmount,
+    TResult Function(ClearSuccess value)? clearSuccess,
+    required TResult orElse(),
+  }) {
+    if (setTransactionType != null) {
+      return setTransactionType(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SetTransactionType implements UserDetailsEvent {
+  const factory SetTransactionType({required final bool isOffline}) =
+      _$SetTransactionTypeImpl;
+
+  bool get isOffline;
+  @JsonKey(ignore: true)
+  _$$SetTransactionTypeImplCopyWith<_$SetTransactionTypeImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ValidateAmountImplCopyWith<$Res> {
+  factory _$$ValidateAmountImplCopyWith(_$ValidateAmountImpl value,
+          $Res Function(_$ValidateAmountImpl) then) =
+      __$$ValidateAmountImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$ValidateAmountImplCopyWithImpl<$Res>
+    extends _$UserDetailsEventCopyWithImpl<$Res, _$ValidateAmountImpl>
+    implements _$$ValidateAmountImplCopyWith<$Res> {
+  __$$ValidateAmountImplCopyWithImpl(
+      _$ValidateAmountImpl _value, $Res Function(_$ValidateAmountImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$ValidateAmountImpl implements ValidateAmount {
+  const _$ValidateAmountImpl();
+
+  @override
+  String toString() {
+    return 'UserDetailsEvent.validateAmount()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$ValidateAmountImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String userId, String branchId) getAllAccounts,
+    required TResult Function(String userId, String branchId)
+        getAllTransactions,
+    required TResult Function() clearUserDetailsData,
+    required TResult Function(num amount) amountChanged,
+    required TResult Function(String note) noteChanged,
+    required TResult Function(UserDetails userDetails) getMonthlyLimit,
+    required TResult Function(UserDetails userDetails, String employeeId)
+        receveAmount,
+    required TResult Function(UserDetails userDetails,
+            DailyCollectionDetails dailyCollectionDetails)
+        addTransaction,
+    required TResult Function(UserDetails userDetails, String employeeId)
+        createNewAccount,
+    required TResult Function(bool firstTime) firstTimePayment,
+    required TResult Function(String branchId) getCashAndBankDetails,
+    required TResult Function(bool isOffline) setTransactionType,
+    required TResult Function() validateAmount,
+    required TResult Function() clearSuccess,
+  }) {
+    return validateAmount();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String userId, String branchId)? getAllAccounts,
+    TResult? Function(String userId, String branchId)? getAllTransactions,
+    TResult? Function()? clearUserDetailsData,
+    TResult? Function(num amount)? amountChanged,
+    TResult? Function(String note)? noteChanged,
+    TResult? Function(UserDetails userDetails)? getMonthlyLimit,
+    TResult? Function(UserDetails userDetails, String employeeId)? receveAmount,
+    TResult? Function(UserDetails userDetails,
+            DailyCollectionDetails dailyCollectionDetails)?
+        addTransaction,
+    TResult? Function(UserDetails userDetails, String employeeId)?
+        createNewAccount,
+    TResult? Function(bool firstTime)? firstTimePayment,
+    TResult? Function(String branchId)? getCashAndBankDetails,
+    TResult? Function(bool isOffline)? setTransactionType,
+    TResult? Function()? validateAmount,
+    TResult? Function()? clearSuccess,
+  }) {
+    return validateAmount?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String userId, String branchId)? getAllAccounts,
+    TResult Function(String userId, String branchId)? getAllTransactions,
+    TResult Function()? clearUserDetailsData,
+    TResult Function(num amount)? amountChanged,
+    TResult Function(String note)? noteChanged,
+    TResult Function(UserDetails userDetails)? getMonthlyLimit,
+    TResult Function(UserDetails userDetails, String employeeId)? receveAmount,
+    TResult Function(UserDetails userDetails,
+            DailyCollectionDetails dailyCollectionDetails)?
+        addTransaction,
+    TResult Function(UserDetails userDetails, String employeeId)?
+        createNewAccount,
+    TResult Function(bool firstTime)? firstTimePayment,
+    TResult Function(String branchId)? getCashAndBankDetails,
+    TResult Function(bool isOffline)? setTransactionType,
+    TResult Function()? validateAmount,
+    TResult Function()? clearSuccess,
+    required TResult orElse(),
+  }) {
+    if (validateAmount != null) {
+      return validateAmount();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetAllAccounts value) getAllAccounts,
+    required TResult Function(GetAllTransactions value) getAllTransactions,
+    required TResult Function(ClearUserDetailsData value) clearUserDetailsData,
+    required TResult Function(AmountChanged value) amountChanged,
+    required TResult Function(NoteChanged value) noteChanged,
+    required TResult Function(GetMonthlyLimit value) getMonthlyLimit,
+    required TResult Function(ReceveAmount value) receveAmount,
+    required TResult Function(_AddTransaction value) addTransaction,
+    required TResult Function(CreateNewAccount value) createNewAccount,
+    required TResult Function(FirstTimePayment value) firstTimePayment,
+    required TResult Function(GetCashAndBankDetails value)
+        getCashAndBankDetails,
+    required TResult Function(SetTransactionType value) setTransactionType,
+    required TResult Function(ValidateAmount value) validateAmount,
+    required TResult Function(ClearSuccess value) clearSuccess,
+  }) {
+    return validateAmount(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GetAllAccounts value)? getAllAccounts,
+    TResult? Function(GetAllTransactions value)? getAllTransactions,
+    TResult? Function(ClearUserDetailsData value)? clearUserDetailsData,
+    TResult? Function(AmountChanged value)? amountChanged,
+    TResult? Function(NoteChanged value)? noteChanged,
+    TResult? Function(GetMonthlyLimit value)? getMonthlyLimit,
+    TResult? Function(ReceveAmount value)? receveAmount,
+    TResult? Function(_AddTransaction value)? addTransaction,
+    TResult? Function(CreateNewAccount value)? createNewAccount,
+    TResult? Function(FirstTimePayment value)? firstTimePayment,
+    TResult? Function(GetCashAndBankDetails value)? getCashAndBankDetails,
+    TResult? Function(SetTransactionType value)? setTransactionType,
+    TResult? Function(ValidateAmount value)? validateAmount,
+    TResult? Function(ClearSuccess value)? clearSuccess,
+  }) {
+    return validateAmount?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetAllAccounts value)? getAllAccounts,
+    TResult Function(GetAllTransactions value)? getAllTransactions,
+    TResult Function(ClearUserDetailsData value)? clearUserDetailsData,
+    TResult Function(AmountChanged value)? amountChanged,
+    TResult Function(NoteChanged value)? noteChanged,
+    TResult Function(GetMonthlyLimit value)? getMonthlyLimit,
+    TResult Function(ReceveAmount value)? receveAmount,
+    TResult Function(_AddTransaction value)? addTransaction,
+    TResult Function(CreateNewAccount value)? createNewAccount,
+    TResult Function(FirstTimePayment value)? firstTimePayment,
+    TResult Function(GetCashAndBankDetails value)? getCashAndBankDetails,
+    TResult Function(SetTransactionType value)? setTransactionType,
+    TResult Function(ValidateAmount value)? validateAmount,
+    TResult Function(ClearSuccess value)? clearSuccess,
+    required TResult orElse(),
+  }) {
+    if (validateAmount != null) {
+      return validateAmount(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ValidateAmount implements UserDetailsEvent {
+  const factory ValidateAmount() = _$ValidateAmountImpl;
+}
+
+/// @nodoc
+abstract class _$$ClearSuccessImplCopyWith<$Res> {
+  factory _$$ClearSuccessImplCopyWith(
+          _$ClearSuccessImpl value, $Res Function(_$ClearSuccessImpl) then) =
+      __$$ClearSuccessImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$ClearSuccessImplCopyWithImpl<$Res>
+    extends _$UserDetailsEventCopyWithImpl<$Res, _$ClearSuccessImpl>
+    implements _$$ClearSuccessImplCopyWith<$Res> {
+  __$$ClearSuccessImplCopyWithImpl(
+      _$ClearSuccessImpl _value, $Res Function(_$ClearSuccessImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$ClearSuccessImpl implements ClearSuccess {
+  const _$ClearSuccessImpl();
+
+  @override
+  String toString() {
+    return 'UserDetailsEvent.clearSuccess()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$ClearSuccessImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String userId, String branchId) getAllAccounts,
+    required TResult Function(String userId, String branchId)
+        getAllTransactions,
+    required TResult Function() clearUserDetailsData,
+    required TResult Function(num amount) amountChanged,
+    required TResult Function(String note) noteChanged,
+    required TResult Function(UserDetails userDetails) getMonthlyLimit,
+    required TResult Function(UserDetails userDetails, String employeeId)
+        receveAmount,
+    required TResult Function(UserDetails userDetails,
+            DailyCollectionDetails dailyCollectionDetails)
+        addTransaction,
+    required TResult Function(UserDetails userDetails, String employeeId)
+        createNewAccount,
+    required TResult Function(bool firstTime) firstTimePayment,
+    required TResult Function(String branchId) getCashAndBankDetails,
+    required TResult Function(bool isOffline) setTransactionType,
+    required TResult Function() validateAmount,
+    required TResult Function() clearSuccess,
+  }) {
+    return clearSuccess();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String userId, String branchId)? getAllAccounts,
+    TResult? Function(String userId, String branchId)? getAllTransactions,
+    TResult? Function()? clearUserDetailsData,
+    TResult? Function(num amount)? amountChanged,
+    TResult? Function(String note)? noteChanged,
+    TResult? Function(UserDetails userDetails)? getMonthlyLimit,
+    TResult? Function(UserDetails userDetails, String employeeId)? receveAmount,
+    TResult? Function(UserDetails userDetails,
+            DailyCollectionDetails dailyCollectionDetails)?
+        addTransaction,
+    TResult? Function(UserDetails userDetails, String employeeId)?
+        createNewAccount,
+    TResult? Function(bool firstTime)? firstTimePayment,
+    TResult? Function(String branchId)? getCashAndBankDetails,
+    TResult? Function(bool isOffline)? setTransactionType,
+    TResult? Function()? validateAmount,
+    TResult? Function()? clearSuccess,
+  }) {
+    return clearSuccess?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String userId, String branchId)? getAllAccounts,
+    TResult Function(String userId, String branchId)? getAllTransactions,
+    TResult Function()? clearUserDetailsData,
+    TResult Function(num amount)? amountChanged,
+    TResult Function(String note)? noteChanged,
+    TResult Function(UserDetails userDetails)? getMonthlyLimit,
+    TResult Function(UserDetails userDetails, String employeeId)? receveAmount,
+    TResult Function(UserDetails userDetails,
+            DailyCollectionDetails dailyCollectionDetails)?
+        addTransaction,
+    TResult Function(UserDetails userDetails, String employeeId)?
+        createNewAccount,
+    TResult Function(bool firstTime)? firstTimePayment,
+    TResult Function(String branchId)? getCashAndBankDetails,
+    TResult Function(bool isOffline)? setTransactionType,
+    TResult Function()? validateAmount,
+    TResult Function()? clearSuccess,
+    required TResult orElse(),
+  }) {
+    if (clearSuccess != null) {
+      return clearSuccess();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetAllAccounts value) getAllAccounts,
+    required TResult Function(GetAllTransactions value) getAllTransactions,
+    required TResult Function(ClearUserDetailsData value) clearUserDetailsData,
+    required TResult Function(AmountChanged value) amountChanged,
+    required TResult Function(NoteChanged value) noteChanged,
+    required TResult Function(GetMonthlyLimit value) getMonthlyLimit,
+    required TResult Function(ReceveAmount value) receveAmount,
+    required TResult Function(_AddTransaction value) addTransaction,
+    required TResult Function(CreateNewAccount value) createNewAccount,
+    required TResult Function(FirstTimePayment value) firstTimePayment,
+    required TResult Function(GetCashAndBankDetails value)
+        getCashAndBankDetails,
+    required TResult Function(SetTransactionType value) setTransactionType,
+    required TResult Function(ValidateAmount value) validateAmount,
+    required TResult Function(ClearSuccess value) clearSuccess,
+  }) {
+    return clearSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GetAllAccounts value)? getAllAccounts,
+    TResult? Function(GetAllTransactions value)? getAllTransactions,
+    TResult? Function(ClearUserDetailsData value)? clearUserDetailsData,
+    TResult? Function(AmountChanged value)? amountChanged,
+    TResult? Function(NoteChanged value)? noteChanged,
+    TResult? Function(GetMonthlyLimit value)? getMonthlyLimit,
+    TResult? Function(ReceveAmount value)? receveAmount,
+    TResult? Function(_AddTransaction value)? addTransaction,
+    TResult? Function(CreateNewAccount value)? createNewAccount,
+    TResult? Function(FirstTimePayment value)? firstTimePayment,
+    TResult? Function(GetCashAndBankDetails value)? getCashAndBankDetails,
+    TResult? Function(SetTransactionType value)? setTransactionType,
+    TResult? Function(ValidateAmount value)? validateAmount,
+    TResult? Function(ClearSuccess value)? clearSuccess,
+  }) {
+    return clearSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetAllAccounts value)? getAllAccounts,
+    TResult Function(GetAllTransactions value)? getAllTransactions,
+    TResult Function(ClearUserDetailsData value)? clearUserDetailsData,
+    TResult Function(AmountChanged value)? amountChanged,
+    TResult Function(NoteChanged value)? noteChanged,
+    TResult Function(GetMonthlyLimit value)? getMonthlyLimit,
+    TResult Function(ReceveAmount value)? receveAmount,
+    TResult Function(_AddTransaction value)? addTransaction,
+    TResult Function(CreateNewAccount value)? createNewAccount,
+    TResult Function(FirstTimePayment value)? firstTimePayment,
+    TResult Function(GetCashAndBankDetails value)? getCashAndBankDetails,
+    TResult Function(SetTransactionType value)? setTransactionType,
+    TResult Function(ValidateAmount value)? validateAmount,
+    TResult Function(ClearSuccess value)? clearSuccess,
+    required TResult orElse(),
+  }) {
+    if (clearSuccess != null) {
+      return clearSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ClearSuccess implements UserDetailsEvent {
+  const factory ClearSuccess() = _$ClearSuccessImpl;
+}
+
+/// @nodoc
 mixin _$UserDetailsState {
   bool get isLoading => throw _privateConstructorUsedError;
+  bool get transactionType => throw _privateConstructorUsedError;
   bool get firebaseLoading => throw _privateConstructorUsedError;
   bool get firstTime => throw _privateConstructorUsedError;
   bool get noMoredata => throw _privateConstructorUsedError;
@@ -2117,6 +3206,9 @@ mixin _$UserDetailsState {
   String get note => throw _privateConstructorUsedError;
   List<TransactionDetails> get transactions =>
       throw _privateConstructorUsedError;
+  CashAndBankDetails get cashAndBankDetails =>
+      throw _privateConstructorUsedError;
+  UserDetails? get userDetails => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $UserDetailsStateCopyWith<UserDetailsState> get copyWith =>
@@ -2131,6 +3223,7 @@ abstract class $UserDetailsStateCopyWith<$Res> {
   @useResult
   $Res call(
       {bool isLoading,
+      bool transactionType,
       bool firebaseLoading,
       bool firstTime,
       bool noMoredata,
@@ -2140,7 +3233,9 @@ abstract class $UserDetailsStateCopyWith<$Res> {
       AccountDetail? account,
       Amount amount,
       String note,
-      List<TransactionDetails> transactions});
+      List<TransactionDetails> transactions,
+      CashAndBankDetails cashAndBankDetails,
+      UserDetails? userDetails});
 }
 
 /// @nodoc
@@ -2157,6 +3252,7 @@ class _$UserDetailsStateCopyWithImpl<$Res, $Val extends UserDetailsState>
   @override
   $Res call({
     Object? isLoading = null,
+    Object? transactionType = null,
     Object? firebaseLoading = null,
     Object? firstTime = null,
     Object? noMoredata = null,
@@ -2167,11 +3263,17 @@ class _$UserDetailsStateCopyWithImpl<$Res, $Val extends UserDetailsState>
     Object? amount = null,
     Object? note = null,
     Object? transactions = null,
+    Object? cashAndBankDetails = null,
+    Object? userDetails = freezed,
   }) {
     return _then(_value.copyWith(
       isLoading: null == isLoading
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
+      transactionType: null == transactionType
+          ? _value.transactionType
+          : transactionType // ignore: cast_nullable_to_non_nullable
               as bool,
       firebaseLoading: null == firebaseLoading
           ? _value.firebaseLoading
@@ -2213,6 +3315,14 @@ class _$UserDetailsStateCopyWithImpl<$Res, $Val extends UserDetailsState>
           ? _value.transactions
           : transactions // ignore: cast_nullable_to_non_nullable
               as List<TransactionDetails>,
+      cashAndBankDetails: null == cashAndBankDetails
+          ? _value.cashAndBankDetails
+          : cashAndBankDetails // ignore: cast_nullable_to_non_nullable
+              as CashAndBankDetails,
+      userDetails: freezed == userDetails
+          ? _value.userDetails
+          : userDetails // ignore: cast_nullable_to_non_nullable
+              as UserDetails?,
     ) as $Val);
   }
 }
@@ -2227,6 +3337,7 @@ abstract class _$$UserDetailsStateImplCopyWith<$Res>
   @useResult
   $Res call(
       {bool isLoading,
+      bool transactionType,
       bool firebaseLoading,
       bool firstTime,
       bool noMoredata,
@@ -2236,7 +3347,9 @@ abstract class _$$UserDetailsStateImplCopyWith<$Res>
       AccountDetail? account,
       Amount amount,
       String note,
-      List<TransactionDetails> transactions});
+      List<TransactionDetails> transactions,
+      CashAndBankDetails cashAndBankDetails,
+      UserDetails? userDetails});
 }
 
 /// @nodoc
@@ -2251,6 +3364,7 @@ class __$$UserDetailsStateImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? isLoading = null,
+    Object? transactionType = null,
     Object? firebaseLoading = null,
     Object? firstTime = null,
     Object? noMoredata = null,
@@ -2261,11 +3375,17 @@ class __$$UserDetailsStateImplCopyWithImpl<$Res>
     Object? amount = null,
     Object? note = null,
     Object? transactions = null,
+    Object? cashAndBankDetails = null,
+    Object? userDetails = freezed,
   }) {
     return _then(_$UserDetailsStateImpl(
       isLoading: null == isLoading
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
+      transactionType: null == transactionType
+          ? _value.transactionType
+          : transactionType // ignore: cast_nullable_to_non_nullable
               as bool,
       firebaseLoading: null == firebaseLoading
           ? _value.firebaseLoading
@@ -2307,6 +3427,14 @@ class __$$UserDetailsStateImplCopyWithImpl<$Res>
           ? _value._transactions
           : transactions // ignore: cast_nullable_to_non_nullable
               as List<TransactionDetails>,
+      cashAndBankDetails: null == cashAndBankDetails
+          ? _value.cashAndBankDetails
+          : cashAndBankDetails // ignore: cast_nullable_to_non_nullable
+              as CashAndBankDetails,
+      userDetails: freezed == userDetails
+          ? _value.userDetails
+          : userDetails // ignore: cast_nullable_to_non_nullable
+              as UserDetails?,
     ));
   }
 }
@@ -2316,6 +3444,7 @@ class __$$UserDetailsStateImplCopyWithImpl<$Res>
 class _$UserDetailsStateImpl implements _UserDetailsState {
   const _$UserDetailsStateImpl(
       {required this.isLoading,
+      required this.transactionType,
       required this.firebaseLoading,
       required this.firstTime,
       required this.noMoredata,
@@ -2325,11 +3454,15 @@ class _$UserDetailsStateImpl implements _UserDetailsState {
       required this.account,
       required this.amount,
       required this.note,
-      required final List<TransactionDetails> transactions})
+      required final List<TransactionDetails> transactions,
+      required this.cashAndBankDetails,
+      required this.userDetails})
       : _transactions = transactions;
 
   @override
   final bool isLoading;
+  @override
+  final bool transactionType;
   @override
   final bool firebaseLoading;
   @override
@@ -2357,17 +3490,24 @@ class _$UserDetailsStateImpl implements _UserDetailsState {
   }
 
   @override
+  final CashAndBankDetails cashAndBankDetails;
+  @override
+  final UserDetails? userDetails;
+
+  @override
   String toString() {
-    return 'UserDetailsState(isLoading: $isLoading, firebaseLoading: $firebaseLoading, firstTime: $firstTime, noMoredata: $noMoredata, showError: $showError, limit: $limit, successOption: $successOption, account: $account, amount: $amount, note: $note, transactions: $transactions)';
+    return 'UserDetailsState(isLoading: $isLoading, transactionType: $transactionType, firebaseLoading: $firebaseLoading, firstTime: $firstTime, noMoredata: $noMoredata, showError: $showError, limit: $limit, successOption: $successOption, account: $account, amount: $amount, note: $note, transactions: $transactions, cashAndBankDetails: $cashAndBankDetails, userDetails: $userDetails)';
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$UserDetailsStateImpl &&
             (identical(other.isLoading, isLoading) ||
                 other.isLoading == isLoading) &&
+            (identical(other.transactionType, transactionType) ||
+                other.transactionType == transactionType) &&
             (identical(other.firebaseLoading, firebaseLoading) ||
                 other.firebaseLoading == firebaseLoading) &&
             (identical(other.firstTime, firstTime) ||
@@ -2383,13 +3523,18 @@ class _$UserDetailsStateImpl implements _UserDetailsState {
             (identical(other.amount, amount) || other.amount == amount) &&
             (identical(other.note, note) || other.note == note) &&
             const DeepCollectionEquality()
-                .equals(other._transactions, _transactions));
+                .equals(other._transactions, _transactions) &&
+            (identical(other.cashAndBankDetails, cashAndBankDetails) ||
+                other.cashAndBankDetails == cashAndBankDetails) &&
+            (identical(other.userDetails, userDetails) ||
+                other.userDetails == userDetails));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
       isLoading,
+      transactionType,
       firebaseLoading,
       firstTime,
       noMoredata,
@@ -2399,7 +3544,9 @@ class _$UserDetailsStateImpl implements _UserDetailsState {
       account,
       amount,
       note,
-      const DeepCollectionEquality().hash(_transactions));
+      const DeepCollectionEquality().hash(_transactions),
+      cashAndBankDetails,
+      userDetails);
 
   @JsonKey(ignore: true)
   @override
@@ -2411,21 +3558,25 @@ class _$UserDetailsStateImpl implements _UserDetailsState {
 
 abstract class _UserDetailsState implements UserDetailsState {
   const factory _UserDetailsState(
-          {required final bool isLoading,
-          required final bool firebaseLoading,
-          required final bool firstTime,
-          required final bool noMoredata,
-          required final AutovalidateMode showError,
-          required final num limit,
-          required final Option<TransactionDetails> successOption,
-          required final AccountDetail? account,
-          required final Amount amount,
-          required final String note,
-          required final List<TransactionDetails> transactions}) =
-      _$UserDetailsStateImpl;
+      {required final bool isLoading,
+      required final bool transactionType,
+      required final bool firebaseLoading,
+      required final bool firstTime,
+      required final bool noMoredata,
+      required final AutovalidateMode showError,
+      required final num limit,
+      required final Option<TransactionDetails> successOption,
+      required final AccountDetail? account,
+      required final Amount amount,
+      required final String note,
+      required final List<TransactionDetails> transactions,
+      required final CashAndBankDetails cashAndBankDetails,
+      required final UserDetails? userDetails}) = _$UserDetailsStateImpl;
 
   @override
   bool get isLoading;
+  @override
+  bool get transactionType;
   @override
   bool get firebaseLoading;
   @override
@@ -2446,6 +3597,10 @@ abstract class _UserDetailsState implements UserDetailsState {
   String get note;
   @override
   List<TransactionDetails> get transactions;
+  @override
+  CashAndBankDetails get cashAndBankDetails;
+  @override
+  UserDetails? get userDetails;
   @override
   @JsonKey(ignore: true)
   _$$UserDetailsStateImplCopyWith<_$UserDetailsStateImpl> get copyWith =>

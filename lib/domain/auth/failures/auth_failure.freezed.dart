@@ -125,7 +125,7 @@ class _$InvalidCredentialsImpl implements _InvalidCredentials {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$InvalidCredentialsImpl &&
@@ -267,7 +267,7 @@ class _$ServerFailureImpl implements _ServerFailure {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ServerFailureImpl &&
@@ -390,7 +390,7 @@ class _$NotAuthenticatedImpl implements _NotAuthenticated {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType && other is _$NotAuthenticatedImpl);
   }

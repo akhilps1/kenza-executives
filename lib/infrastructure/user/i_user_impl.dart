@@ -127,7 +127,7 @@ class IUserImpl implements IUserFacade {
           DailyCollection.fromMap(data.data()!).copyWith(id: data.id),
         );
       } else {
-        final data = DailyCollection(amount: 0, timestamp: Timestamp.now());
+        final data = DailyCollection.initial();
         await _firestore
             .collection('executive')
             .doc(employeeId)
@@ -169,7 +169,7 @@ class IUserImpl implements IUserFacade {
           DailyCollection.fromMap(data.data()!).copyWith(id: data.id),
         );
       } else {
-        final data = DailyCollection(amount: 0, timestamp: Timestamp.now());
+        final data = DailyCollection.initial();
         await _firestore
             .collection('branches')
             .doc(branchId)

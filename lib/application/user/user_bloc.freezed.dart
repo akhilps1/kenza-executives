@@ -158,7 +158,7 @@ class _$SerchTearmChangedImpl implements SerchTearmChanged {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SerchTearmChangedImpl &&
@@ -332,7 +332,7 @@ class _$SearchClickedImpl implements SearchClicked {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SearchClickedImpl &&
@@ -506,7 +506,7 @@ class _$SearchClosedImpl implements SearchClosed {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SearchClosedImpl &&
@@ -679,7 +679,7 @@ class _$GetAllusersImpl implements GetAllusers {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$GetAllusersImpl &&
@@ -835,7 +835,7 @@ class _$ClearUserDataImpl implements ClearUserData {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType && other is _$ClearUserDataImpl);
   }
@@ -977,7 +977,7 @@ class _$ClearUserFailureImpl implements ClearUserFailure {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType && other is _$ClearUserFailureImpl);
   }
@@ -1139,7 +1139,7 @@ class _$GetEmployeeDailyCollectionImpl implements GetEmployeeDailyCollection {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$GetEmployeeDailyCollectionImpl &&
@@ -1317,7 +1317,7 @@ class _$GetBranchDailyCollectionImpl implements GetBranchDailyCollection {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$GetBranchDailyCollectionImpl &&
@@ -1643,7 +1643,7 @@ class _$UserStateImpl implements _UserState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$UserStateImpl &&

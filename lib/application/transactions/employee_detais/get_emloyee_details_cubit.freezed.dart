@@ -17,6 +17,7 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$GetEmloyeeDetailsState {
   Executive? get executive => throw _privateConstructorUsedError;
+  PaymentKeys? get paymentKeys => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $GetEmloyeeDetailsStateCopyWith<GetEmloyeeDetailsState> get copyWith =>
@@ -29,7 +30,7 @@ abstract class $GetEmloyeeDetailsStateCopyWith<$Res> {
           $Res Function(GetEmloyeeDetailsState) then) =
       _$GetEmloyeeDetailsStateCopyWithImpl<$Res, GetEmloyeeDetailsState>;
   @useResult
-  $Res call({Executive? executive});
+  $Res call({Executive? executive, PaymentKeys? paymentKeys});
 }
 
 /// @nodoc
@@ -47,12 +48,17 @@ class _$GetEmloyeeDetailsStateCopyWithImpl<$Res,
   @override
   $Res call({
     Object? executive = freezed,
+    Object? paymentKeys = freezed,
   }) {
     return _then(_value.copyWith(
       executive: freezed == executive
           ? _value.executive
           : executive // ignore: cast_nullable_to_non_nullable
               as Executive?,
+      paymentKeys: freezed == paymentKeys
+          ? _value.paymentKeys
+          : paymentKeys // ignore: cast_nullable_to_non_nullable
+              as PaymentKeys?,
     ) as $Val);
   }
 }
@@ -66,7 +72,7 @@ abstract class _$$GetEmloyeeDetailsStateImplCopyWith<$Res>
       __$$GetEmloyeeDetailsStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({Executive? executive});
+  $Res call({Executive? executive, PaymentKeys? paymentKeys});
 }
 
 /// @nodoc
@@ -83,12 +89,17 @@ class __$$GetEmloyeeDetailsStateImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? executive = freezed,
+    Object? paymentKeys = freezed,
   }) {
     return _then(_$GetEmloyeeDetailsStateImpl(
       executive: freezed == executive
           ? _value.executive
           : executive // ignore: cast_nullable_to_non_nullable
               as Executive?,
+      paymentKeys: freezed == paymentKeys
+          ? _value.paymentKeys
+          : paymentKeys // ignore: cast_nullable_to_non_nullable
+              as PaymentKeys?,
     ));
   }
 }
@@ -96,27 +107,32 @@ class __$$GetEmloyeeDetailsStateImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$GetEmloyeeDetailsStateImpl implements _GetEmloyeeDetailsState {
-  const _$GetEmloyeeDetailsStateImpl({required this.executive});
+  const _$GetEmloyeeDetailsStateImpl(
+      {required this.executive, required this.paymentKeys});
 
   @override
   final Executive? executive;
+  @override
+  final PaymentKeys? paymentKeys;
 
   @override
   String toString() {
-    return 'GetEmloyeeDetailsState(executive: $executive)';
+    return 'GetEmloyeeDetailsState(executive: $executive, paymentKeys: $paymentKeys)';
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$GetEmloyeeDetailsStateImpl &&
             (identical(other.executive, executive) ||
-                other.executive == executive));
+                other.executive == executive) &&
+            (identical(other.paymentKeys, paymentKeys) ||
+                other.paymentKeys == paymentKeys));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, executive);
+  int get hashCode => Object.hash(runtimeType, executive, paymentKeys);
 
   @JsonKey(ignore: true)
   @override
@@ -127,11 +143,14 @@ class _$GetEmloyeeDetailsStateImpl implements _GetEmloyeeDetailsState {
 }
 
 abstract class _GetEmloyeeDetailsState implements GetEmloyeeDetailsState {
-  const factory _GetEmloyeeDetailsState({required final Executive? executive}) =
-      _$GetEmloyeeDetailsStateImpl;
+  const factory _GetEmloyeeDetailsState(
+      {required final Executive? executive,
+      required final PaymentKeys? paymentKeys}) = _$GetEmloyeeDetailsStateImpl;
 
   @override
   Executive? get executive;
+  @override
+  PaymentKeys? get paymentKeys;
   @override
   @JsonKey(ignore: true)
   _$$GetEmloyeeDetailsStateImplCopyWith<_$GetEmloyeeDetailsStateImpl>

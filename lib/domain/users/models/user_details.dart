@@ -1,7 +1,5 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 
-import 'dart:convert';
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class UserDetails {
@@ -22,6 +20,9 @@ class UserDetails {
     required this.timestamp,
     required this.token,
     required this.addressType,
+    required this.isOffline,
+    required this.lastPayment,
+    this.cardNumber,
     this.id,
   });
 
@@ -42,6 +43,8 @@ class UserDetails {
         ladmark: '',
         pincode: '',
         state: '',
+        isOffline: null,
+        lastPayment: null,
       );
 
   factory UserDetails.fromMap(Map<String, dynamic> map) {
@@ -60,9 +63,15 @@ class UserDetails {
       branchId: map['branchId'] as String,
       referredBy: map['referredBy'] as String,
       token: map['token'] as String,
+      cardNumber:
+          map['cardNumber'] != null ? map['cardNumber'] as String : null,
       maxDepositeAmount: map['maxDepositeAmount'] as num,
       addressType: map['addressType'] as int,
       timestamp: map['timestamp'] as Timestamp,
+      isOffline: map['isOffline'] as bool?,
+      lastPayment: map['lastPayment'] != null
+          ? LastPayment.fromMap(map['lastPayment'] as Map<String, dynamic>)
+          : null,
     );
   }
   final String? id;
@@ -79,10 +88,13 @@ class UserDetails {
   final String branchId;
   final String referredBy;
   final String token;
+  final String? cardNumber;
 
   final num maxDepositeAmount;
   final int addressType;
   final Timestamp timestamp;
+  final bool? isOffline;
+  final LastPayment? lastPayment;
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
@@ -100,9 +112,12 @@ class UserDetails {
       'branchId': branchId,
       'referredBy': referredBy,
       'token': token,
+      'cardNumber': cardNumber,
       'maxDepositeAmount': maxDepositeAmount,
       'addressType': addressType,
       'timestamp': timestamp,
+      'isOffline': isOffline,
+      'lastPayment': lastPayment?.toMap(),
     };
   }
 
@@ -121,9 +136,12 @@ class UserDetails {
     String? branchId,
     String? referredBy,
     String? token,
+    String? cardNumber,
     num? maxDepositeAmount,
     int? addressType,
     Timestamp? timestamp,
+    bool? isOffline,
+    LastPayment? lastPayment,
   }) {
     return UserDetails(
       id: id ?? this.id,
@@ -140,14 +158,45 @@ class UserDetails {
       branchId: branchId ?? this.branchId,
       referredBy: referredBy ?? this.referredBy,
       token: token ?? this.token,
+      cardNumber: cardNumber ?? this.cardNumber,
       maxDepositeAmount: maxDepositeAmount ?? this.maxDepositeAmount,
       addressType: addressType ?? this.addressType,
       timestamp: timestamp ?? this.timestamp,
+      isOffline: isOffline ?? this.isOffline,
+      lastPayment: lastPayment ?? this.lastPayment,
+    );
+  }
+}
+
+class LastPayment {
+  LastPayment({
+    required this.timestamp,
+    required this.amount,
+  });
+  final Timestamp timestamp;
+  final num amount;
+
+  Map<String, dynamic> toMap() {
+    return <String, dynamic>{
+      'timestamp': timestamp,
+      'amount': amount,
+    };
+  }
+
+  factory LastPayment.fromMap(Map<String, dynamic> map) {
+    return LastPayment(
+      timestamp: map['timestamp'] as Timestamp,
+      amount: map['amount'] as num,
     );
   }
 
-  String toJson() => json.encode(toMap());
-
-  factory UserDetails.fromJson(String source) =>
-      UserDetails.fromMap(json.decode(source) as Map<String, dynamic>);
+  LastPayment copyWith({
+    Timestamp? timestamp,
+    num? amount,
+  }) {
+    return LastPayment(
+      timestamp: timestamp ?? this.timestamp,
+      amount: amount ?? this.amount,
+    );
+  }
 }

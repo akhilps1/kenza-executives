@@ -1,5 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:executives/domain/user_details/models/account_model.dart';
+import 'package:executives/domain/user_details/models/cash_and_bank_details.dart';
 import 'package:executives/domain/user_details/models/daily_collection.dart';
 import 'package:executives/domain/transactions/models/transaction.dart';
 import 'package:executives/domain/users/failures/user_failure.dart';
@@ -25,7 +26,10 @@ abstract class IUserDeatailsFacade {
   }
 
   Future<Either<UserFailure, Unit>> updateAmount({
+    required bool isOffline,
     required DailyCollectionDetails collection,
+    required UserDetails userDetails,
+    required CashAndBankDetails cashAndBankDetails,
   }) {
     throw UnimplementedError(
       'updateAmount() not implemented, implement this function before you calling it.',
@@ -76,6 +80,14 @@ abstract class IUserDeatailsFacade {
   }) {
     throw UnimplementedError(
       'verifySmsCode() not implemented, implement this function before you calling it.',
+    );
+  }
+
+  Future<Either<UserFailure, CashAndBankDetails>> getCashAndBankDetails({
+    required String branchId,
+  }) {
+    throw UnimplementedError(
+      'getCashAndBankDetails() not implemented, implement this function before you calling it.',
     );
   }
 }

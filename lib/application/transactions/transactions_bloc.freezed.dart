@@ -202,7 +202,7 @@ class _$GetAllTransactionsImpl implements GetAllTransactions {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$GetAllTransactionsImpl &&
@@ -425,7 +425,7 @@ class _$RefreshTransactionImpl implements RefreshTransaction {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$RefreshTransactionImpl &&
@@ -640,7 +640,7 @@ class _$SearchTearmChangedImpl implements SearchTearmChanged {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SearchTearmChangedImpl &&
@@ -858,7 +858,7 @@ class _$SearchClickedImpl implements SearchClicked {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SearchClickedImpl &&
@@ -1054,7 +1054,7 @@ class _$ClearSearchImpl implements ClearSearch {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType && other is _$ClearSearchImpl);
   }
@@ -1231,7 +1231,7 @@ class _$ClearTransactionImpl implements ClearTransaction {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType && other is _$ClearTransactionImpl);
   }
@@ -1408,7 +1408,7 @@ class _$ClearTransactionDataImpl implements ClearTransactionData {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ClearTransactionDataImpl);
@@ -1604,7 +1604,7 @@ class _$DateRangeChangedImpl implements DateRangeChanged {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$DateRangeChangedImpl &&
@@ -1822,7 +1822,7 @@ class _$ClearDateRangeImpl implements ClearDateRange {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ClearDateRangeImpl &&
@@ -2019,7 +2019,7 @@ class _$CancelDateRangeImpl implements CancelDateRange {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType && other is _$CancelDateRangeImpl);
   }
@@ -2222,7 +2222,7 @@ class _$DateRangeAppliedImpl implements DateRangeApplied {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$DateRangeAppliedImpl &&
@@ -2445,7 +2445,7 @@ class _$GetCollectionAmountImpl implements _GetCollectionAmount {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$GetCollectionAmountImpl &&
@@ -2662,7 +2662,7 @@ class _$GetTotalAmoutCollectedImpl implements GetTotalAmoutCollected {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$GetTotalAmoutCollectedImpl &&
@@ -3031,7 +3031,7 @@ class _$TransactionsStateImpl implements _TransactionsState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$TransactionsStateImpl &&

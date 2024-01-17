@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:bloc/bloc.dart';
 import 'package:bloc_concurrency/bloc_concurrency.dart';
 import 'package:bot_toast/bot_toast.dart';
@@ -9,6 +7,7 @@ import 'package:executives/domain/core/serveice/custom_toast.dart';
 import 'package:executives/domain/core/serveice/keywords_generater.dart';
 import 'package:executives/domain/user_details/i_user_details_facade.dart';
 import 'package:executives/domain/user_details/models/account_model.dart';
+import 'package:executives/domain/user_details/models/cash_and_bank_details.dart';
 import 'package:executives/domain/user_details/models/daily_collection.dart';
 import 'package:executives/domain/transactions/models/transaction.dart';
 import 'package:executives/domain/users/failures/value_validator.dart';
@@ -135,15 +134,6 @@ class UserDetailsBloc extends Bloc<UserDetailsEvent, UserDetailsState> {
       },
     );
 
-    on<ClearUserDetailsData>(
-      (event, emit) {
-        _iUserDeatailsFacade.clearDoc();
-        emit(
-          UserDetailsState.initial(),
-        );
-      },
-    );
-
     on<AmountChanged>(
       (event, emit) => emit(
         state.copyWith(
@@ -167,10 +157,13 @@ class UserDetailsBloc extends Bloc<UserDetailsEvent, UserDetailsState> {
         final failureOrSuccess =
             await _iUserDeatailsFacade.getMonthlyLimit(event.userDetails);
         failureOrSuccess.fold(
-          (_) => null,
+          (_) => emit(
+            state.copyWith(userDetails: event.userDetails),
+          ),
           (success) => emit(
             state.copyWith(
               limit: success,
+              userDetails: event.userDetails,
             ),
           ),
         );
@@ -196,6 +189,7 @@ class UserDetailsBloc extends Bloc<UserDetailsEvent, UserDetailsState> {
             amount: state.amount.getOrCrash(),
             collectedAmount: state.amount.getOrCrash(),
             lastDayCollected: 0,
+            userDetails: state.userDetails!,
           );
           //
           if (state.account?.chechCompletedSixMonths() == false) {
@@ -203,8 +197,10 @@ class UserDetailsBloc extends Bloc<UserDetailsEvent, UserDetailsState> {
               state.copyWith(firebaseLoading: true),
             );
             final failureOrSuccess = await _iUserDeatailsFacade.updateAmount(
-              collection: dailyCollection,
-            );
+                collection: dailyCollection,
+                isOffline: state.transactionType,
+                userDetails: state.userDetails!,
+                cashAndBankDetails: state.cashAndBankDetails);
 
             failureOrSuccess.fold(
               (l) {
@@ -237,6 +233,9 @@ class UserDetailsBloc extends Bloc<UserDetailsEvent, UserDetailsState> {
             //
             final failureOrSuccess = await _iUserDeatailsFacade.updateAmount(
               collection: dailyCollection,
+              isOffline: state.transactionType,
+              userDetails: state.userDetails!,
+              cashAndBankDetails: state.cashAndBankDetails,
             );
 
             failureOrSuccess.fold(
@@ -287,7 +286,8 @@ class UserDetailsBloc extends Bloc<UserDetailsEvent, UserDetailsState> {
             userDetails: event.userDetails,
             amount: event.dailyCollectionDetails.amount,
             note: state.note,
-            status: 1,
+            modeOfPay: 2,
+            status: !state.transactionType ? 0 : 1,
             branchId: event.dailyCollectionDetails.branchId,
             employeeId: event.dailyCollectionDetails.employeeId,
             accountId: event.dailyCollectionDetails.accountId,
@@ -321,5 +321,55 @@ class UserDetailsBloc extends Bloc<UserDetailsEvent, UserDetailsState> {
         );
       },
     );
+
+    on<GetCashAndBankDetails>((event, emit) async {
+      final result = await _iUserDeatailsFacade.getCashAndBankDetails(
+          branchId: event.branchId);
+
+      result.fold(
+        (l) => null,
+        (r) {
+          emit(
+            state.copyWith(cashAndBankDetails: r),
+          );
+        },
+      );
+    });
+
+    on<SetTransactionType>(
+      (event, emit) {
+        emit(state.copyWith(transactionType: event.isOffline));
+      },
+    );
+    on<ClearUserDetailsData>(
+      (event, emit) {
+        _iUserDeatailsFacade.clearDoc();
+        emit(
+          UserDetailsState.initial(),
+        );
+      },
+    );
+
+    on<ValidateAmount>((event, emit) {
+      //
+      final validatedAmount = state.amount.value.isRight();
+
+      if (!validatedAmount) {
+        emit(
+          state.copyWith(
+            showError: AutovalidateMode.always,
+          ),
+        );
+      } else {
+        emit(
+          state.copyWith(
+            showError: AutovalidateMode.disabled,
+          ),
+        );
+      }
+    });
+
+    on<ClearSuccess>(
+        (event, emit) => emit(state.copyWith(successOption: none())));
   }
 }

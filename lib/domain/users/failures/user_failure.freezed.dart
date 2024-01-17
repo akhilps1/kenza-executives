@@ -23,6 +23,7 @@ mixin _$UserFailure {
     required TResult Function(String errorMsg) serverFailure,
     required TResult Function(String errorMsg) accountNotFont,
     required TResult Function(String errorMsg) transactionNotFound,
+    required TResult Function(String errorMsg) cashAndBankNotFount,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -31,6 +32,7 @@ mixin _$UserFailure {
     TResult? Function(String errorMsg)? serverFailure,
     TResult? Function(String errorMsg)? accountNotFont,
     TResult? Function(String errorMsg)? transactionNotFound,
+    TResult? Function(String errorMsg)? cashAndBankNotFount,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -39,6 +41,7 @@ mixin _$UserFailure {
     TResult Function(String errorMsg)? serverFailure,
     TResult Function(String errorMsg)? accountNotFont,
     TResult Function(String errorMsg)? transactionNotFound,
+    TResult Function(String errorMsg)? cashAndBankNotFount,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -48,6 +51,7 @@ mixin _$UserFailure {
     required TResult Function(_ServerFailure value) serverFailure,
     required TResult Function(_AccountNotFont value) accountNotFont,
     required TResult Function(_TransactionNotFound value) transactionNotFound,
+    required TResult Function(_CashAndBankNotFount value) cashAndBankNotFount,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -56,6 +60,7 @@ mixin _$UserFailure {
     TResult? Function(_ServerFailure value)? serverFailure,
     TResult? Function(_AccountNotFont value)? accountNotFont,
     TResult? Function(_TransactionNotFound value)? transactionNotFound,
+    TResult? Function(_CashAndBankNotFount value)? cashAndBankNotFount,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -64,6 +69,7 @@ mixin _$UserFailure {
     TResult Function(_ServerFailure value)? serverFailure,
     TResult Function(_AccountNotFont value)? accountNotFont,
     TResult Function(_TransactionNotFound value)? transactionNotFound,
+    TResult Function(_CashAndBankNotFount value)? cashAndBankNotFount,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -153,7 +159,7 @@ class _$UserNotFountImpl implements _UserNotFount {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$UserNotFountImpl &&
@@ -177,6 +183,7 @@ class _$UserNotFountImpl implements _UserNotFount {
     required TResult Function(String errorMsg) serverFailure,
     required TResult Function(String errorMsg) accountNotFont,
     required TResult Function(String errorMsg) transactionNotFound,
+    required TResult Function(String errorMsg) cashAndBankNotFount,
   }) {
     return userNotFount(errorMsg);
   }
@@ -188,6 +195,7 @@ class _$UserNotFountImpl implements _UserNotFount {
     TResult? Function(String errorMsg)? serverFailure,
     TResult? Function(String errorMsg)? accountNotFont,
     TResult? Function(String errorMsg)? transactionNotFound,
+    TResult? Function(String errorMsg)? cashAndBankNotFount,
   }) {
     return userNotFount?.call(errorMsg);
   }
@@ -199,6 +207,7 @@ class _$UserNotFountImpl implements _UserNotFount {
     TResult Function(String errorMsg)? serverFailure,
     TResult Function(String errorMsg)? accountNotFont,
     TResult Function(String errorMsg)? transactionNotFound,
+    TResult Function(String errorMsg)? cashAndBankNotFount,
     required TResult orElse(),
   }) {
     if (userNotFount != null) {
@@ -214,6 +223,7 @@ class _$UserNotFountImpl implements _UserNotFount {
     required TResult Function(_ServerFailure value) serverFailure,
     required TResult Function(_AccountNotFont value) accountNotFont,
     required TResult Function(_TransactionNotFound value) transactionNotFound,
+    required TResult Function(_CashAndBankNotFount value) cashAndBankNotFount,
   }) {
     return userNotFount(this);
   }
@@ -225,6 +235,7 @@ class _$UserNotFountImpl implements _UserNotFount {
     TResult? Function(_ServerFailure value)? serverFailure,
     TResult? Function(_AccountNotFont value)? accountNotFont,
     TResult? Function(_TransactionNotFound value)? transactionNotFound,
+    TResult? Function(_CashAndBankNotFount value)? cashAndBankNotFount,
   }) {
     return userNotFount?.call(this);
   }
@@ -236,6 +247,7 @@ class _$UserNotFountImpl implements _UserNotFount {
     TResult Function(_ServerFailure value)? serverFailure,
     TResult Function(_AccountNotFont value)? accountNotFont,
     TResult Function(_TransactionNotFound value)? transactionNotFound,
+    TResult Function(_CashAndBankNotFount value)? cashAndBankNotFount,
     required TResult orElse(),
   }) {
     if (userNotFount != null) {
@@ -304,7 +316,7 @@ class _$ServerFailureImpl implements _ServerFailure {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ServerFailureImpl &&
@@ -328,6 +340,7 @@ class _$ServerFailureImpl implements _ServerFailure {
     required TResult Function(String errorMsg) serverFailure,
     required TResult Function(String errorMsg) accountNotFont,
     required TResult Function(String errorMsg) transactionNotFound,
+    required TResult Function(String errorMsg) cashAndBankNotFount,
   }) {
     return serverFailure(errorMsg);
   }
@@ -339,6 +352,7 @@ class _$ServerFailureImpl implements _ServerFailure {
     TResult? Function(String errorMsg)? serverFailure,
     TResult? Function(String errorMsg)? accountNotFont,
     TResult? Function(String errorMsg)? transactionNotFound,
+    TResult? Function(String errorMsg)? cashAndBankNotFount,
   }) {
     return serverFailure?.call(errorMsg);
   }
@@ -350,6 +364,7 @@ class _$ServerFailureImpl implements _ServerFailure {
     TResult Function(String errorMsg)? serverFailure,
     TResult Function(String errorMsg)? accountNotFont,
     TResult Function(String errorMsg)? transactionNotFound,
+    TResult Function(String errorMsg)? cashAndBankNotFount,
     required TResult orElse(),
   }) {
     if (serverFailure != null) {
@@ -365,6 +380,7 @@ class _$ServerFailureImpl implements _ServerFailure {
     required TResult Function(_ServerFailure value) serverFailure,
     required TResult Function(_AccountNotFont value) accountNotFont,
     required TResult Function(_TransactionNotFound value) transactionNotFound,
+    required TResult Function(_CashAndBankNotFount value) cashAndBankNotFount,
   }) {
     return serverFailure(this);
   }
@@ -376,6 +392,7 @@ class _$ServerFailureImpl implements _ServerFailure {
     TResult? Function(_ServerFailure value)? serverFailure,
     TResult? Function(_AccountNotFont value)? accountNotFont,
     TResult? Function(_TransactionNotFound value)? transactionNotFound,
+    TResult? Function(_CashAndBankNotFount value)? cashAndBankNotFount,
   }) {
     return serverFailure?.call(this);
   }
@@ -387,6 +404,7 @@ class _$ServerFailureImpl implements _ServerFailure {
     TResult Function(_ServerFailure value)? serverFailure,
     TResult Function(_AccountNotFont value)? accountNotFont,
     TResult Function(_TransactionNotFound value)? transactionNotFound,
+    TResult Function(_CashAndBankNotFount value)? cashAndBankNotFount,
     required TResult orElse(),
   }) {
     if (serverFailure != null) {
@@ -455,7 +473,7 @@ class _$AccountNotFontImpl implements _AccountNotFont {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AccountNotFontImpl &&
@@ -480,6 +498,7 @@ class _$AccountNotFontImpl implements _AccountNotFont {
     required TResult Function(String errorMsg) serverFailure,
     required TResult Function(String errorMsg) accountNotFont,
     required TResult Function(String errorMsg) transactionNotFound,
+    required TResult Function(String errorMsg) cashAndBankNotFount,
   }) {
     return accountNotFont(errorMsg);
   }
@@ -491,6 +510,7 @@ class _$AccountNotFontImpl implements _AccountNotFont {
     TResult? Function(String errorMsg)? serverFailure,
     TResult? Function(String errorMsg)? accountNotFont,
     TResult? Function(String errorMsg)? transactionNotFound,
+    TResult? Function(String errorMsg)? cashAndBankNotFount,
   }) {
     return accountNotFont?.call(errorMsg);
   }
@@ -502,6 +522,7 @@ class _$AccountNotFontImpl implements _AccountNotFont {
     TResult Function(String errorMsg)? serverFailure,
     TResult Function(String errorMsg)? accountNotFont,
     TResult Function(String errorMsg)? transactionNotFound,
+    TResult Function(String errorMsg)? cashAndBankNotFount,
     required TResult orElse(),
   }) {
     if (accountNotFont != null) {
@@ -517,6 +538,7 @@ class _$AccountNotFontImpl implements _AccountNotFont {
     required TResult Function(_ServerFailure value) serverFailure,
     required TResult Function(_AccountNotFont value) accountNotFont,
     required TResult Function(_TransactionNotFound value) transactionNotFound,
+    required TResult Function(_CashAndBankNotFount value) cashAndBankNotFount,
   }) {
     return accountNotFont(this);
   }
@@ -528,6 +550,7 @@ class _$AccountNotFontImpl implements _AccountNotFont {
     TResult? Function(_ServerFailure value)? serverFailure,
     TResult? Function(_AccountNotFont value)? accountNotFont,
     TResult? Function(_TransactionNotFound value)? transactionNotFound,
+    TResult? Function(_CashAndBankNotFount value)? cashAndBankNotFount,
   }) {
     return accountNotFont?.call(this);
   }
@@ -539,6 +562,7 @@ class _$AccountNotFontImpl implements _AccountNotFont {
     TResult Function(_ServerFailure value)? serverFailure,
     TResult Function(_AccountNotFont value)? accountNotFont,
     TResult Function(_TransactionNotFound value)? transactionNotFound,
+    TResult Function(_CashAndBankNotFount value)? cashAndBankNotFount,
     required TResult orElse(),
   }) {
     if (accountNotFont != null) {
@@ -607,7 +631,7 @@ class _$TransactionNotFoundImpl implements _TransactionNotFound {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$TransactionNotFoundImpl &&
@@ -632,6 +656,7 @@ class _$TransactionNotFoundImpl implements _TransactionNotFound {
     required TResult Function(String errorMsg) serverFailure,
     required TResult Function(String errorMsg) accountNotFont,
     required TResult Function(String errorMsg) transactionNotFound,
+    required TResult Function(String errorMsg) cashAndBankNotFount,
   }) {
     return transactionNotFound(errorMsg);
   }
@@ -643,6 +668,7 @@ class _$TransactionNotFoundImpl implements _TransactionNotFound {
     TResult? Function(String errorMsg)? serverFailure,
     TResult? Function(String errorMsg)? accountNotFont,
     TResult? Function(String errorMsg)? transactionNotFound,
+    TResult? Function(String errorMsg)? cashAndBankNotFount,
   }) {
     return transactionNotFound?.call(errorMsg);
   }
@@ -654,6 +680,7 @@ class _$TransactionNotFoundImpl implements _TransactionNotFound {
     TResult Function(String errorMsg)? serverFailure,
     TResult Function(String errorMsg)? accountNotFont,
     TResult Function(String errorMsg)? transactionNotFound,
+    TResult Function(String errorMsg)? cashAndBankNotFount,
     required TResult orElse(),
   }) {
     if (transactionNotFound != null) {
@@ -669,6 +696,7 @@ class _$TransactionNotFoundImpl implements _TransactionNotFound {
     required TResult Function(_ServerFailure value) serverFailure,
     required TResult Function(_AccountNotFont value) accountNotFont,
     required TResult Function(_TransactionNotFound value) transactionNotFound,
+    required TResult Function(_CashAndBankNotFount value) cashAndBankNotFount,
   }) {
     return transactionNotFound(this);
   }
@@ -680,6 +708,7 @@ class _$TransactionNotFoundImpl implements _TransactionNotFound {
     TResult? Function(_ServerFailure value)? serverFailure,
     TResult? Function(_AccountNotFont value)? accountNotFont,
     TResult? Function(_TransactionNotFound value)? transactionNotFound,
+    TResult? Function(_CashAndBankNotFount value)? cashAndBankNotFount,
   }) {
     return transactionNotFound?.call(this);
   }
@@ -691,6 +720,7 @@ class _$TransactionNotFoundImpl implements _TransactionNotFound {
     TResult Function(_ServerFailure value)? serverFailure,
     TResult Function(_AccountNotFont value)? accountNotFont,
     TResult Function(_TransactionNotFound value)? transactionNotFound,
+    TResult Function(_CashAndBankNotFount value)? cashAndBankNotFount,
     required TResult orElse(),
   }) {
     if (transactionNotFound != null) {
@@ -709,5 +739,163 @@ abstract class _TransactionNotFound implements UserFailure {
   @override
   @JsonKey(ignore: true)
   _$$TransactionNotFoundImplCopyWith<_$TransactionNotFoundImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$CashAndBankNotFountImplCopyWith<$Res>
+    implements $UserFailureCopyWith<$Res> {
+  factory _$$CashAndBankNotFountImplCopyWith(_$CashAndBankNotFountImpl value,
+          $Res Function(_$CashAndBankNotFountImpl) then) =
+      __$$CashAndBankNotFountImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String errorMsg});
+}
+
+/// @nodoc
+class __$$CashAndBankNotFountImplCopyWithImpl<$Res>
+    extends _$UserFailureCopyWithImpl<$Res, _$CashAndBankNotFountImpl>
+    implements _$$CashAndBankNotFountImplCopyWith<$Res> {
+  __$$CashAndBankNotFountImplCopyWithImpl(_$CashAndBankNotFountImpl _value,
+      $Res Function(_$CashAndBankNotFountImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? errorMsg = null,
+  }) {
+    return _then(_$CashAndBankNotFountImpl(
+      errorMsg: null == errorMsg
+          ? _value.errorMsg
+          : errorMsg // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$CashAndBankNotFountImpl implements _CashAndBankNotFount {
+  const _$CashAndBankNotFountImpl({required this.errorMsg});
+
+  @override
+  final String errorMsg;
+
+  @override
+  String toString() {
+    return 'UserFailure.cashAndBankNotFount(errorMsg: $errorMsg)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$CashAndBankNotFountImpl &&
+            (identical(other.errorMsg, errorMsg) ||
+                other.errorMsg == errorMsg));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, errorMsg);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$CashAndBankNotFountImplCopyWith<_$CashAndBankNotFountImpl> get copyWith =>
+      __$$CashAndBankNotFountImplCopyWithImpl<_$CashAndBankNotFountImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String errorMsg) userNotFount,
+    required TResult Function(String errorMsg) serverFailure,
+    required TResult Function(String errorMsg) accountNotFont,
+    required TResult Function(String errorMsg) transactionNotFound,
+    required TResult Function(String errorMsg) cashAndBankNotFount,
+  }) {
+    return cashAndBankNotFount(errorMsg);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String errorMsg)? userNotFount,
+    TResult? Function(String errorMsg)? serverFailure,
+    TResult? Function(String errorMsg)? accountNotFont,
+    TResult? Function(String errorMsg)? transactionNotFound,
+    TResult? Function(String errorMsg)? cashAndBankNotFount,
+  }) {
+    return cashAndBankNotFount?.call(errorMsg);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String errorMsg)? userNotFount,
+    TResult Function(String errorMsg)? serverFailure,
+    TResult Function(String errorMsg)? accountNotFont,
+    TResult Function(String errorMsg)? transactionNotFound,
+    TResult Function(String errorMsg)? cashAndBankNotFount,
+    required TResult orElse(),
+  }) {
+    if (cashAndBankNotFount != null) {
+      return cashAndBankNotFount(errorMsg);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_UserNotFount value) userNotFount,
+    required TResult Function(_ServerFailure value) serverFailure,
+    required TResult Function(_AccountNotFont value) accountNotFont,
+    required TResult Function(_TransactionNotFound value) transactionNotFound,
+    required TResult Function(_CashAndBankNotFount value) cashAndBankNotFount,
+  }) {
+    return cashAndBankNotFount(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_UserNotFount value)? userNotFount,
+    TResult? Function(_ServerFailure value)? serverFailure,
+    TResult? Function(_AccountNotFont value)? accountNotFont,
+    TResult? Function(_TransactionNotFound value)? transactionNotFound,
+    TResult? Function(_CashAndBankNotFount value)? cashAndBankNotFount,
+  }) {
+    return cashAndBankNotFount?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_UserNotFount value)? userNotFount,
+    TResult Function(_ServerFailure value)? serverFailure,
+    TResult Function(_AccountNotFont value)? accountNotFont,
+    TResult Function(_TransactionNotFound value)? transactionNotFound,
+    TResult Function(_CashAndBankNotFount value)? cashAndBankNotFount,
+    required TResult orElse(),
+  }) {
+    if (cashAndBankNotFount != null) {
+      return cashAndBankNotFount(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _CashAndBankNotFount implements UserFailure {
+  const factory _CashAndBankNotFount({required final String errorMsg}) =
+      _$CashAndBankNotFountImpl;
+
+  @override
+  String get errorMsg;
+  @override
+  @JsonKey(ignore: true)
+  _$$CashAndBankNotFountImplCopyWith<_$CashAndBankNotFountImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -32,4 +32,12 @@ class UserDetailsEvent with _$UserDetailsEvent {
   }) = CreateNewAccount;
   const factory UserDetailsEvent.firstTimePayment(bool firstTime) =
       FirstTimePayment;
+  const factory UserDetailsEvent.getCashAndBankDetails(String branchId) =
+      GetCashAndBankDetails;
+  const factory UserDetailsEvent.setTransactionType({
+    required bool isOffline,
+  }) = SetTransactionType;
+
+  const factory UserDetailsEvent.validateAmount() = ValidateAmount;
+  const factory UserDetailsEvent.clearSuccess() = ClearSuccess;
 }

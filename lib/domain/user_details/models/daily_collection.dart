@@ -1,3 +1,5 @@
+import 'package:executives/domain/users/models/user_details.dart';
+
 class DailyCollectionDetails {
   String? id;
   final String branchId;
@@ -7,6 +9,8 @@ class DailyCollectionDetails {
   final num amount;
   final num collectedAmount;
   final num lastDayCollected;
+  final UserDetails userDetails;
+
   DailyCollectionDetails({
     required this.branchId,
     required this.accountId,
@@ -15,34 +19,9 @@ class DailyCollectionDetails {
     required this.amount,
     required this.collectedAmount,
     required this.lastDayCollected,
+    required this.userDetails,
     this.id,
   });
-
-  Map<String, dynamic> toMap() {
-    return <String, dynamic>{
-      'id': id,
-      'branchId': branchId,
-      'accountId': accountId,
-      'employeeId': employeeId,
-      'userId': userId,
-      'amount': amount,
-      'collectedAmount': collectedAmount,
-      'lastDayCollected': lastDayCollected,
-    };
-  }
-
-  factory DailyCollectionDetails.fromMap(Map<String, dynamic> map) {
-    return DailyCollectionDetails(
-      id: map['id'] != null ? map['id'] as String : null,
-      branchId: map['branchId'] as String,
-      accountId: map['accountId'] as String,
-      employeeId: map['employeeId'] as String,
-      userId: map['userId'] as String,
-      amount: map['amount'] as num,
-      collectedAmount: map['collectedAmount'] as num,
-      lastDayCollected: map['lastDayCollected'] as num,
-    );
-  }
 
   DailyCollectionDetails copyWith({
     String? id,
@@ -53,8 +32,10 @@ class DailyCollectionDetails {
     num? amount,
     num? collectedAmount,
     num? lastDayCollected,
+    UserDetails? userDetails,
   }) {
     return DailyCollectionDetails(
+      userDetails: userDetails ?? this.userDetails,
       id: id ?? this.id,
       branchId: branchId ?? this.branchId,
       accountId: accountId ?? this.accountId,

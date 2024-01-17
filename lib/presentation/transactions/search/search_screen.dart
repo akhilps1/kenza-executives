@@ -115,7 +115,7 @@ class _TransactionSearchScreenState extends State<TransactionSearchScreen> {
               slivers: [
                 if (state.searchItems.isNotEmpty)
                   SliverList.builder(
-                    itemCount: state.transactions.length,
+                    itemCount: state.searchItems.length,
                     itemBuilder: (context, index) {
                       final transaction = state.searchItems[index];
                       return TransactionDetailsCard(transaction: transaction);

@@ -159,7 +159,7 @@ class _$InvalidEmailImpl<T> implements InvalidEmail<T> {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$InvalidEmailImpl<T> &&
@@ -317,7 +317,7 @@ class _$InvlidPasswordImpl<T> implements InvlidPassword<T> {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$InvlidPasswordImpl<T> &&
@@ -475,7 +475,7 @@ class _$LimitReachedImpl<T> implements LimitReached<T> {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$LimitReachedImpl<T> &&
@@ -633,7 +633,7 @@ class _$InvalidAmountImpl<T> implements InvalidAmount<T> {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$InvalidAmountImpl<T> &&
@@ -791,7 +791,7 @@ class _$MonthlyLimitExeededImpl<T> implements MonthlyLimitExeeded<T> {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$MonthlyLimitExeededImpl<T> &&

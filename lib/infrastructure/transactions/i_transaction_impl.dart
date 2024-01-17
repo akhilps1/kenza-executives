@@ -6,6 +6,7 @@ import 'package:executives/domain/auth/models/executive.dart';
 
 import 'package:executives/domain/transactions/failures/transaction_failure.dart';
 import 'package:executives/domain/transactions/i_transaction_facade.dart';
+import 'package:executives/domain/transactions/models/payment_keys.dart';
 import 'package:executives/domain/transactions/models/transaction.dart';
 import 'package:executives/domain/users/models/daily_collection.dart';
 import 'package:executives/infrastructure/transactions/usecase/get_employee_details_usecase.dart';
@@ -106,25 +107,9 @@ class ITransactionImpl implements ITransactionFacade {
                 Filter.and(
                   Filter('branchId', isEqualTo: branchId),
                   Filter('employeeId', isEqualTo: employeeId),
-                ),
-              )
-              .where(
-                Filter.and(
                   Filter('timestamp',
-                      isGreaterThanOrEqualTo: dateRange.startDate!
-                          .add(const Duration(microseconds: 1))),
-                  Filter(
-                    'timestamp',
-                    isLessThanOrEqualTo: dateRange.endDate!.add(
-                      const Duration(
-                        hours: 23,
-                        minutes: 59,
-                        seconds: 59,
-                        milliseconds: 59,
-                        microseconds: 59,
-                      ),
-                    ),
-                  ),
+                      isGreaterThanOrEqualTo: dateRange.startDate),
+                  Filter('timestamp', isLessThanOrEqualTo: dateRange.endDate),
                   Filter('show', isEqualTo: true),
                 ),
               )
@@ -137,28 +122,9 @@ class ITransactionImpl implements ITransactionFacade {
                 Filter.and(
                   Filter('branchId', isEqualTo: branchId),
                   Filter('employeeId', isEqualTo: employeeId),
-                ),
-              )
-              .where(
-                Filter.and(
-                  Filter(
-                    'timestamp',
-                    isGreaterThanOrEqualTo: dateRange.startDate!.add(
-                      const Duration(microseconds: 1),
-                    ),
-                  ),
-                  Filter(
-                    'timestamp',
-                    isLessThanOrEqualTo: dateRange.endDate!.add(
-                      const Duration(
-                        hours: 23,
-                        minutes: 59,
-                        seconds: 59,
-                        milliseconds: 59,
-                        microseconds: 59,
-                      ),
-                    ),
-                  ),
+                  Filter('timestamp',
+                      isGreaterThanOrEqualTo: dateRange.startDate),
+                  Filter('timestamp', isLessThanOrEqualTo: dateRange.endDate),
                   Filter('show', isEqualTo: true),
                 ),
               )
@@ -332,24 +298,8 @@ class ITransactionImpl implements ITransactionFacade {
           .collection('daily_collection')
           .where(
             Filter.and(
-              Filter(
-                'timestamp',
-                isGreaterThanOrEqualTo: dateRange.startDate!.add(
-                  const Duration(microseconds: 1),
-                ),
-              ),
-              Filter(
-                'timestamp',
-                isLessThanOrEqualTo: dateRange.endDate!.add(
-                  const Duration(
-                    hours: 23,
-                    minutes: 59,
-                    seconds: 59,
-                    milliseconds: 59,
-                    microseconds: 59,
-                  ),
-                ),
-              ),
+              Filter('timestamp', isGreaterThanOrEqualTo: dateRange.startDate),
+              Filter('timestamp', isLessThanOrEqualTo: dateRange.endDate),
             ),
           )
           .get();
@@ -380,5 +330,26 @@ class ITransactionImpl implements ITransactionFacade {
     required String employeeId,
   }) {
     return _emloyeeDetails.getEmployeeDetails(employeeId: employeeId);
+  }
+
+  @override
+  Future<Either<TransactionFailure, PaymentKeys>> getPaymetKeys({
+    required String branchId,
+  }) async {
+    try {
+      final response = await _firestore
+          .collection('branches')
+          .doc(branchId)
+          .collection('keys')
+          .doc('payment_keys')
+          .get();
+      if (response.data() != null) {
+        return right(PaymentKeys.fromMap(response.data()!));
+      } else {
+        return left(TransactionFailure.notFount(errorMsg: 'Key Not Configure'));
+      }
+    } on FirebaseException catch (e) {
+      return left(TransactionFailure.serverFailure(errorMsg: e.code));
+    }
   }
 }

@@ -1,6 +1,8 @@
 import 'dart:async';
 import 'dart:developer';
 
+import 'package:executives/domain/user_details/models/cash_and_bank_details.dart';
+import 'package:executives/infrastructure/user_details/usecase/get_cash_and_bank_details.dart';
 import 'package:executives/infrastructure/user_details/usecase/notification_usecase.dart';
 import 'package:executives/infrastructure/user_details/usecase/user_verification_usecase.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -20,15 +22,18 @@ class IUserDeatailsImpl implements IUserDeatailsFacade {
     required FirebaseFirestore firestore,
     required NotificationServeice notificationServeice,
     required UserVerificationServeice userVerificationServeice,
+    required GetCashAndBankDetails cashAndBankDetails,
   })  : _firestore = firestore,
         _notificationServeice = notificationServeice,
-        _userVerificationServeice = userVerificationServeice;
+        _userVerificationServeice = userVerificationServeice,
+        _cashAndBankDetails = cashAndBankDetails;
 
   final FirebaseFirestore _firestore;
 
   final NotificationServeice _notificationServeice;
 
   final UserVerificationServeice _userVerificationServeice;
+  final GetCashAndBankDetails _cashAndBankDetails;
 
   QueryDocumentSnapshot<Map<String, dynamic>>? _lastDoc;
 
@@ -201,19 +206,90 @@ class IUserDeatailsImpl implements IUserDeatailsFacade {
 
   @override
   Future<Either<UserFailure, Unit>> updateAmount({
+    required bool isOffline,
     required DailyCollectionDetails collection,
+    required UserDetails userDetails,
+    required CashAndBankDetails cashAndBankDetails,
   }) async {
+    final batch = _firestore.batch();
+    final monthilyLimitId =
+        DateTime.now().year.toString() + DateTime.now().month.toString();
+
+    final dailyCollectionId = DateTime.now().year.toString() +
+        DateTime.now().month.toString() +
+        DateTime.now().day.toString();
+
+    final lastTransactionMonth =
+        // ignore: lines_longer_than_80_chars
+        '${userDetails.lastPayment?.timestamp.toDate().year}${userDetails.lastPayment?.timestamp.toDate().month}';
+
+    batch
+      ..update(
+        _firestore.collection('accounts').doc(collection.accountId),
+        {
+          'deposits': FieldValue.increment(collection.amount),
+        },
+      )
+      ..update(_firestore.collection('branches').doc(collection.branchId), {
+        'totalTransactionAmount': FieldValue.increment(collection.amount),
+      })
+      ..update(
+          _firestore
+              .collection('users')
+              .doc(collection.userId)
+              .collection('monthly_limit')
+              .doc(monthilyLimitId),
+          {
+            'limit': FieldValue.increment(-collection.amount),
+          })
+      ..update(_firestore.collection('executive').doc(collection.employeeId), {
+        'collected': FieldValue.increment(collection.amount),
+      })
+      ..update(
+          _firestore
+              .collection('branches')
+              .doc(collection.branchId)
+              .collection('daily_collection')
+              .doc(dailyCollectionId),
+          isOffline
+              ? {
+                  'amount': FieldValue.increment(collection.amount),
+                  'offline': FieldValue.increment(collection.amount),
+                }
+              : {
+                  'amount': FieldValue.increment(collection.amount),
+                  'online': FieldValue.increment(collection.amount),
+                })
+      ..update(
+        _firestore.collection('users').doc(collection.userId),
+        {
+          'lastPayment.timestamp': Timestamp.now(),
+          'lastPayment.amount': lastTransactionMonth == monthilyLimitId
+              ? FieldValue.increment(collection.amount)
+              : collection.amount,
+        },
+      )
+      ..update(
+          _firestore
+              .collection('executive')
+              .doc(collection.employeeId)
+              .collection('daily_collection')
+              .doc(dailyCollectionId),
+          {
+            'amount': FieldValue.increment(collection.amount),
+          })
+      ..update(
+          _firestore.collection('cash_and_bank').doc(cashAndBankDetails.id),
+          isOffline
+              ? {
+                  'cashBalance': FieldValue.increment(collection.amount),
+                }
+              : {
+                  'bankBalance': FieldValue.increment(collection.amount),
+                });
+
     try {
-      await Future.wait(
-        [
-          _updateAmountInAccount(collection),
-          _updateAmountInBranch(collection),
-          _updateAmountInEmployee(collection),
-          _updateDailyCollectedAmount(collection),
-          _updateAmountMonthlyLimit(collection),
-          _updateDailyCollectedAmountInEmployee(collection),
-        ],
-      );
+      batch.commit();
       return right(unit);
     } on Exception catch (e) {
       log('updateAmount() Exception: $e');
@@ -289,69 +365,10 @@ class IUserDeatailsImpl implements IUserDeatailsFacade {
     );
   }
 
-  Future<void> _updateAmountInAccount(DailyCollectionDetails collection) async {
-    await _firestore.collection('accounts').doc(collection.accountId).update(
-      {
-        'deposits': FieldValue.increment(collection.amount),
-      },
-    );
-  }
-
-  Future<void> _updateAmountInBranch(DailyCollectionDetails collection) async {
-    await _firestore.collection('branches').doc(collection.branchId).update({
-      'totalTransactionAmount': FieldValue.increment(collection.amount),
-    });
-  }
-
-  Future<void> _updateAmountMonthlyLimit(
-      DailyCollectionDetails collection) async {
-    final id = DateTime.now().year.toString() + DateTime.now().month.toString();
-    await _firestore
-        .collection('users')
-        .doc(collection.userId)
-        .collection('monthly_limit')
-        .doc(id)
-        .update({
-      'limit': FieldValue.increment(-collection.amount),
-    });
-  }
-
-  Future<void> _updateAmountInEmployee(
-      DailyCollectionDetails collection) async {
-    await _firestore.collection('executive').doc(collection.employeeId).update({
-      'collected': FieldValue.increment(collection.amount),
-    });
-  }
-
-  Future<void> _updateDailyCollectedAmount(
-      DailyCollectionDetails collection) async {
-    final id = DateTime.now().year.toString() +
-        DateTime.now().month.toString() +
-        DateTime.now().day.toString();
-
-    await _firestore
-        .collection('branches')
-        .doc(collection.branchId)
-        .collection('daily_collection')
-        .doc(id)
-        .update({
-      'amount': FieldValue.increment(collection.amount),
-    });
-  }
-
-  Future<void> _updateDailyCollectedAmountInEmployee(
-      DailyCollectionDetails collection) async {
-    final id = DateTime.now().year.toString() +
-        DateTime.now().month.toString() +
-        DateTime.now().day.toString();
-
-    await _firestore
-        .collection('executive')
-        .doc(collection.employeeId)
-        .collection('daily_collection')
-        .doc(id)
-        .update({
-      'amount': FieldValue.increment(collection.amount),
-    });
+  @override
+  Future<Either<UserFailure, CashAndBankDetails>> getCashAndBankDetails({
+    required String branchId,
+  }) {
+    return _cashAndBankDetails(branchId);
   }
 }

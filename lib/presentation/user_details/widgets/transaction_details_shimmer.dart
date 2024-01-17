@@ -20,7 +20,7 @@ class TranactionShimmerWidget extends StatelessWidget {
         return Container(
           margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
           width: 340,
-          height: 60,
+          height: 70,
           padding: const EdgeInsets.all(5),
           decoration: ShapeDecoration(
             color: Colors.white.withOpacity(0.6),
@@ -38,7 +38,7 @@ class TranactionShimmerWidget extends StatelessWidget {
               children: [
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     SizedBox(
                       width: 80,
@@ -53,12 +53,6 @@ class TranactionShimmerWidget extends StatelessWidget {
                         ),
                       ),
                     ),
-                  ],
-                ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
                     SizedBox(
                       width: 120,
                       child: Card(
@@ -72,8 +66,14 @@ class TranactionShimmerWidget extends StatelessWidget {
                         ),
                       ),
                     ),
+                  ],
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
                     SizedBox(
-                      width: 80,
+                      width: 100,
                       child: Card(
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.all(

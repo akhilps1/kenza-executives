@@ -1,11 +1,8 @@
-import 'dart:async';
 import 'dart:developer';
 
 import 'package:bloc/bloc.dart';
 import 'package:bloc_concurrency/bloc_concurrency.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:executives/application/transactions/employee_detais/get_emloyee_details_cubit.dart';
-import 'package:executives/domain/core/di/injection.dart';
 import 'package:executives/domain/users/models/daily_collection.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
@@ -226,6 +223,9 @@ class TransactionsBloc extends Bloc<TransactionsEvent, TransactionsState> {
             final amountCollected = collections.reduce(
               (value, element) => DailyCollection(
                 amount: value.amount + element.amount,
+                offline: value.offline + element.offline,
+                online: value.online + element.online,
+                withdrow: 0,
                 timestamp: Timestamp.now(),
               ),
             );

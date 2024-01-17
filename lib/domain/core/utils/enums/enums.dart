@@ -13,3 +13,9 @@ enum TransactionType {
   debit,
   credit,
 }
+
+enum ModeOfPay {
+  self,
+  branch,
+  executive,
+}

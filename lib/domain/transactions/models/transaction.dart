@@ -1,3 +1,4 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:executives/domain/core/utils/enums/enums.dart';
 import 'package:executives/domain/users/models/user_details.dart';
@@ -14,6 +15,7 @@ class TransactionDetails {
     required this.keywords,
     required this.transactionType,
     required this.referrerId,
+    required this.modeOfPay,
     required this.referredBy,
     required this.timestamp,
     required this.show,
@@ -36,6 +38,7 @@ class TransactionDetails {
       note: map['note'] as String,
       status: map['status'] as int,
       accountId: map['accountId'] as String,
+      modeOfPay: map['modeOfPay'] as int,
       id: map['transactionId'] as String?,
     );
   }
@@ -51,6 +54,7 @@ class TransactionDetails {
   final String employeeId;
   final List<String> keywords;
   final int transactionType;
+  final int modeOfPay;
   final String referredBy;
   final bool show;
 
@@ -76,6 +80,18 @@ class TransactionDetails {
     }
   }
 
+  ModeOfPay get getModeOfPay {
+    switch (modeOfPay) {
+      case 2:
+        return ModeOfPay.executive;
+      case 1:
+        return ModeOfPay.branch;
+      case 0:
+      default:
+        return ModeOfPay.self;
+    }
+  }
+
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'id': id,
@@ -93,40 +109,43 @@ class TransactionDetails {
       'timestamp': timestamp,
       'show': show,
       'referrerId': referrerId,
+      'modeOfPay': modeOfPay,
     };
   }
 
   TransactionDetails copyWith({
     String? id,
+    Timestamp? timestamp,
     UserDetails? userDetails,
-    num? amount,
+    String? accountId,
     String? note,
+    num? amount,
+    String? referrerId,
     int? status,
     String? branchId,
     String? employeeId,
-    String? accountId,
-    int? transactionType,
-    String? referrerId,
     List<String>? keywords,
-    Timestamp? timestamp,
+    int? transactionType,
+    int? modeOfPay,
     String? referredBy,
     bool? show,
   }) {
     return TransactionDetails(
       id: id ?? this.id,
-      show: show ?? this.show,
       timestamp: timestamp ?? this.timestamp,
-      referrerId: referrerId ?? this.referrerId,
-      transactionType: transactionType ?? this.transactionType,
-      referredBy: referredBy ?? this.referredBy,
       userDetails: userDetails ?? this.userDetails,
-      keywords: keywords ?? this.keywords,
-      amount: amount ?? this.amount,
+      accountId: accountId ?? this.accountId,
       note: note ?? this.note,
+      amount: amount ?? this.amount,
+      referrerId: referrerId ?? this.referrerId,
       status: status ?? this.status,
       branchId: branchId ?? this.branchId,
       employeeId: employeeId ?? this.employeeId,
-      accountId: accountId ?? this.accountId,
+      keywords: keywords ?? this.keywords,
+      transactionType: transactionType ?? this.transactionType,
+      modeOfPay: modeOfPay ?? this.modeOfPay,
+      referredBy: referredBy ?? this.referredBy,
+      show: show ?? this.show,
     );
   }
 }

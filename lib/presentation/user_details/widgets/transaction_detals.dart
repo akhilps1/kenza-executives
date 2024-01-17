@@ -1,3 +1,4 @@
+import 'package:executives/domain/core/utils/enums/enums.dart';
 import 'package:executives/domain/transactions/models/transaction.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
@@ -42,8 +43,11 @@ class TransactionDetailsWidget extends StatelessWidget {
                   opacity: 0.90,
                   child: Text(
                     '\u{20B9} ${transaction.amount.toDouble()}',
-                    style: const TextStyle(
-                      color: Color(0xFF333333),
+                    style: TextStyle(
+                      color: transaction.getTransactinType ==
+                              TransactionType.credit
+                          ? const Color(0xFF289C00)
+                          : const Color(0xFFF33D3F),
                       fontSize: 17,
                       fontFamily: 'Montserrat',
                       fontWeight: FontWeight.w600,

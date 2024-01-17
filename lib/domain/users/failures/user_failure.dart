@@ -11,4 +11,6 @@ class UserFailure with _$UserFailure {
       _AccountNotFont;
   const factory UserFailure.transactionNotFound({required String errorMsg}) =
       _TransactionNotFound;
+  const factory UserFailure.cashAndBankNotFount({required String errorMsg}) =
+      _CashAndBankNotFount;
 }

@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:executives/application/user_details/otp_verification/otp_verification_cubit.dart';
 import 'package:executives/application/user_details/user_details_bloc.dart';
 import 'package:executives/domain/core/utils/extentions/extentions.dart';
@@ -68,10 +70,11 @@ class _UserDetailsScreenState extends State<UserDetailsScreen>
 
   @override
   Widget build(BuildContext context) {
-    return WillPopScope(
-      onWillPop: () {
-        context.read<UserDetailsBloc>().add(const ClearUserDetailsData());
-        return Future.value(true);
+    return PopScope(
+      onPopInvoked: (didPop) {
+        if (didPop) {
+          context.read<UserDetailsBloc>().add(const ClearUserDetailsData());
+        }
       },
       child: Scaffold(
         backgroundColor: AppColor.scaffoldColor,
@@ -91,6 +94,7 @@ class _UserDetailsScreenState extends State<UserDetailsScreen>
         ),
         body: BlocBuilder<UserDetailsBloc, UserDetailsState>(
           builder: (context, state) {
+            log("LOAING : ${state.firebaseLoading}");
             return CustomScrollView(
               controller: scrollController,
               slivers: [
@@ -143,13 +147,30 @@ class _UserDetailsScreenState extends State<UserDetailsScreen>
                               } else {
                                 showModalBottomSheet(
                                   context: context,
+                                  isDismissible: false,
                                   transitionAnimationController:
                                       _animationController,
                                   isScrollControlled: true,
-                                  builder: (context) => Padding(
-                                    padding: MediaQuery.of(context).viewInsets,
-                                    child: ReceveAmountDialog(
-                                        userDetails: widget.userDetails),
+                                  builder: (context) => PopScope(
+                                    canPop: context
+                                                .watch<UserDetailsBloc>()
+                                                .state
+                                                .firebaseLoading ==
+                                            true
+                                        ? false
+                                        : true,
+                                    onPopInvoked: (didPop) {
+                                      log("invoked $didPop");
+                                    },
+                                    child: Padding(
+                                      padding:
+                                          MediaQuery.of(context).viewInsets,
+                                      child: ReceveAmountDialog(
+                                        userDetails: widget.userDetails,
+                                        animationController:
+                                            _animationController,
+                                      ),
+                                    ),
                                   ),
                                 );
                               }

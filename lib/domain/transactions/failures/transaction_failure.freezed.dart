@@ -141,7 +141,7 @@ class _$ServerFailureImpl implements _ServerFailure {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ServerFailureImpl &&
@@ -280,7 +280,7 @@ class _$NotFountImpl implements _NotFount {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$NotFountImpl &&

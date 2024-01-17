@@ -4,6 +4,7 @@ part of 'user_details_bloc.dart';
 class UserDetailsState with _$UserDetailsState {
   const factory UserDetailsState({
     required bool isLoading,
+    required bool transactionType,
     required bool firebaseLoading,
     required bool firstTime,
     required bool noMoredata,
@@ -14,13 +15,17 @@ class UserDetailsState with _$UserDetailsState {
     required Amount amount,
     required String note,
     required List<TransactionDetails> transactions,
+    required CashAndBankDetails cashAndBankDetails,
+    required UserDetails? userDetails,
   }) = _UserDetailsState;
 
   factory UserDetailsState.initial() => UserDetailsState(
+        userDetails: null,
         isLoading: false,
         noMoredata: false,
         firstTime: false,
         firebaseLoading: false,
+        transactionType: true,
         amount: Amount(0),
         limit: 0,
         successOption: none(),
@@ -28,5 +33,6 @@ class UserDetailsState with _$UserDetailsState {
         account: null,
         note: '',
         transactions: [],
+        cashAndBankDetails: CashAndBankDetails.initial(),
       );
 }
