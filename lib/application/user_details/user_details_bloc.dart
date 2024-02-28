@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:bloc/bloc.dart';
 import 'package:bloc_concurrency/bloc_concurrency.dart';
 import 'package:bot_toast/bot_toast.dart';
@@ -329,6 +331,8 @@ class UserDetailsBloc extends Bloc<UserDetailsEvent, UserDetailsState> {
       result.fold(
         (l) => null,
         (r) {
+          log('cashAndBank ${r.id}');
+
           emit(
             state.copyWith(cashAndBankDetails: r),
           );

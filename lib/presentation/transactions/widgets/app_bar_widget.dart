@@ -156,7 +156,7 @@ class _AppbarWidgetsState extends State<AppbarWidgets> {
                                               initialDisplayDate: todayStart,
                                               extendableRangeSelectionDirection:
                                                   ExtendableRangeSelectionDirection
-                                                      .backward,
+                                                      .forward,
                                               selectionShape:
                                                   DateRangePickerSelectionShape
                                                       .rectangle,

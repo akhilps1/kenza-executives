@@ -1,8 +1,5 @@
-import 'dart:developer';
-
 import 'package:dartz/dartz.dart';
 import 'package:executives/domain/core/failures/value_objects.dart/value_failure.dart';
-import 'package:executives/domain/users/models/user_details.dart';
 
 Either<ValueFailure<String>, String> validateUserName(String userName) {
   if (userName.isNotEmpty) {

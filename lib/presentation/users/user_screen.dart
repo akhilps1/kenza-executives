@@ -163,7 +163,7 @@ class _UsersScreenState extends State<UsersScreen> {
                   ),
                 ),
               ),
-              if (state.users.isNotEmpty && state.isLoading == false)
+              if (state.users.isNotEmpty)
                 SliverList.builder(
                   itemCount: state.users.length,
                   itemBuilder: (context, index) {
@@ -188,7 +188,7 @@ class _UsersScreenState extends State<UsersScreen> {
                 )
               else
                 const SliverFillRemaining(
-                  child: ShimmerWidget(),
+                  child:   ShimmerWidget(),
                 ),
               if (state.isLoading && state.users.length >= 10)
                 const SliverToBoxAdapter(

@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:executives/application/transactions/transactions_bloc.dart';
 import 'package:executives/domain/core/utils/extentions/extentions.dart';
 import 'package:executives/domain/core/utils/media_res/media_res.dart';

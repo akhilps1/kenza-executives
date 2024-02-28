@@ -1,3 +1,4 @@
+import 'package:executives/application/core/extentions.dart';
 import 'package:executives/domain/core/utils/extentions/extentions.dart';
 import 'package:executives/domain/core/utils/media_res/media_res.dart';
 import 'package:executives/domain/core/utils/theme/app_colors.dart';
@@ -70,7 +71,7 @@ class UserDetailsWidget extends StatelessWidget {
                 child: Opacity(
                   opacity: 0.80,
                   child: Text(
-                    user.name.toLowerCase().capitalize,
+                    user.name.toLowerCase().capitalize.removeSpaces,
                     style: const TextStyle(
                       color: Colors.black,
                       fontSize: 13,
@@ -84,14 +85,14 @@ class UserDetailsWidget extends StatelessWidget {
                 height: 4,
               ),
               UserSubDetailsWidget(
-                text: user.ladmark.toLowerCase().capitalize,
+                text: user.ladmark.toLowerCase().capitalize.removeSpaces,
                 image: Icons.place,
               ),
               const SizedBox(
                 height: 4,
               ),
               UserSubDetailsWidget(
-                text: user.phoneNo,
+                text: user.phoneNo.removeSpaces,
                 image: Icons.call,
               )
             ],

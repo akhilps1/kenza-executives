@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:executives/application/core/constants.dart';
 import 'package:executives/application/user_details/otp_verification/otp_verification_cubit.dart';
 import 'package:executives/domain/core/serveice/custom_toast.dart';

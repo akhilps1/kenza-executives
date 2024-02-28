@@ -211,6 +211,14 @@ class IUserDeatailsImpl implements IUserDeatailsFacade {
     required UserDetails userDetails,
     required CashAndBankDetails cashAndBankDetails,
   }) async {
+    log('CashAndBankDetailsRepo: ${cashAndBankDetails.id}');
+
+    if (cashAndBankDetails.id == null || cashAndBankDetails.id!.isEmpty) {
+      return left(
+        UserFailure.serverFailure(errorMsg: 'Somthing went wrong!'),
+      );
+    }
+
     final batch = _firestore.batch();
     final monthilyLimitId =
         DateTime.now().year.toString() + DateTime.now().month.toString();
@@ -242,24 +250,34 @@ class IUserDeatailsImpl implements IUserDeatailsFacade {
           {
             'limit': FieldValue.increment(-collection.amount),
           })
-      ..update(_firestore.collection('executive').doc(collection.employeeId), {
-        'collected': FieldValue.increment(collection.amount),
-      })
       ..update(
-          _firestore
-              .collection('branches')
-              .doc(collection.branchId)
-              .collection('daily_collection')
-              .doc(dailyCollectionId),
-          isOffline
-              ? {
-                  'amount': FieldValue.increment(collection.amount),
-                  'offline': FieldValue.increment(collection.amount),
-                }
-              : {
-                  'amount': FieldValue.increment(collection.amount),
-                  'online': FieldValue.increment(collection.amount),
-                })
+        _firestore.collection('executive').doc(collection.employeeId),
+        isOffline
+            ? {
+                'collected': FieldValue.increment(collection.amount),
+                'offline': FieldValue.increment(collection.amount),
+              }
+            : {
+                'collected': FieldValue.increment(collection.amount),
+                'online': FieldValue.increment(collection.amount),
+              },
+      )
+      ..update(
+        _firestore
+            .collection('branches')
+            .doc(collection.branchId)
+            .collection('daily_collection')
+            .doc(dailyCollectionId),
+        isOffline
+            ? {
+                'amount': FieldValue.increment(collection.amount),
+                'offline': FieldValue.increment(collection.amount),
+              }
+            : {
+                'amount': FieldValue.increment(collection.amount),
+                'online': FieldValue.increment(collection.amount),
+              },
+      )
       ..update(
         _firestore.collection('users').doc(collection.userId),
         {
@@ -275,9 +293,15 @@ class IUserDeatailsImpl implements IUserDeatailsFacade {
               .doc(collection.employeeId)
               .collection('daily_collection')
               .doc(dailyCollectionId),
-          {
-            'amount': FieldValue.increment(collection.amount),
-          })
+          isOffline
+              ? {
+                  'amount': FieldValue.increment(collection.amount),
+                  'offline': FieldValue.increment(collection.amount),
+                }
+              : {
+                  'amount': FieldValue.increment(collection.amount),
+                  'online': FieldValue.increment(collection.amount),
+                })
       ..update(
           _firestore.collection('cash_and_bank').doc(cashAndBankDetails.id),
           isOffline

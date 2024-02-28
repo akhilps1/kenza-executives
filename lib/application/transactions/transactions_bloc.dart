@@ -212,6 +212,7 @@ class TransactionsBloc extends Bloc<TransactionsEvent, TransactionsState> {
     on<_GetCollectionAmount>(
       (event, emit) async {
         log('worked');
+
         final failureOrSuccess = await _transactionFacade.getCollectionAmount(
           employeeId: event.employeeId,
           dateRange: event.dateRange,

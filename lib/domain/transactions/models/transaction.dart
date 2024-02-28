@@ -5,7 +5,6 @@ import 'package:executives/domain/users/models/user_details.dart';
 
 class TransactionDetails {
   TransactionDetails({
-    required this.userDetails,
     required this.amount,
     required this.note,
     required this.status,
@@ -19,6 +18,8 @@ class TransactionDetails {
     required this.referredBy,
     required this.timestamp,
     required this.show,
+    required this.userDetails,
+    this.isCashAndBank,
     this.id,
   });
 
@@ -40,6 +41,7 @@ class TransactionDetails {
       accountId: map['accountId'] as String,
       modeOfPay: map['modeOfPay'] as int,
       id: map['transactionId'] as String?,
+      isCashAndBank: map['isCashAndBank'] as bool?,
     );
   }
   final String? id;
@@ -57,6 +59,7 @@ class TransactionDetails {
   final int modeOfPay;
   final String referredBy;
   final bool show;
+  final bool? isCashAndBank;
 
   TransactionStatus get getTransactinStatus {
     switch (status) {
@@ -80,17 +83,17 @@ class TransactionDetails {
     }
   }
 
-  ModeOfPay get getModeOfPay {
-    switch (modeOfPay) {
-      case 2:
-        return ModeOfPay.executive;
-      case 1:
-        return ModeOfPay.branch;
-      case 0:
-      default:
-        return ModeOfPay.self;
-    }
-  }
+  // ModeOfPay get getModeOfPay {
+  //   switch (modeOfPay) {
+  //     case 2:
+  //       return ModeOfPay.executive;
+  //     case 1:
+  //       return ModeOfPay.branch;
+  //     case 0:
+  //     default:
+  //       return ModeOfPay.self;
+  //   }
+  // }
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
@@ -110,6 +113,7 @@ class TransactionDetails {
       'show': show,
       'referrerId': referrerId,
       'modeOfPay': modeOfPay,
+      'isCashAndBank': isCashAndBank,
     };
   }
 
